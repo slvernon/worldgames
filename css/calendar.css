@@ -85,7 +85,6 @@
 
 /* followed team's fixtures stand out in the timeline */
 .wg-fx.fav { border-color: var(--wg-gold); box-shadow: inset 3px 0 0 var(--wg-gold); }
-.wg-score-tot { font-size: 11px; color: var(--wg-muted); font-weight: 600; margin-left: 2px; }
 
 /* ---- day sections ---- */
 .wg-day { margin-bottom: 18px; }
@@ -127,23 +126,20 @@
 .wg-pool-ko { background: var(--wg-lilac); }
 
 .wg-fx-body { min-width: 0; }
-.wg-teams {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 8px;
-  align-items: center;
-}
-.wg-team {
+/* stacked mini-scoreboard: one team per line, score right-aligned */
+.wg-teams { display: flex; flex-direction: column; gap: 3px; }
+.wg-side { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.wg-side .wg-team {
+  flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere;
   font-size: 14px; font-weight: 500;
-  min-width: 0; overflow-wrap: anywhere; word-break: break-word;
 }
-.wg-teams .wg-team:last-child { text-align: right; }
-.wg-team-win { font-weight: 700; color: var(--wg-teal); }
-
-.wg-score { display: flex; align-items: center; gap: 4px; justify-content: center; }
-.wg-score-num { font: 700 15px/1 'Poppins', sans-serif; }
-.wg-score-sep { color: var(--wg-muted); }
-.wg-score-vs { font-size: 12px; color: var(--wg-muted); font-weight: 600; }
+.wg-side-sc {
+  flex: none; white-space: nowrap;
+  font: 700 15px/1.1 'Poppins', sans-serif; color: var(--wg-ink);
+}
+.wg-side.win .wg-team { font-weight: 700; color: var(--wg-teal); }
+.wg-side.win .wg-side-sc { color: var(--wg-teal); }
+.wg-score-tot { font-size: 11px; color: var(--wg-muted); font-weight: 600; }
 
 /* ---- status badge ---- */
 .wg-status {

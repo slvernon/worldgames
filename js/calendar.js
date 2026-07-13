@@ -198,20 +198,25 @@
     else if (fx.stage === 'knockout') when.appendChild(el('span', 'wg-pool wg-pool-ko', 'Knockout'));
     row.appendChild(when);
 
-    // Middle: teams + score
+    // Middle: a stacked mini-scoreboard — each team on its own line with its
+    // score beside it. (A horizontal home|score|away layout squeezes long GAA
+    // club names into one-letter-per-line columns on phones.)
     var body = el('div', 'wg-fx-body');
     var teams = el('div', 'wg-teams');
-    var homeEl = el('span', 'wg-team', refName(div, fx.homeRef));
-    var awayEl = el('span', 'wg-team', refName(div, fx.awayRef));
-    // Highlight winner when final.
-    if (fx.status === 'final' && fx.home && fx.away) {
-      var ht = fx.home.total, at = fx.away.total;
-      if (ht > at) homeEl.classList.add('wg-team-win');
-      else if (at > ht) awayEl.classList.add('wg-team-win');
+    var played = !!(fx.home && fx.away);
+    var ht = played ? totalOf(fx.home) : null, at = played ? totalOf(fx.away) : null;
+
+    function sideRow(ref, sc, isWin) {
+      var r = el('div', 'wg-side' + (isWin ? ' win' : ''));
+      r.appendChild(el('span', 'wg-team', refName(div, ref)));
+      var s = el('span', 'wg-side-sc');
+      if (sc) s.innerHTML = fmtScore(sc) + ' <span class="wg-score-tot">(' + totalOf(sc) + ')</span>';
+      else s.textContent = played ? '' : 'v';
+      r.appendChild(s);
+      return r;
     }
-    teams.appendChild(homeEl);
-    teams.appendChild(scoreCell(fx));
-    teams.appendChild(awayEl);
+    teams.appendChild(sideRow(fx.homeRef, played ? fx.home : null, played && ht > at));
+    teams.appendChild(sideRow(fx.awayRef, played ? fx.away : null, played && at > ht));
     body.appendChild(teams);
 
     // Prediction chip only for full-tier upcoming (not final) games.
