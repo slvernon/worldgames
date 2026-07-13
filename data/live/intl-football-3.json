@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-3",
   "season": "2026",
-  "updatedAt": "2026-07-13T10:08:23Z",
+  "updatedAt": "2026-07-13T10:25:51Z",
   "teams": {
     "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
       "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
@@ -104,20 +104,6 @@
       "status": "scheduled"
     },
     {
-      "id": "bf3d0f29-3cd9-4a33-a7b2-0bfd631489d4",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": "Field 2",
-      "pool": null,
-      "round": "SF2",
-      "homeRef": "1st Pool B",
-      "awayRef": "Winner QF1",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "036c06ac-1a24-4e0b-b0cc-3a7a8513ef78",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -127,6 +113,20 @@
       "round": "SF1",
       "homeRef": "1st Pool A",
       "awayRef": "Winner QF2",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "bf3d0f29-3cd9-4a33-a7b2-0bfd631489d4",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "SF2",
+      "homeRef": "1st Pool B",
+      "awayRef": "Winner QF1",
       "home": null,
       "away": null,
       "status": "scheduled"
