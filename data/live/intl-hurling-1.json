@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-13T10:25:52Z",
+  "updatedAt": "2026-07-13T21:40:44Z",
   "teams": {
     "2d96597a-29a4-4d43-95d7-3bad6752d875": {
       "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
@@ -656,14 +656,22 @@
       "stage": "group",
       "date": "2026-07-13",
       "time": "15:30",
-      "pitch": "Field 3",
+      "pitch": "Field 6",
       "pool": null,
       "round": "Round 4",
       "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
       "awayRef": "647d1a71-1d0c-4898-af20-af812469942d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 6,
+        "total": 6
+      },
+      "away": {
+        "goals": 6,
+        "points": 5,
+        "total": 23
+      },
+      "status": "final"
     },
     {
       "id": "998c593f-3487-41bf-953e-8dcf4708ada8",
@@ -675,9 +683,17 @@
       "round": "Round 3",
       "homeRef": "389b191b-5481-4737-ac23-7207daa3bea8",
       "awayRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "away": {
+        "goals": 6,
+        "points": 10,
+        "total": 28
+      },
+      "status": "final"
     },
     {
       "id": "8a0e8592-476c-46fc-a267-9fe4a2ce13ba",
@@ -689,9 +705,17 @@
       "round": "Round 3",
       "homeRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
       "awayRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 11,
+        "total": 20
+      },
+      "away": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
+      "status": "final"
     },
     {
       "id": "675fc98a-c1d2-40bc-87e9-c9a6750c198a",
@@ -703,9 +727,17 @@
       "round": "Round 3",
       "homeRef": "05990fb1-d313-43db-9c95-04adca442784",
       "awayRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 4,
+        "total": 7
+      },
+      "away": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "status": "final"
     },
     {
       "id": "9df6c901-b69f-463a-8b80-d4b3bc16f233",
@@ -717,9 +749,17 @@
       "round": "Round 3",
       "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
       "awayRef": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "away": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "746e88e2-b202-4195-ae52-1c2a817884c4",
@@ -731,9 +771,17 @@
       "round": "Round 2",
       "homeRef": "05990fb1-d313-43db-9c95-04adca442784",
       "awayRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
+      },
+      "status": "final"
     },
     {
       "id": "5c6c2b5b-f5d9-4fec-95c4-c036319cdba9",
@@ -745,9 +793,17 @@
       "round": "Round 2",
       "homeRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
       "awayRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 1,
+        "points": 8,
+        "total": 11
+      },
+      "status": "final"
     },
     {
       "id": "2ee54231-e172-42be-9ca6-a01b405ee2cc",
@@ -759,9 +815,17 @@
       "round": "Round 2",
       "homeRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
       "awayRef": "389b191b-5481-4737-ac23-7207daa3bea8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 9,
+        "total": 21
+      },
+      "away": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "233a8687-4a86-43b3-bed7-afef67609a48",
@@ -773,9 +837,17 @@
       "round": "Round 2",
       "homeRef": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
       "awayRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 3,
+        "total": 12
+      },
+      "away": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "status": "final"
     },
     {
       "id": "032f3784-0e1b-4fd5-bbd4-00fca6252933",
@@ -787,23 +859,17 @@
       "round": "Round 2",
       "homeRef": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
       "awayRef": "647d1a71-1d0c-4898-af20-af812469942d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "fb1861d6-fc72-4e45-a5b5-816d92eadf57",
-      "stage": "group",
-      "date": "2026-07-13",
-      "time": "09:00",
-      "pitch": "Field 4",
-      "pool": null,
-      "round": "Round 1",
-      "homeRef": "647d1a71-1d0c-4898-af20-af812469942d",
-      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 9,
+        "total": 21
+      },
+      "away": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "c404982b-e8f9-4fb0-9266-ca704e878815",
@@ -868,6 +934,28 @@
         "goals": 1,
         "points": 9,
         "total": 12
+      },
+      "status": "final"
+    },
+    {
+      "id": "fb1861d6-fc72-4e45-a5b5-816d92eadf57",
+      "stage": "group",
+      "date": "2026-07-13",
+      "time": "09:00",
+      "pitch": "Field 4",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "647d1a71-1d0c-4898-af20-af812469942d",
+      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 1,
+        "points": 5,
+        "total": 8
       },
       "status": "final"
     },

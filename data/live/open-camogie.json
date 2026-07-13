@@ -1,7 +1,7 @@
 {
   "slug": "open-camogie",
   "season": "2026",
-  "updatedAt": "2026-07-13T10:25:54Z",
+  "updatedAt": "2026-07-13T21:40:48Z",
   "teams": {
     "1c82221b-4db3-44c9-8497-37e1a752db68": {
       "id": "1c82221b-4db3-44c9-8497-37e1a752db68",
@@ -175,9 +175,17 @@
       "round": "Round 4",
       "homeRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
       "awayRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 8,
+        "total": 17
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     }
   ]
 }

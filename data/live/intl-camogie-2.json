@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-2",
   "season": "2026",
-  "updatedAt": "2026-07-13T10:25:53Z",
+  "updatedAt": "2026-07-13T21:40:46Z",
   "teams": {
     "061c49ed-1e36-47f2-8132-ea857b2dcd27": {
       "id": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
@@ -185,9 +185,17 @@
       "round": "Round 2",
       "homeRef": "01209e2b-1d47-4150-9d82-1534ab3cf62b",
       "awayRef": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "61dbcd2f-a25a-48c5-bb0b-e320443bc1ea",
@@ -199,9 +207,17 @@
       "round": "Round 2",
       "homeRef": "cb8b42f4-adc5-408f-ad8f-94d438c39e63",
       "awayRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 4,
+        "total": 4
+      },
+      "away": {
+        "goals": 3,
+        "points": 0,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "7a1c2945-2e67-4307-b5fd-27148a2dec12",
