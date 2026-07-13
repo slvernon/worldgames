@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-3",
   "season": "2026",
-  "updatedAt": "2026-07-13T22:23:44Z",
+  "updatedAt": "2026-07-13T23:01:52Z",
   "teams": {
     "c721050d-4ba6-4af9-80cf-d86c51ceb88f": {
       "id": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
@@ -480,20 +480,6 @@
       "status": "scheduled"
     },
     {
-      "id": "57befe4e-3367-45e2-b316-d612440b669d",
-      "stage": "group",
-      "date": "2026-07-14",
-      "time": "11:30",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "Round 4",
-      "homeRef": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
-      "awayRef": "3205d5cc-5f8e-47c5-a241-d5b73d20c329",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "2ab674b2-2e65-4c08-b63f-3070e69ae712",
       "stage": "group",
       "date": "2026-07-14",
@@ -503,6 +489,20 @@
       "round": "Round 5",
       "homeRef": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
       "awayRef": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "57befe4e-3367-45e2-b316-d612440b669d",
+      "stage": "group",
+      "date": "2026-07-14",
+      "time": "11:30",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 4",
+      "homeRef": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
+      "awayRef": "3205d5cc-5f8e-47c5-a241-d5b73d20c329",
       "home": null,
       "away": null,
       "status": "scheduled"

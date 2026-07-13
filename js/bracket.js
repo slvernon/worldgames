@@ -34,6 +34,13 @@
   function isRealFinal(fx) {
     return fx && fx.status === 'final' && totalOf(fx.home) != null && totalOf(fx.away) != null;
   }
+  // GAA score with its running total appended in muted text, e.g. "2-07 (13)".
+  function scHtml(sc) {
+    if (!sc) return '';
+    var tot = (typeof sc.total === 'number') ? sc.total : ((sc.goals || 0) * 3 + (sc.points || 0));
+    return WG.data.fmtScore(sc) + '<span class="bk-tot">(' + tot + ')</span>';
+  }
+  function favId(div) { return (WG.fav && div && div.slug) ? WG.fav.get(div.slug) : null; }
 
   function picks(state) {
     state.playout = state.playout || {};
@@ -205,22 +212,28 @@
     gsCtl.appendChild(renderCollapseAll(effDiv, state, rerender));
     gh.appendChild(gsCtl);
     left.appendChild(gh);
+    if ((picks(state).scoreMode || 'pick') === 'pick') {
+      left.appendChild(el('p', 'bk-pickhint', 'Tap a team to pick the winner — real scores lock in automatically.'));
+    }
     left.appendChild(renderGroupDays(div, effDiv, state, rerender, ratings));
 
     right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP));
     var st = el('div', 'bk-standings');
-    ['A', 'B'].forEach(function (p) { st.appendChild(renderPool(div, effDiv, standings, p)); });
+    ['A', 'B'].forEach(function (p) { st.appendChild(renderPool(div, effDiv, standings, p, rerender)); });
     right.appendChild(st);
-
-    right.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How the Cup, Shield and predictions work', KNOCKOUT_HELP));
-    var brackets = el('div', 'bk-brackets');
-    brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'cup', 'Cup'));
-    brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'shield', 'Shield'));
-    right.appendChild(brackets);
 
     cols.appendChild(left);
     cols.appendChild(right);
     wrap.appendChild(cols);
+
+    // Knockout gets its own full-width band below the two panes so the tree can breathe.
+    var koBand = el('div', 'bk-ko-band');
+    koBand.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How the Cup, Shield and predictions work', KNOCKOUT_HELP));
+    var brackets = el('div', 'bk-brackets');
+    brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'cup', 'Cup'));
+    brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'shield', 'Shield'));
+    koBand.appendChild(brackets);
+    wrap.appendChild(koBand);
 
     drawAllConnectors(); // after the tree is in the DOM and laid out
     if (!resizeBound) { resizeBound = true; window.addEventListener('resize', drawAllConnectors); }
@@ -247,23 +260,7 @@
     return gs.length > 0 && gs.every(function (f) { return f.status === 'final'; });
   }
 
-  function renderTableRows(div, rows) {
-    var table = el('table', 'bk-tbl');
-    table.innerHTML = '<thead><tr><th>#</th><th class="l">Team</th><th>P</th><th>W</th><th>L</th><th>+/-</th><th>Pts</th></tr></thead>';
-    var tb = el('tbody');
-    rows.forEach(function (r) {
-      var diff = (r.diff > 0 ? '+' : '') + r.diff;
-      var tr = el('tr');
-      tr.innerHTML = '<td>' + r.rank + '</td><td class="l">' + teamName(div, r.teamId) +
-        '</td><td>' + r.P + '</td><td>' + r.W + '</td><td>' + r.L + '</td><td>' + diff +
-        '</td><td class="pts">' + r.pts + '</td>';
-      tb.appendChild(tr);
-    });
-    table.appendChild(tb);
-    return table;
-  }
-
-  function renderSingleStandings(div, standings) {
+  function renderSingleStandings(div, standings, rerender) {
     var box = el('div', 'bk-pool pool-a');
     var complete = groupComplete(div);
     box.appendChild(el('div', 'bk-pool-h', '<span class="bk-dot"></span> Group Table' +
@@ -272,7 +269,7 @@
     if (!rows.length) {
       box.appendChild(el('div', 'bk-scen', 'Standings appear once group games are played.'));
     } else {
-      box.appendChild(renderTableRows(div, rows));
+      box.appendChild(buildStandingsTable(div, rows, rerender, null));
     }
     return box;
   }
@@ -296,14 +293,16 @@
     if (isRealFinal(k)) {
       win = totalOf(k.home) > totalOf(k.away) ? 'home' : (totalOf(k.away) > totalOf(k.home) ? 'away' : null);
     }
+    var fav = favId(div);
     [['home', k.homeRef, k.home], ['away', k.awayRef, k.away]].forEach(function (side) {
       var which = side[0], ref = side[1], sc = side[2];
       var known = !!(div.teams && div.teams[ref]);
       var slot = el('div', 'bk-slot');
       if (!known) slot.classList.add('seed');
       if (win === which) slot.classList.add('win');
+      if (known && ref === fav) slot.classList.add('favteam');
       var label = known ? teamName(div, ref) : String(ref == null ? 'TBD' : ref);
-      var scoreHtml = isRealFinal(k) ? '<span class="bk-sc">' + WG.data.fmtScore(sc) + '</span>' : '';
+      var scoreHtml = isRealFinal(k) ? '<span class="bk-sc">' + scHtml(sc) + '</span>' : '';
       slot.innerHTML = '<span class="bk-tn">' + label + '</span>' + scoreHtml;
       m.appendChild(slot);
       if (which === 'home') m.appendChild(el('div', 'bk-v', 'v'));
@@ -382,6 +381,9 @@
       gsCtl.appendChild(renderCollapseAll(effDiv, state, rerender));
       gh.appendChild(gsCtl);
       left.appendChild(gh);
+      if ((picks(state).scoreMode || 'pick') === 'pick') {
+        left.appendChild(el('p', 'bk-pickhint', 'Tap a team to pick the winner — real scores lock in automatically.'));
+      }
       left.appendChild(renderGroupDays(div, effDiv, state, rerender, ratings));
     } else {
       left.appendChild(el('p', 'bk-hint', 'No group games listed for this division yet.'));
@@ -389,26 +391,30 @@
 
     right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP_GENERIC));
     var st = el('div', 'bk-standings');
-    st.appendChild(renderSingleStandings(effDiv, standings));
+    st.appendChild(renderSingleStandings(effDiv, standings, rerender));
     right.appendChild(st);
-
-    var koCard = renderKnockoutGeneric(effDiv, ratings);
-    if (koCard) {
-      right.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How predictions work', KNOCKOUT_HELP_GENERIC));
-      var brackets = el('div', 'bk-brackets');
-      brackets.appendChild(koCard);
-      right.appendChild(brackets);
-    }
 
     cols.appendChild(left);
     cols.appendChild(right);
     wrap.appendChild(cols);
+
+    var koCard = renderKnockoutGeneric(effDiv, ratings);
+    if (koCard) {
+      var koBand = el('div', 'bk-ko-band');
+      koBand.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How predictions work', KNOCKOUT_HELP_GENERIC));
+      var brackets = el('div', 'bk-brackets');
+      brackets.appendChild(koCard);
+      koBand.appendChild(brackets);
+      wrap.appendChild(koBand);
+    }
   }
 
   // ---- explainer (collapsible) + jump-nav + controls ----
   function renderExplainer(state, rerender) {
     var pk = picks(state);
-    var open = pk.explainOpen !== false; // default open; remembered once collapsed
+    // Default: open on desktop, collapsed on phones (where it would bury content);
+    // once the user toggles it, remember their choice.
+    var open = (pk.explainOpen == null) ? isDesktopTwoPane() : pk.explainOpen;
     var box = el('div', 'bk-explain' + (open ? '' : ' closed'));
     var head = el('button', 'bk-explain-h', 'How it works <span class="bk-explain-chev">▾</span>');
     head.setAttribute('aria-expanded', String(open));
@@ -469,6 +475,7 @@
   // Compact sticky section nav (mobile only, via CSS).
   function renderJumpNav() {
     var nav = el('div', 'bk-jumpnav');
+    nav.appendChild(el('span', 'bk-jumpnav-lbl', 'Jump to'));
     [['bk-sec-group', 'Group'], ['bk-sec-standings', 'Standings'], ['bk-sec-knockout', 'Knockout']].forEach(function (s) {
       var b = el('button', 'bk-jump', s[1]);
       b.onclick = function () { var t = document.getElementById(s[0]); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
@@ -547,9 +554,14 @@
       var list = byDay[date].sort(function (a, b) { return a.time < b.time ? -1 : 1; });
       var collapsed = !!state._collapsed[date];
       var card = el('div', 'bk-day' + (collapsed ? ' collapsed' : ''));
+      // Only name a pitch in the header when EVERY game that day is on it.
+      var pitchSet = {};
+      list.forEach(function (g) { if (g.pitch) pitchSet[g.pitch] = 1; });
+      var pitchKeys = Object.keys(pitchSet);
+      var pitchMeta = pitchKeys.length === 1 ? ' · ' + pitchKeys[0] : '';
       var head = el('button', 'bk-day-h',
         '<span class="bk-day-title">' + dayLabel(date) + '</span>' +
-        '<span class="bk-day-meta">' + list.length + ' games · ' + (list[0].pitch || '') + '</span>' +
+        '<span class="bk-day-meta">' + list.length + ' games' + pitchMeta + '</span>' +
         '<span class="bk-day-chev" aria-hidden="true">▾</span>');
       head.setAttribute('aria-expanded', String(!collapsed));
       head.onclick = function () { state._collapsed[date] = !state._collapsed[date]; rerender(); };
@@ -577,6 +589,7 @@
       // PICK mode (and locked live results): two tappable team buttons
       var real = live || !!f._manual;
       var winner = real ? winSide(f) : g[f.id];
+      var fav = favId(div);
       var pair = el('div', 'bk-pair');
       [['home', f.homeRef], ['away', f.awayRef]].forEach(function (side, idx) {
         var which = side[0], id = side[1];
@@ -584,8 +597,9 @@
         if (winner === which) b.classList.add('win');
         else if (winner) b.classList.add('lose');
         if (real) b.classList.add('locked');
+        if (id && id === fav) b.classList.add('favteam');
         b.innerHTML = '<span class="bk-tn">' + teamName(div, id) + '</span>' +
-          (real ? '<span class="bk-sc">' + WG.data.fmtScore(which === 'home' ? f.home : f.away) + '</span>' : '');
+          (real ? '<span class="bk-sc">' + scHtml(which === 'home' ? f.home : f.away) + '</span>' : '');
         if (live) b.disabled = true;
         else b.onclick = function () { g[f.id] = (g[f.id] === which) ? undefined : which; if (!g[f.id]) delete g[f.id]; rerender(); };
         pair.appendChild(b);
@@ -636,28 +650,50 @@
     return wrap;
   }
 
+  // Shared standings <table> builder with a "follow" star column + fav highlight.
+  // extraCell(r) -> trailing-cell HTML (e.g. Cup/Shield badge) or '' for none.
+  function buildStandingsTable(div, rows, rerender, extraCell) {
+    var fav = favId(div);
+    var table = el('table', 'bk-tbl');
+    table.innerHTML = '<thead><tr><th></th><th>#</th><th class="l">Team</th><th>P</th><th>W</th><th>L</th><th>+/-</th><th>Pts</th>' +
+      (extraCell ? '<th></th>' : '') + '</tr></thead>';
+    var tb = el('tbody');
+    rows.forEach(function (r) {
+      var isFav = r.teamId === fav;
+      var diff = (r.diff > 0 ? '+' : '') + r.diff;
+      var tr = el('tr', isFav ? 'fav' : null);
+      var star = '<button class="bk-star' + (isFav ? ' on' : '') + '" data-team="' + r.teamId +
+        '" aria-label="Follow ' + teamName(div, r.teamId) + '">' + (isFav ? '★' : '☆') + '</button>';
+      tr.innerHTML = '<td class="star">' + star + '</td><td>' + r.rank + '</td><td class="l">' + teamName(div, r.teamId) +
+        '</td><td>' + r.P + '</td><td>' + r.W + '</td><td>' + r.L + '</td><td>' + diff +
+        '</td><td class="pts">' + r.pts + '</td>' + (extraCell ? '<td>' + (extraCell(r) || '') + '</td>' : '');
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    if (rerender && WG.fav) {
+      table.addEventListener('click', function (e) {
+        var btn = e.target && e.target.closest ? e.target.closest('.bk-star') : null;
+        if (!btn) return;
+        e.preventDefault();
+        WG.fav.toggle(div.slug, btn.getAttribute('data-team'));
+        rerender();
+      });
+    }
+    return table;
+  }
+
   // ---- standings pool table + Cup/Shield tags + scenario line ----
-  function renderPool(div, effDiv, standings, pool) {
+  function renderPool(div, effDiv, standings, pool, rerender) {
     var box = el('div', 'bk-pool pool-' + pool.toLowerCase());
     var complete = poolComplete(effDiv, pool);
     box.appendChild(el('div', 'bk-pool-h', '<span class="bk-dot"></span> ' + POOL_LABEL[pool] +
       '<span class="bk-prov">' + (complete ? 'Final' : 'Provisional') + '</span>'));
     var rows = (standings && standings[pool]) ? standings[pool].slice().sort(function (a, b) { return a.rank - b.rank; }) : [];
-    var table = el('table', 'bk-tbl');
-    table.innerHTML = '<thead><tr><th>#</th><th class="l">Team</th><th>P</th><th>W</th><th>L</th><th>+/-</th><th>Pts</th><th></th></tr></thead>';
-    var tb = el('tbody');
     var cutoff = pool === 'A' ? 3 : 2;
-    rows.forEach(function (r) {
-      var tr = el('tr');
-      var dest = complete ? (r.rank <= cutoff ? '<span class="bk-badge cup">Cup</span>' : '<span class="bk-badge shield">Shield</span>') : '';
-      var diff = (r.diff > 0 ? '+' : '') + r.diff;
-      tr.innerHTML = '<td>' + r.rank + '</td><td class="l">' + teamName(div, r.teamId) +
-        '</td><td>' + r.P + '</td><td>' + r.W + '</td><td>' + r.L + '</td><td>' + diff +
-        '</td><td class="pts">' + r.pts + '</td><td>' + dest + '</td>';
-      tb.appendChild(tr);
-    });
-    table.appendChild(tb);
-    box.appendChild(table);
+    box.appendChild(buildStandingsTable(div, rows, rerender, function (r) {
+      if (!complete) return '';
+      return r.rank <= cutoff ? '<span class="bk-badge cup">Cup</span>' : '<span class="bk-badge shield">Shield</span>';
+    }));
 
     var scen = (WG.scenarios && WG.scenarios.forPool) ? safe(function () { return WG.scenarios.forPool(div, pool, standings); }) : null;
     if (scen && !complete) {
@@ -730,6 +766,7 @@
     if (k.feedsTo) m.setAttribute('data-feeds', k.feedsTo.matchId);
     m.appendChild(el('div', 'bk-meta', '<b>' + k.time + '</b> · ' + k.pitch));
     var knock = picks(state).knock;
+    var fav = favId(div);
 
     [['home', k.homeRef], ['away', k.awayRef]].forEach(function (side) {
       var which = side[0], ref = side[1];
@@ -741,9 +778,10 @@
       if (!known) slot.classList.add('seed');
       if (known && prov) slot.classList.add('prov');
       if (known && r.winner === id) slot.classList.add('win');
+      if (known && id === fav) slot.classList.add('favteam');
       var scoreHtml = '';
       if (r.locked && isRealFinal(k)) {
-        scoreHtml = '<span class="bk-sc">' + WG.data.fmtScore(which === 'home' ? k.home : k.away) + '</span>';
+        scoreHtml = '<span class="bk-sc">' + scHtml(which === 'home' ? k.home : k.away) + '</span>';
       }
       slot.innerHTML = '<span class="bk-tn">' + label + '</span>' + scoreHtml;
       if (known && !r.locked) {
@@ -814,9 +852,11 @@
   function injectStyles() {
     if (document.getElementById('bk-style')) return;
     var css = [
-    '.bk-wrap{--teal:#00b4a8;--crim:#e40048;--lilac:#c084d8;--gold:#f0b400;--ink:#182219;--mut:#6d7168;--line:#e7e7ee;}',
+    '.bk-wrap{--teal:#00b4a8;--crim:#e40048;--blue:#3f6fe6;--lilac:#c084d8;--gold:#f0b400;--ink:#182219;--mut:#6d7168;--line:#e7e7ee;}',
     '.bk-intro{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 10px;}',
     '.bk-hint{margin:0;font-size:13px;color:var(--mut);flex:1 1 240px;}',
+    '.bk-pickhint{margin:8px 0 2px;font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px;}',
+    '.bk-pickhint::before{content:"\\1F449";font-size:13px;}',
     ".bk-reset{font:600 12px/1 'Poppins',sans-serif;letter-spacing:.4px;text-transform:uppercase;border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 12px;border-radius:8px;cursor:pointer;}",
     '.bk-reset:hover{border-color:var(--teal);}',
     ".bk-h2{font:600 15px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:1px;margin:26px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line);}",
@@ -828,14 +868,14 @@
     '.bk-day-h:active{background:#eee7cf;}',
     '.bk-day-h:hover{background:#f3eede;}',
     ".bk-day-title{font:600 14px/1 'Poppins',sans-serif;}",
-    '.bk-day-meta{margin-left:auto;font-weight:500;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;}',
+    '.bk-day-meta{margin-left:auto;font-weight:500;font-size:11.5px;color:var(--mut);}',
     '.bk-day-chev{flex:none;color:var(--mut);font-size:12px;transition:transform .15s;}',
     '.bk-day.collapsed .bk-day-chev{transform:rotate(-90deg);}',
     '.bk-day.collapsed .bk-day-body{display:none;}',
     '.bk-day.collapsed .bk-day-h{border-bottom:0;}',
     '.bk-game{display:flex;flex-direction:column;gap:6px;padding:6px 12px;border-bottom:1px solid #f2f2f6;border-left:3px solid transparent;}',
     '.bk-game:last-child{border-bottom:0;}',
-    '.bk-game.pool-a{border-left-color:var(--teal);}.bk-game.pool-b{border-left-color:var(--crim);}',
+    '.bk-game.pool-a{border-left-color:var(--teal);}.bk-game.pool-b{border-left-color:var(--blue);}',
     '.bk-game-top{display:flex;align-items:center;gap:10px;}',
     ".bk-time{font:600 12px/1 'Poppins',sans-serif;color:var(--mut);width:40px;flex:none;}",
     // header row + pick/score mode toggle
@@ -867,7 +907,7 @@
     '.bk-jumpnav{display:none;}',
     '.bk-scrollhint{display:none;}',
     '.bk-h2row,.bk-h2{scroll-margin-top:56px;}',
-    '.bk-explain-b .ga{color:var(--teal);}.bk-explain-b .gb{color:var(--crim);}',
+    '.bk-explain-b .ga{color:var(--teal);}.bk-explain-b .gb{color:var(--blue);}',
     ".bk-chip{display:inline-block;font:700 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.4px;padding:3px 7px;border-radius:5px;}",
     '.bk-chip.cup{background:#fff5d6;color:#a9791a;}.bk-chip.shield{background:#f5e9fb;color:#8a3fb0;}',
     ".bk-legend{margin:-4px 0 12px;font-size:12px;color:var(--mut);line-height:1.5;}",
@@ -887,15 +927,31 @@
     '.bk-team:hover:not(:disabled){border-color:var(--teal);}',
     '.bk-team.win{background:#e3f7ee;border-color:var(--teal);color:#046b63;}',
     '.bk-team.win .bk-tn::before{content:"\\2713 ";color:var(--teal);font-weight:700;}',
-    '.bk-team.lose{background:#f6f6f8;color:#9aa;}',
+    '.bk-team.lose{background:#f6f6f8;color:#9497a6;}',
     '.bk-team.locked{cursor:default;}',
+    // pickable teams get a clear "tap me" affordance, distinct from played rows
+    '.bk-pair .bk-team:not(.win):not(.lose):not(.locked){border-style:dashed;border-color:#c9d2e3;background:#fcfdff;}',
+    '.bk-pair .bk-team:not(.win):not(.lose):not(.locked)::after{content:"pick";flex:none;font:700 8px/1 \'Poppins\',sans-serif;letter-spacing:.5px;text-transform:uppercase;color:#aeb6c6;}',
+    '.bk-pair .bk-team:not(.win):not(.lose):not(.locked):hover{background:#effaf8;border-style:solid;border-color:var(--teal);}',
+    '.bk-pair .bk-team:not(.win):not(.lose):not(.locked):hover::after{color:var(--teal);}',
+    // followed ("my team") emphasis, shared across group buttons + knockout slots
+    '.bk-team.favteam{box-shadow:inset 3px 0 0 var(--gold);}',
+    '.bk-slot.favteam{box-shadow:inset 3px 0 0 var(--gold);}',
+    '.bk-tot{color:var(--mut);font-weight:600;font-size:.82em;margin-left:3px;}',
     ".bk-sc{font:700 12px/1 'Poppins',sans-serif;color:var(--ink);flex:none;}",
     '.bk-standings{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}',
     '.bk-pool{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0;}',
     ".bk-pool-h{font:600 14px/1 'Poppins',sans-serif;padding:10px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;}",
     '.bk-dot{width:9px;height:9px;border-radius:50%;margin-right:8px;}',
-    '.pool-a .bk-dot{background:var(--teal);}.pool-b .bk-dot{background:var(--crim);}',
-    ".bk-prov{margin-left:auto;font:500 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);}",
+    '.pool-a .bk-dot{background:var(--teal);}.pool-b .bk-dot{background:var(--blue);}',
+    ".bk-prov{margin-left:auto;font:500 11px/1 'Poppins',sans-serif;color:var(--mut);}",
+    // follow ("my team") star + highlighted row
+    '.bk-tbl td.star{padding:0 0 0 6px;width:22px;}',
+    ".bk-star{border:0;background:none;cursor:pointer;font-size:15px;line-height:1;color:#c7c7d2;padding:4px;}",
+    '.bk-star.on{color:var(--gold);}',
+    '.bk-star:hover{color:var(--gold);}',
+    '.bk-tbl tr.fav td{background:rgba(240,180,0,.09);}',
+    '.bk-tbl tr.fav td.l{box-shadow:inset 3px 0 0 var(--gold);}',
     '.bk-tbl{width:100%;border-collapse:collapse;font-size:13px;}',
     ".bk-tbl th{font:600 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.4px;color:var(--mut);padding:8px 6px;border-bottom:1px solid var(--line);text-align:center;}",
     '.bk-tbl th.l,.bk-tbl td.l{text-align:left;}',
@@ -907,6 +963,7 @@
     '.bk-scen{font-size:12px;color:var(--ink);padding:10px 14px;border-top:1px solid var(--line);background:#fbfbfd;line-height:1.7;}',
     ".bk-scen-h{font:600 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);margin-bottom:4px;}",
     '.bk-scen .ok{color:#046b63;font-weight:700;}.bk-scen .out{color:var(--crim);font-weight:700;}',
+    '.bk-ko-band{margin-top:8px;}',
     '.bk-brackets{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;}',
     '.bk-bracket{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0;}',
     '.bk-tree{min-width:0;}',
@@ -924,18 +981,18 @@
     '.bk-meta b{color:var(--teal);}.bk-match.final .bk-meta b{color:#a9791a;}',
     ".bk-slot{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 8px;border-radius:6px;font:600 13px/1.2 'Inter',sans-serif;border:1px solid transparent;}",
     '.bk-slot .bk-tn{overflow-wrap:anywhere;word-break:break-word;min-width:0;}',
-    '.bk-slot.seed{color:#9aa;font-weight:500;font-style:italic;}',
+    '.bk-slot.seed{color:#5c6070;font-weight:500;font-style:italic;}',
     '.bk-slot.prov .bk-tn{text-decoration:underline dashed var(--gold);text-underline-offset:3px;text-decoration-thickness:1px;}',
     ".bk-provkey{text-decoration:underline dashed var(--gold);text-underline-offset:2px;color:var(--ink);}",
     '.bk-slot.pick{cursor:pointer;}',
     '.bk-slot.pick:hover{background:#f2f8f7;border-color:#cfe8e4;}',
     '.bk-slot.win{background:#e6f7f5;border-color:var(--teal);color:#046b63;}',
     ".bk-v{text-align:center;font:600 9px/1 'Poppins',sans-serif;color:#bbb;letter-spacing:2px;margin:2px 0;}",
-    '.bk-pred{margin-top:6px;font-size:11.5px;color:#555;border-top:1px dashed var(--line);padding-top:5px;}',
-    ".bk-pred-tag{font:700 9px/1 'Poppins',sans-serif;letter-spacing:.5px;background:#efeaff;color:#6a3fd0;padding:2px 5px;border-radius:4px;}",
+    '.bk-pred{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;padding:6px 8px;font-size:12px;color:var(--ink);background:linear-gradient(90deg,rgba(240,180,0,.10),rgba(0,180,168,.10));border:1px dashed var(--gold);border-radius:10px;}',
+    ".bk-pred-tag{font:800 9px/1 'Poppins',sans-serif;letter-spacing:.1em;background:var(--gold);color:#1c1c28;padding:3px 6px;border-radius:5px;}",
     '.bk-fire{color:var(--crim);font-weight:600;white-space:nowrap;}',
     '.bk-close{color:var(--mut);font-weight:600;white-space:nowrap;}',
-    '.bk-pred-group{padding-left:48px;}',
+    '.bk-pred-group{margin-left:48px;}',
     ".bk-feeds{font:600 9.5px/1.2 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.4px;color:var(--mut);margin-top:6px;}",
     ".bk-champ{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font:700 14px/1 'Poppins',sans-serif;}",
     ".bk-champ span{font:600 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin-right:6px;}",
@@ -943,9 +1000,10 @@
     // knockout swipe hint on smaller screens (bracket fits without scroll on wide desktop)
     '@media (max-width:1023px){.bk-scrollhint{display:block;font:600 10.5px/1 \'Poppins\',sans-serif;letter-spacing:.3px;color:var(--mut);text-align:right;margin:-2px 0 6px;}}',
     // phones: sticky section jump-nav (tabbar is at the bottom here, so top is free)
-    '@media (max-width:639px){.bk-jumpnav{display:flex;gap:6px;position:sticky;top:0;z-index:6;background:#f6f6f9;padding:8px 0;margin:2px 0 6px;}',
-    ".bk-jump{flex:1;font:600 11px/1 'Poppins',sans-serif;letter-spacing:.3px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 6px;cursor:pointer;}",
-    '.bk-jump:active{background:#e6f7f5;border-color:var(--teal);}}',
+    '@media (max-width:639px){.bk-jumpnav{display:flex;align-items:center;gap:6px;position:sticky;top:0;z-index:6;background:#f6f6f9;padding:8px 0;margin:2px 0 6px;}',
+    ".bk-jumpnav-lbl{font:700 9px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.6px;color:var(--mut);flex:none;}",
+    ".bk-jump{font:600 11px/1 'Poppins',sans-serif;color:var(--mut);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;}",
+    '.bk-jump:active{background:#e6f7f5;border-color:var(--teal);color:var(--ink);}}',
     // tablet: 3-column group days + side-by-side standings (single-pane)
     '@media (min-width:720px) and (max-width:1023px){.bk-days{grid-template-columns:repeat(3,minmax(0,1fr));}.bk-standings{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}',
     '.bk-tree-inner{gap:44px;}',
@@ -958,6 +1016,7 @@
     '.bk-col-left .bk-days{grid-template-columns:minmax(0,1fr);}',   /* days stack in the narrow left pane (collapse helps here) */
     '.bk-standings{grid-template-columns:minmax(0,1fr);}',           /* stack Group A / B in the right pane */
     '.bk-col{min-width:150px;}',
+    '.bk-ko-band .bk-brackets{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;}',  /* Cup + Shield side by side, full width */
     '}'
     ].join('');
     var s = document.createElement('style');

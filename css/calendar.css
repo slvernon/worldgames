@@ -5,6 +5,7 @@
   --wg-gold: #F0B400;
   --wg-teal: #00B4A8;
   --wg-crimson: #E40048;
+  --wg-blue: #3f6fe6;
   --wg-lilac: #C084D8;
   --wg-dark: #17172a;
   --wg-ink: #1c1c28;
@@ -54,19 +55,37 @@
 .wg-nn-score { font: 700 18px/1 'Poppins', sans-serif; color: var(--wg-gold); margin-top: 6px; }
 
 /* ---- controls / filter ---- */
-.wg-cal-controls { display: flex; justify-content: flex-end; margin-bottom: 12px; }
-.wg-filter { display: flex; align-items: center; gap: 8px; }
-.wg-filter-lbl { font-size: 12px; font-weight: 600; color: var(--wg-muted); }
+.wg-cal-controls { display: block; margin-bottom: 12px; }
+.wg-filter {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  background: var(--wg-card); border: 1px solid var(--wg-line);
+  border-radius: 12px; padding: 8px 10px;
+}
+.wg-filter-lbl {
+  font: 700 10px/1 'Poppins', sans-serif; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--wg-muted); flex: none;
+}
 .wg-filter-sel {
+  flex: 1; min-width: 0;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 14px; font-weight: 600;
   padding: 8px 10px;
   border: 1px solid var(--wg-line);
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff;
   color: var(--wg-ink);
-  min-width: 150px;
 }
+.wg-fav-btn {
+  flex: none; border: 1px solid var(--wg-line); background: #fff;
+  border-radius: 8px; cursor: pointer; font-size: 16px; line-height: 1;
+  color: #c7c7d2; padding: 8px 10px;
+}
+.wg-fav-btn.on { color: var(--wg-gold); border-color: var(--wg-gold); background: rgba(240,180,0,.08); }
+.wg-fav-btn:disabled { opacity: .4; cursor: default; }
+
+/* followed team's fixtures stand out in the timeline */
+.wg-fx.fav { border-color: var(--wg-gold); box-shadow: inset 3px 0 0 var(--wg-gold); }
+.wg-score-tot { font-size: 11px; color: var(--wg-muted); font-weight: 600; margin-left: 2px; }
 
 /* ---- day sections ---- */
 .wg-day { margin-bottom: 18px; }
@@ -104,7 +123,7 @@
   padding: 2px 6px; border-radius: 999px; width: fit-content; color: #fff;
 }
 .wg-pool-A { background: var(--wg-teal); }
-.wg-pool-B { background: var(--wg-crimson); }
+.wg-pool-B { background: var(--wg-blue); }
 .wg-pool-ko { background: var(--wg-lilac); }
 
 .wg-fx-body { min-width: 0; }

@@ -164,12 +164,21 @@
     return el('span', 'wg-status wg-status-' + st, label);
   }
 
+  function totalOf(sc) {
+    if (!sc) return 0;
+    return (typeof sc.total === 'number') ? sc.total : ((sc.goals || 0) * 3 + (sc.points || 0));
+  }
+  function scoreNum(sc) {
+    var n = el('span', 'wg-score-num');
+    n.innerHTML = fmtScore(sc) + ' <span class="wg-score-tot">(' + totalOf(sc) + ')</span>';
+    return n;
+  }
   function scoreCell(fx) {
     var cell = el('div', 'wg-score');
     if (fx.home && fx.away) {
-      cell.appendChild(el('span', 'wg-score-num', fmtScore(fx.home)));
+      cell.appendChild(scoreNum(fx.home));
       cell.appendChild(el('span', 'wg-score-sep', '–'));
-      cell.appendChild(el('span', 'wg-score-num', fmtScore(fx.away)));
+      cell.appendChild(scoreNum(fx.away));
     } else {
       cell.appendChild(el('span', 'wg-score-num wg-score-vs', 'vs'));
     }
@@ -178,6 +187,8 @@
 
   function fixtureRow(div, fx, ratings, showPredictions, scen) {
     var row = el('div', 'wg-fx wg-fx-' + (fx.status || 'scheduled'));
+    var fav = (WG.fav && div.slug) ? WG.fav.get(div.slug) : null;
+    if (fav && (fx.homeRef === fav || fx.awayRef === fav)) row.classList.add('fav');
 
     // Left: time + pitch
     var when = el('div', 'wg-fx-when');
@@ -280,6 +291,9 @@
       return refName(div, a).localeCompare(refName(div, b));
     });
 
+    var selected = (state && state.calendarTeam) || '';
+    var fav = (WG.fav && div.slug) ? WG.fav.get(div.slug) : null;
+
     var wrap = el('div', 'wg-filter');
     wrap.appendChild(el('label', 'wg-filter-lbl', 'Team'));
     var sel = el('select', 'wg-filter-sel');
@@ -287,15 +301,29 @@
     optAll.value = '';
     sel.appendChild(optAll);
     ids.forEach(function (id) {
-      var o = el('option', null, refName(div, id));
+      var o = el('option', null, refName(div, id) + (id === fav ? '  ★' : ''));
       o.value = id;
-      if (state && state.calendarTeam === id) o.selected = true;
+      if (selected === id) o.selected = true;
       sel.appendChild(o);
     });
     sel.addEventListener('change', function () {
       onChange(sel.value || null);
     });
     wrap.appendChild(sel);
+
+    // "Follow" star: marks the selected team as your team (persists, highlights
+    // its fixtures here + in the bracket). Disabled until a team is chosen.
+    var isFav = selected && selected === fav;
+    var star = el('button', 'wg-fav-btn' + (isFav ? ' on' : ''), isFav ? '★' : '☆');
+    star.type = 'button';
+    star.title = selected ? (isFav ? 'Unfollow this team' : 'Follow this team') : 'Pick a team to follow it';
+    if (!selected) star.disabled = true;
+    star.addEventListener('click', function () {
+      if (!selected || !WG.fav) return;
+      WG.fav.toggle(div.slug, selected);
+      onChange(selected || null); // re-render, keeping the current filter
+    });
+    wrap.appendChild(star);
     return wrap;
   }
 

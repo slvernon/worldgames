@@ -262,4 +262,20 @@
     // exposed so other modules can reuse consistent score coercion
     _coerceScore: coerceScore
   };
+
+  // ---- Favourite ("my team"), persisted per division -----------------------
+  WG.fav = {
+    get: function (slug) { try { return window.localStorage.getItem('wg.fav.' + slug) || null; } catch (e) { return null; } },
+    set: function (slug, teamId) {
+      try {
+        if (teamId) window.localStorage.setItem('wg.fav.' + slug, teamId);
+        else window.localStorage.removeItem('wg.fav.' + slug);
+      } catch (e) {}
+    },
+    toggle: function (slug, teamId) {
+      var cur = WG.fav.get(slug);
+      WG.fav.set(slug, cur === teamId ? null : teamId);
+      return WG.fav.get(slug);
+    }
+  };
 })();
