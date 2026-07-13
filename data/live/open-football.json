@@ -1,0 +1,123 @@
+{
+  "slug": "open-football",
+  "season": "2026",
+  "updatedAt": "2026-07-13T10:08:28Z",
+  "teams": {
+    "06ca79ca-663b-4656-999c-f069ad93ebae": {
+      "id": "06ca79ca-663b-4656-999c-f069ad93ebae",
+      "name": "Yorkshire GAA"
+    },
+    "5332369c-922a-4f92-95d1-85c933075c6c": {
+      "id": "5332369c-922a-4f92-95d1-85c933075c6c",
+      "name": "Waterford Football"
+    },
+    "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
+      "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
+      "name": "Italy"
+    },
+    "5675951f-53b9-47dc-8cfa-b505724245a6": {
+      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "name": "Middle East"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "0779d953-db92-40f1-b3f7-5271887c97a7",
+      "stage": "knockout",
+      "date": "2026-07-17",
+      "time": "09:00",
+      "pitch": "Azzurri Walsh Park",
+      "pool": null,
+      "round": "Final",
+      "homeRef": "1st",
+      "awayRef": "2nd",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "a2da81ff-e7dc-4881-b521-5ea00b439319",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "16:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "06ca79ca-663b-4656-999c-f069ad93ebae",
+      "awayRef": "5332369c-922a-4f92-95d1-85c933075c6c",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "8b9159d8-a2a3-4e8b-882f-cc06c6d8cbf9",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
+      "awayRef": "06ca79ca-663b-4656-999c-f069ad93ebae",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "1baf047a-9735-45b6-aaf3-fbda32c951f5",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "5332369c-922a-4f92-95d1-85c933075c6c",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "2e934c22-5189-4a22-b8e5-34226374f639",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "14:00",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "5332369c-922a-4f92-95d1-85c933075c6c",
+      "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "a79ea746-c5b4-4172-918a-7ead2821bddb",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "13:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "06ca79ca-663b-4656-999c-f069ad93ebae",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "fe68cdce-f572-44da-8f31-331429b67eb1",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "16:00",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    }
+  ]
+}

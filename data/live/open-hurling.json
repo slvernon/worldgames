@@ -1,0 +1,123 @@
+{
+  "slug": "open-hurling",
+  "season": "2026",
+  "updatedAt": "2026-07-13T10:08:28Z",
+  "teams": {
+    "4050c474-3c6c-487f-b235-772b85097be7": {
+      "id": "4050c474-3c6c-487f-b235-772b85097be7",
+      "name": "Waterford Hurling"
+    },
+    "b9ad32f8-8cd4-4c40-8dad-c959479901b0": {
+      "id": "b9ad32f8-8cd4-4c40-8dad-c959479901b0",
+      "name": "Benelux HUO"
+    },
+    "5675951f-53b9-47dc-8cfa-b505724245a6": {
+      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "name": "Middle East"
+    },
+    "07d42cfb-f444-4040-b5a5-82e0854e77f0": {
+      "id": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "name": "Asia"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "4f882e08-1d73-4323-8fd0-8dbe39974b1f",
+      "stage": "knockout",
+      "date": "2026-07-17",
+      "time": "11:10",
+      "pitch": "Azzurri Walsh Park",
+      "pool": null,
+      "round": "Final",
+      "homeRef": "1st",
+      "awayRef": "2nd",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "9a5250ce-7e5c-4ca0-90c4-1cdcb2e2580e",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "17:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
+      "awayRef": "b9ad32f8-8cd4-4c40-8dad-c959479901b0",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "e35ed827-9e94-4fd0-98d8-fc01660836a6",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "16:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "0c6684b5-36e1-481e-84f6-f33ea1e393b6",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
+      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "c35f7c4b-679d-4f8d-b67a-e7dc80f7d640",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "b9ad32f8-8cd4-4c40-8dad-c959479901b0",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "c46a5ccc-a116-4b3b-87c7-2f691b8e0547",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "17:00",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "ed2476e1-8b47-414a-a0ae-bc80591ae947",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "15:30",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "awayRef": "b9ad32f8-8cd4-4c40-8dad-c959479901b0",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    }
+  ]
+}

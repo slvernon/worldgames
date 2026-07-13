@@ -1,0 +1,54 @@
+name: Poll live scores
+
+# Fetches live scores during the tournament window and commits any changed
+# data/*.json back to the repo so GitHub Pages serves fresh scores.
+#
+# Cron is in UTC. Irish time is UTC+1 in July.
+#   '*/10 7-17 13-17 7 *'  every 10 min, ~08:00-18:00 Irish, 13-17 July 2026
+#   '0 18 13-17 7 *'       final sweep ~19:00 Irish (a couple hours after last games)
+on:
+  schedule:
+    - cron: '*/10 7-17 13-17 7 *'
+    - cron: '0 18 13-17 7 *'
+  workflow_dispatch: {}   # manual "Run workflow" button
+
+# Allow the job to push commits back to the repo.
+permissions:
+  contents: write
+
+# Never run two pollers at once.
+concurrency:
+  group: poll-live-scores
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch results (stdlib only, always exits 0)
+        env:
+          # The public read key is baked into fetch_results.py. Only set this repo
+          # secret if Foireann ever rotates the key. Safe to leave unset.
+          WG_API_KEY: ${{ secrets.WG_API_KEY }}
+        run: python3 fetch_results.py --verbose
+
+      - name: Commit changed scores
+        run: |
+          git config user.name  "wg-score-bot"
+          git config user.email "wg-score-bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data)" ]; then
+            git add data
+            git commit -m "chore(scores): update live scores [skip ci]"
+            git push
+            echo "Pushed updated scores."
+          else
+            echo "No score changes to commit."
+          fi

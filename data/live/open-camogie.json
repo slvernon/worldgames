@@ -1,0 +1,183 @@
+{
+  "slug": "open-camogie",
+  "season": "2026",
+  "updatedAt": "2026-07-13T10:08:28Z",
+  "teams": {
+    "1c82221b-4db3-44c9-8497-37e1a752db68": {
+      "id": "1c82221b-4db3-44c9-8497-37e1a752db68",
+      "name": "Europe Camogie Open (GGE)"
+    },
+    "5675951f-53b9-47dc-8cfa-b505724245a6": {
+      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "name": "Middle East"
+    },
+    "169831f8-762b-40d7-9c05-2024d7635e8d": {
+      "id": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "name": "Britain 2"
+    },
+    "07d42cfb-f444-4040-b5a5-82e0854e77f0": {
+      "id": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "name": "Asia"
+    },
+    "91b178fb-ee0f-4805-b45b-c18ae8364daa": {
+      "id": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "name": "Britain 1"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "c90afd15-d985-42e5-a85f-1262e1fe2650",
+      "stage": "knockout",
+      "date": "2026-07-17",
+      "time": "12:15",
+      "pitch": "Azzurri Walsh Park",
+      "pool": null,
+      "round": "Final",
+      "homeRef": "1st",
+      "awayRef": "2nd",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "3834b804-3737-430d-9df8-6367194eaf66",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "16:30",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "1c82221b-4db3-44c9-8497-37e1a752db68",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "42bc6d1a-d85c-4916-9fac-95306a36eca0",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "awayRef": "1c82221b-4db3-44c9-8497-37e1a752db68",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "d338052a-7771-4ac8-8dbe-6444bf11b355",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "14:30",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "a50c91d0-303b-4419-83ca-54a5bfea3069",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "13:30",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": null,
+      "homeRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "awayRef": "1c82221b-4db3-44c9-8497-37e1a752db68",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "c1a75c30-3918-4677-b24d-4eb340712041",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "13:00",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "f3ececfc-419b-4ecd-bd97-e35e4b8fcb53",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "17:30",
+      "pitch": "Field 4",
+      "pool": null,
+      "round": "Round 3",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "29b2440b-c309-4a88-a4db-7ed3e586ad96",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "17:30",
+      "pitch": "Field 3",
+      "pool": null,
+      "round": "Round 4",
+      "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "awayRef": "1c82221b-4db3-44c9-8497-37e1a752db68",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "666c47e6-d96d-4505-b915-40a15d77dc4b",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "16:30",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "awayRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "20404f4a-3301-4679-a05a-f67c0664710f",
+      "stage": "knockout",
+      "date": "2026-07-15",
+      "time": "16:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": null,
+      "homeRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "57829a9a-5c95-4f2d-bbdf-81a58a261149",
+      "stage": "group",
+      "date": "2026-07-13",
+      "time": "16:00",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "Round 4",
+      "homeRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "awayRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    }
+  ]
+}

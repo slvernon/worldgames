@@ -1,0 +1,237 @@
+/* ==========================================================================
+   GAA World Games companion — styles.css
+   Mobile-first, static site. All classes prefixed .wg-*
+   Consumed by: WG.bracket.render, WG.calendar.render, WG.app.*
+   ========================================================================== */
+
+/* ----- Fonts ----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* ----- Brand palette + tokens ------------------------------------------ */
+:root {
+  /* Brand (sampled from logo) */
+  --wg-gold:    #F0B400;
+  --wg-teal:    #00B4A8;
+  --wg-crimson: #E40048;
+  --wg-lilac:   #C084D8;
+
+  /* Dark masthead / surfaces */
+  --wg-ink:     #17172a;   /* masthead bg */
+  --wg-ink-2:   #21213a;   /* raised dark panel */
+
+  /* Light UI surfaces */
+  --wg-bg:      #f5f5f8;
+  --wg-surface: #ffffff;
+  --wg-surface-2:#f0f0f5;
+  --wg-line:    #e2e2ec;
+  --wg-line-2:  #d0d0dd;
+
+  /* Text */
+  --wg-text:    #1c1c28;
+  --wg-text-dim:#5c5c70;
+  --wg-text-faint:#9494a6;
+  --wg-on-dark: #ffffff;
+
+  /* Semantic pool colors (map + badges) */
+  --wg-pool-a:  var(--wg-teal);    /* Pool A / Cup */
+  --wg-pool-b:  var(--wg-crimson); /* Pool B */
+  --wg-shield:  var(--wg-lilac);   /* Shield */
+  --wg-champ:   var(--wg-gold);    /* winners / champions */
+
+  /* Feedback */
+  --wg-live:    #E40048;
+  --wg-win-bg:  rgba(240,180,0,0.14);
+
+  /* Metrics */
+  --wg-radius:  14px;
+  --wg-radius-sm: 10px;
+  --wg-gap:     12px;
+  --wg-tabbar-h: 60px;
+  --wg-shadow:  0 1px 3px rgba(23,23,42,0.08), 0 1px 2px rgba(23,23,42,0.06);
+  --wg-shadow-lg: 0 6px 20px rgba(23,23,42,0.14);
+
+  --wg-font-head: 'Poppins', system-ui, sans-serif;
+  --wg-font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ----- Reset-ish ------------------------------------------------------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--wg-font-body);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--wg-text);
+  background: var(--wg-bg);
+  /* leave room for the fixed bottom tab bar */
+  padding-bottom: calc(var(--wg-tabbar-h) + env(safe-area-inset-bottom, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--wg-font-head); margin: 0; line-height: 1.15; }
+a { color: inherit; }
+button { font-family: inherit; }
+
+/* ==========================================================================
+   MASTHEAD
+   ========================================================================== */
+.wg-masthead {
+  background: var(--wg-ink);
+  color: var(--wg-on-dark);
+  padding: 14px 16px 0;
+  /* scrolls away with the page (not fixed) */
+}
+.wg-masthead__row {
+  display: flex; align-items: center; gap: 12px;
+}
+.wg-masthead__logo {
+  height: 42px; width: auto; flex: none; display: block;
+}
+.wg-masthead__titles { min-width: 0; }
+.wg-kicker {
+  font-family: var(--wg-font-head);
+  font-weight: 700; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--wg-gold);
+  margin: 0 0 1px;
+}
+.wg-title {
+  font-family: var(--wg-font-head);
+  font-weight: 700; font-size: 19px; color: var(--wg-on-dark);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.wg-subtitle {
+  font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Division select lives in the masthead */
+.wg-divselect-wrap { padding: 10px 0 12px; }
+.wg-divselect {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  font-family: var(--wg-font-body); font-size: 15px; font-weight: 600;
+  color: var(--wg-on-dark);
+  background: var(--wg-ink-2);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: var(--wg-radius-sm);
+  padding: 11px 38px 11px 12px;
+  /* custom gold chevron */
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F0B400' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.wg-divselect:focus-visible { outline: 2px solid var(--wg-gold); outline-offset: 2px; }
+
+/* The 4-color brand rule (gold/teal/crimson/lilac) */
+.wg-rule {
+  height: 4px; width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--wg-gold)    0%, var(--wg-gold)    25%,
+    var(--wg-teal)    25%, var(--wg-teal)    50%,
+    var(--wg-crimson) 50%, var(--wg-crimson) 75%,
+    var(--wg-lilac)   75%, var(--wg-lilac)   100%
+  );
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.wg-main { max-width: 1280px; margin: 0 auto; padding: 14px 14px 40px; }
+.wg-view { display: none; }
+.wg-view.is-active { display: block; }
+
+.wg-section { margin: 0 0 22px; }
+.wg-section__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 8px; margin: 0 0 10px; padding: 0 2px;
+}
+.wg-section__title {
+  font-family: var(--wg-font-head); font-weight: 700; font-size: 17px;
+}
+.wg-section__meta { font-size: 12px; color: var(--wg-text-dim); }
+
+.wg-eyebrow {
+  font-family: var(--wg-font-head); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--wg-text-faint); margin: 0 2px 8px;
+}
+
+.wg-empty {
+  border: 1px dashed var(--wg-line-2); border-radius: var(--wg-radius);
+  padding: 22px 16px; text-align: center; color: var(--wg-text-dim);
+  font-size: 14px; background: var(--wg-surface);
+}
+.wg-provisional {
+  font-size: 11px; font-weight: 600; color: var(--wg-text-faint);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ==========================================================================
+   NOTE — Calendar, prediction chips, standings tables and the knockout bracket
+   are styled by css/calendar.css and by the <style> that js/bracket.js injects
+   at render time. The earlier top-level rules for those (.wg-bracket / .wg-match
+   / .wg-round / .wg-slot / .wg-badge / .wg-fixture / .wg-standings / .wg-pred …)
+   were SUPERSEDED and collided with the modules (page-level horizontal flex,
+   overflow:hidden clipping connectors, pill-shaped FINAL/PREDICTION badges).
+   They have been removed so the modules own those views unambiguously.
+   ========================================================================== */
+
+/* ==========================================================================
+   BOTTOM TAB BAR (phones) — Bracket / Calendar
+   ========================================================================== */
+.wg-tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  height: calc(var(--wg-tabbar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  background: var(--wg-ink);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 -2px 12px rgba(23,23,42,0.18);
+}
+.wg-tab {
+  flex: 1 1 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  background: transparent; border: 0; cursor: pointer;
+  color: rgba(255,255,255,0.55);
+  font-family: var(--wg-font-head); font-weight: 600; font-size: 11px;
+  letter-spacing: 0.02em;
+  position: relative; padding: 8px 0;
+}
+.wg-tab__icon { width: 22px; height: 22px; display: block; }
+.wg-tab.is-active { color: var(--wg-on-dark); }
+.wg-tab.is-active::after {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 34px; height: 3px; border-radius: 0 0 3px 3px; background: var(--wg-gold);
+}
+.wg-tab:focus-visible { outline: 2px solid var(--wg-gold); outline-offset: -3px; }
+
+/* ==========================================================================
+   RESPONSIVE — tablet/desktop niceties
+   ========================================================================== */
+@media (min-width: 640px) {
+  body { font-size: 15px; padding-bottom: 24px; }  /* tabbar becomes inline-ish */
+  .wg-title { font-size: 22px; }
+  .wg-main { padding: 18px 16px 32px; }
+
+  /* On wider screens the tab bar can move to the top of content instead of fixed bottom */
+  .wg-tabbar {
+    position: sticky; bottom: auto; top: 0;
+    height: auto; box-shadow: none;
+    max-width: 1280px; margin: 0 auto; border-top: 0;
+  }
+  .wg-tab { flex-direction: row; gap: 6px; padding: 12px 0; font-size: 13px; }
+  .wg-tab.is-active::after { top: auto; bottom: 0; border-radius: 3px 3px 0 0; }
+}
+
+@media (min-width: 720px) {
+  /* Show pools side-by-side */
+  .wg-pools { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+}
+
+/* ----- Reduced motion --------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .wg-badge-live::before { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
