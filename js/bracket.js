@@ -204,16 +204,12 @@
     left.appendChild(gh);
     left.appendChild(renderGroupDays(div, effDiv, state, rerender, ratings));
 
-    var sh = el('h2', 'bk-h2', 'Standings'); sh.id = 'bk-sec-standings';
-    right.appendChild(sh);
-    right.appendChild(el('p', 'bk-legend', '<b>P</b> played · <b>W</b> won · <b>L</b> lost · <b>+/&minus;</b> score difference · <b>Pts</b> points (2 per win). Tiebreak: points, then head-to-head, then score difference.'));
+    right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP));
     var st = el('div', 'bk-standings');
     ['A', 'B'].forEach(function (p) { st.appendChild(renderPool(div, effDiv, standings, p)); });
     right.appendChild(st);
 
-    var kh = el('h2', 'bk-h2', 'Knockout'); kh.id = 'bk-sec-knockout';
-    right.appendChild(kh);
-    right.appendChild(el('p', 'bk-legend', '<b>Cup</b> = Group A top 3 + Group B top 2. <b>Shield</b> = the rest. Seeds populate from the <b>current standings</b> as games are played (<span class="bk-provkey">dashed</span> = provisional) and lock once a group is settled. Tap a team to play it out.'));
+    right.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How the Cup, Shield and predictions work', KNOCKOUT_HELP));
     var brackets = el('div', 'bk-brackets');
     brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'cup', 'Cup'));
     brackets.appendChild(renderBracketCard(div, standings, resolved, ratings, state, 'shield', 'Shield'));
@@ -244,6 +240,50 @@
       '<span class="bk-chip shield">Shield</span> = the other four (Group A 4th–5th, Group B 3rd–4th).'));
     return box;
   }
+
+  // A tucked-away "?" disclosure. Native <details> so it needs no JS wiring and
+  // survives re-renders. `label` is the aria label; `bodyHtml` is the panel.
+  function helpDetails(label, bodyHtml) {
+    var d = document.createElement('details');
+    d.className = 'bk-help';
+    var s = document.createElement('summary');
+    s.className = 'bk-help-s';
+    s.setAttribute('aria-label', label);
+    s.setAttribute('title', label);
+    s.textContent = '?';
+    d.appendChild(s);
+    var b = el('div', 'bk-help-b', null);
+    b.innerHTML = bodyHtml;
+    d.appendChild(b);
+    return d;
+  }
+
+  // Header row: an <h2> with a "?" help disclosure tucked on the right.
+  function h2WithHelp(id, title, label, bodyHtml) {
+    var row = el('div', 'bk-h2row');
+    var h = el('h2', 'bk-h2 flush', title); h.id = id;
+    row.appendChild(h);
+    row.appendChild(helpDetails(label, bodyHtml));
+    return row;
+  }
+
+  var STANDINGS_HELP =
+    '<b>Reading the table</b><br>' +
+    '<b>#</b> current position &nbsp;·&nbsp; <b>P</b> games played &nbsp;·&nbsp; <b>W</b> won &nbsp;·&nbsp; ' +
+    '<b>L</b> lost &nbsp;·&nbsp; <b>+/&minus;</b> score difference (total scored minus conceded, where a goal = 3, a point = 1) &nbsp;·&nbsp; ' +
+    '<b>Pts</b> league points (2 for a win, 0 for a loss).<br><br>' +
+    '<b>Ties are broken by</b>, in order: league points → head-to-head result → score difference → team name. ' +
+    'Each group is a double round-robin (every pair meets twice).';
+
+  var KNOCKOUT_HELP =
+    '<b>Cup</b> = Group A top 3 + Group B top 2. <b>Shield</b> = the other four. ' +
+    'Seeds fill in from the <span class="bk-provkey">current standings</span> as games are played ' +
+    '(dashed = provisional) and lock once a group is mathematically settled. Tap a team to play the bracket out yourself.<br><br>' +
+    '<b>How predictions work.</b> Each team gets a strength rating: start with its average scoring margin over played games, ' +
+    'then adjust twice for schedule strength (beating a strong team counts more than beating a weak one). ' +
+    'A matchup’s projected margin is the gap between the two ratings; the win-% is a curve over that gap. ' +
+    'Games projected within a few points are flagged <span class="bk-close">close</span> or 🔥 <b>toss-up</b>. ' +
+    'Predictions use only real played scores — never your hypothetical picks — and appear once both teams have a game in.';
 
   // Compact sticky section nav (mobile only, via CSS).
   function renderJumpNav() {
@@ -448,8 +488,8 @@
         else if (s.status === 'eliminated') lines.push('<b>' + teamName(div, r.teamId) + ':</b> <span class="out">Shield only</span>');
         else if (s.need) lines.push('<b>' + teamName(div, r.teamId) + ':</b> ' + s.need);
       });
-      var meaningful = lines.some(function (l) { return /through to Cup|Shield only|Win |reach|top/.test(l); });
-      if (meaningful) box.appendChild(el('div', 'bk-scen', '<div class="bk-scen-h">Cup race</div>' + lines.join('<br>')));
+      if (lines.length) box.appendChild(el('div', 'bk-scen',
+        '<div class="bk-scen-h">Cup race — top ' + cutoff + ' of this group make the Cup</div>' + lines.join('<br>')));
     }
     return box;
   }
@@ -497,8 +537,9 @@
     if (!pred || !pred.favTeamId) return null;
     var flag = pred.watch === 'must' ? '<span class="bk-fire">🔥 toss-up</span>'
              : pred.watch === 'close' ? '<span class="bk-close">close</span>' : '';
+    var pct = pred.winProb != null ? ' <span class="bk-pred-pct">(' + Math.round(pred.winProb * 100) + '%)</span>' : '';
     return el('div', 'bk-pred', '<span class="bk-pred-tag">PREDICTION</span> ' +
-      teamName(div, pred.favTeamId) + ' by ~' + pred.margin + ' ' + flag);
+      teamName(div, pred.favTeamId) + ' by ~' + pred.margin + pct + ' ' + flag);
   }
 
   function renderMatch(div, standings, resolved, ratings, state, k) {
@@ -650,6 +691,14 @@
     '.bk-chip.cup{background:#fff5d6;color:#a9791a;}.bk-chip.shield{background:#f5e9fb;color:#8a3fb0;}',
     ".bk-legend{margin:-4px 0 12px;font-size:12px;color:var(--mut);line-height:1.5;}",
     '.bk-legend b{color:var(--ink);}',
+    '.bk-h2row{position:relative;}',
+    '.bk-help{margin-left:auto;flex:none;}',
+    '.bk-help>summary.bk-help-s{list-style:none;cursor:pointer;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);color:var(--mut);background:#fff;font:700 12px/20px \'Poppins\',sans-serif;text-align:center;display:inline-block;-webkit-user-select:none;user-select:none;}',
+    '.bk-help>summary.bk-help-s::-webkit-details-marker{display:none;}',
+    '.bk-help[open]>summary.bk-help-s{background:var(--teal);color:#fff;border-color:var(--teal);}',
+    '.bk-help-b{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;font-size:12px;color:var(--ink);line-height:1.65;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 10px 30px rgba(20,20,40,.14);}',
+    '.bk-help-b b{color:var(--ink);}',
+    '.bk-pred-pct{color:var(--mut);font-weight:600;}',
     '.bk-pair{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;}',
     '.bk-vs-mini{text-align:center;font:600 9px/1 \'Poppins\',sans-serif;color:#b3b3c0;letter-spacing:1px;margin:-1px 0;}',
     ".bk-team{width:100%;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:6px;font:600 13px/1.2 'Inter',sans-serif;text-align:left;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 11px;cursor:pointer;}",

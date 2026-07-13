@@ -206,6 +206,11 @@
       }
     }
 
+    // Current live rank per team (from the standings we were handed), so a
+    // contention message can be honest about where a team actually sits.
+    var rankOf = {};
+    (standings && standings[pool] || []).forEach(function (r) { rankOf[r.teamId] = r.rank; });
+
     teamIds.forEach(function (id) {
       var status, need;
       if (inAll[id] && !ambiguous[id]) {
@@ -216,7 +221,7 @@
         need = 'Cannot reach top ' + cutoff + ' — headed for the Shield';
       } else {
         status = 'contention';
-        need = nextNeed(div, id, remaining, cutoff);
+        need = contentionNeed(div, id, remaining, cutoff, rankOf[id], teamIds.length);
       }
       result[id] = { status: status, need: need };
     });
@@ -224,20 +229,32 @@
     return result;
   }
 
-  // Plain-English hint for a team still in contention: name its next game.
-  function nextNeed(div, teamId, remaining, cutoff) {
+  // Plain-English, position-aware hint for a team still in contention. Reads the
+  // team's CURRENT rank so a leader isn't told to "win to reach top N", and names
+  // its next game as a secondary hint.
+  function contentionNeed(div, teamId, remaining, cutoff, rank, teamCount) {
+    var inZone = rank && rank <= cutoff;
+    var head;
+    if (rank) {
+      head = inZone
+        ? 'Currently ' + ordinal(rank) + ' — holding a Cup place, not yet safe'
+        : 'Currently ' + ordinal(rank) + (teamCount ? ' of ' + teamCount : '') +
+          ' — needs to climb into the top ' + cutoff;
+    } else {
+      head = 'In the hunt for a top ' + cutoff + ' place';
+    }
+    // Secondary: name the earliest remaining game, if any.
     var mine = remaining.filter(function (f) {
       return f.homeRef === teamId || f.awayRef === teamId;
     });
-    if (!mine.length) return 'Depends on other results to reach top ' + cutoff;
-    // Earliest upcoming game (by date+time).
-    mine.sort(function (a, b) {
-      return (a.date + a.time).localeCompare(b.date + b.time);
-    });
-    var g = mine[0];
-    var oppId = g.homeRef === teamId ? g.awayRef : g.homeRef;
-    var opp = (div.teams && div.teams[oppId] && div.teams[oppId].name) || oppId;
-    return 'Win vs ' + opp + ' to reach top ' + cutoff;
+    if (mine.length) {
+      mine.sort(function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); });
+      var g = mine[0];
+      var oppId = g.homeRef === teamId ? g.awayRef : g.homeRef;
+      var opp = (div.teams && div.teams[oppId] && div.teams[oppId].name) || oppId;
+      head += ' · next: ' + opp;
+    }
+    return head;
   }
 
   function ordinal(n) {
