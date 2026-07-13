@@ -230,6 +230,21 @@ button { font-family: inherit; }
   .wg-pools { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 }
 
+/* ----- Footer (last-updated) -------------------------------------------- */
+.wg-footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 16px 28px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--wg-muted);
+}
+.wg-footer:empty { display: none; }
+/* On phones the tab bar is fixed to the bottom — keep the footer clear of it. */
+@media (max-width: 719px) {
+  .wg-footer { padding-bottom: calc(var(--wg-tabbar-h) + env(safe-area-inset-bottom, 0px) + 16px); }
+}
+
 /* ----- Reduced motion --------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .wg-badge-live::before { animation: none; }

@@ -137,6 +137,7 @@
 
   function overlayLive(div, live) {
     if (!live) return div;
+    if (live.updatedAt) div.updatedAt = live.updatedAt;   // when the fetcher last refreshed this file
     var liveTeams = (live.teams && typeof live.teams === 'object') ? live.teams : {};
     var patches = Array.isArray(live) ? live : (Array.isArray(live.fixtures) ? live.fixtures : []);
 

@@ -116,7 +116,7 @@
 }
 .wg-team {
   font-size: 14px; font-weight: 500;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  min-width: 0; overflow-wrap: anywhere; word-break: break-word;
 }
 .wg-teams .wg-team:last-child { text-align: right; }
 .wg-team-win { font-weight: 700; color: var(--wg-teal); }

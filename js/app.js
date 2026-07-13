@@ -25,7 +25,7 @@
   var DEFAULT_VIEW = 'bracket';
 
   // ---- DOM refs (resolved on init) -----------------------------------------
-  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elTabs;
+  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elTabs, elFooter;
 
   // ---- runtime state -------------------------------------------------------
   var current = {
@@ -70,13 +70,29 @@
     container.appendChild(d);
   }
 
+  // Format the data's updatedAt for the footer. Local time; fail-soft.
+  function fmtUpdated(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    try {
+      return d.toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    } catch (e) { return d.toISOString().slice(0, 16).replace('T', ' '); }
+  }
+  function updateFooter() {
+    if (!elFooter) return;
+    var iso = current.div && current.div.updatedAt;
+    elFooter.textContent = iso ? ('Scores last updated ' + fmtUpdated(iso) + ' · auto-refreshes during games') : '';
+  }
+
   // Render whichever view is active for the current division.
   function renderActiveView() {
     var div = current.div;
     if (!div) return;
+    updateFooter();
 
     if (current.view === 'bracket') {
-      if (isFull(current.slug) && WG.bracket && typeof WG.bracket.render === 'function') {
+      if (WG.bracket && typeof WG.bracket.render === 'function') {
         try {
           WG.bracket.render(elViewBracket, div, current.state);
         } catch (e) {
@@ -84,7 +100,6 @@
           showEmpty(elViewBracket, 'Bracket unavailable.');
         }
       } else {
-        // Should not happen (schedule-tier forces calendar), but stay safe.
         showEmpty(elViewBracket, 'Bracket not available for this division.');
       }
     } else { // calendar
@@ -111,27 +126,15 @@
     }
   }
 
-  // Show/hide the Bracket tab depending on tier. Schedule-tier => calendar only.
+  // Bracket + Calendar are now available for EVERY division, so both tabs always show.
   function applyTierTabs() {
-    var full = isFull(current.slug);
     for (var i = 0; i < elTabs.length; i++) {
-      var t = elTabs[i];
-      if (t.getAttribute('data-view') === 'bracket') {
-        t.hidden = !full;
-      }
-    }
-    // Single visible tab? drop the sticky/fixed bar chrome noise by keeping it,
-    // but ensure it doesn't look empty — CSS handles a single flex child fine.
-    if (!full && current.view === 'bracket') {
-      current.view = 'calendar';
-      lsSet(LS.view, current.view);
+      elTabs[i].hidden = false;
     }
   }
 
   function setView(view) {
     if (view !== 'bracket' && view !== 'calendar') return;
-    // Guard: bracket only allowed on full tier.
-    if (view === 'bracket' && !isFull(current.slug)) view = 'calendar';
     current.view = view;
     lsSet(LS.view, view);
     applyViewToggle();
@@ -176,12 +179,6 @@
     WG.data.loadDivision(slug).then(function (div) {
       if (myToken !== loadToken) return; // a newer selection superseded us
       current.div = div;
-      // Re-apply tier tabs from loaded div.tier (metadata is authoritative, but
-      // keep them in sync in case a baked file disagrees).
-      if (div.tier === 'schedule' && current.view === 'bracket') {
-        current.view = 'calendar';
-        lsSet(LS.view, current.view);
-      }
       applyTierTabs();
       applyViewToggle();
       renderActiveView();
@@ -213,9 +210,10 @@
       if (slug !== current.slug) return;                 // user switched divisions
       var ae = document.activeElement;
       if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'SELECT')) return; // don't disrupt typing
-      if (divSignature(div) === divSignature(current.div)) return;           // nothing new
+      if (current.div) current.div.updatedAt = div.updatedAt;               // keep footer time fresh
+      updateFooter();
+      if (divSignature(div) === divSignature(current.div)) return;           // no fixture/score change
       current.div = div;
-      if (div.tier === 'schedule' && current.view === 'bracket') { current.view = 'calendar'; applyTierTabs(); applyViewToggle(); }
       renderActiveView();
     }).catch(function () {});
   }
@@ -252,6 +250,7 @@
     elTabbar = document.getElementById('wg-tabbar');
     elViewBracket = document.getElementById('wg-view-bracket');
     elViewCalendar = document.getElementById('wg-view-calendar');
+    elFooter = document.getElementById('wg-footer');
     elTabs = elTabbar ? elTabbar.querySelectorAll('.wg-tab') : [];
 
     if (!elSelect || !WG.data) {

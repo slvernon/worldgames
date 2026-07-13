@@ -159,6 +159,9 @@
 
   // ================= RENDER =================
   function render(rootEl, div, state) {
+    // Divisions without hand-authored pools (everything except Camogie Div 1) get
+    // a generic single-table + knockout-tree bracket instead of the Cup/Shield flow.
+    if (!div.pools) return renderGeneric(rootEl, div, state);
     injectStyles();
     rootEl.innerHTML = '';
     var wrap = el('div', 'bk-wrap');
@@ -225,6 +228,183 @@
 
   function safe(fn) { try { return fn(); } catch (e) { return null; } }
 
+  // ================= GENERIC BRACKET (all non-pool divisions) =================
+  var STANDINGS_HELP_GENERIC =
+    '<b>Reading the table</b><br>' +
+    '<b>#</b> current position &nbsp;·&nbsp; <b>P</b> games played &nbsp;·&nbsp; <b>W</b> won &nbsp;·&nbsp; ' +
+    '<b>L</b> lost &nbsp;·&nbsp; <b>+/&minus;</b> score difference (total scored minus conceded, where a goal = 3, a point = 1) &nbsp;·&nbsp; ' +
+    '<b>Pts</b> league points (2 for a win).<br><br>' +
+    '<b>Ties are broken by</b>, in order: league points → head-to-head result (only when exactly two teams are level) → ' +
+    'score difference → highest total score for → most goals scored → fewest goals conceded → penalty competition.';
+
+  var KNOCKOUT_HELP_GENERIC =
+    '<b>How predictions work.</b> Each team gets a strength rating from its scoring margins, adjusted for how strong its ' +
+    'opponents were. A matchup’s projected margin is the gap between the two ratings; the win-% is a curve over that gap. ' +
+    'Predictions use only real played scores and appear once both teams are known and have a game in.';
+
+  function groupComplete(div) {
+    var gs = (div.fixtures || []).filter(function (f) { return f.stage === 'group'; });
+    return gs.length > 0 && gs.every(function (f) { return f.status === 'final'; });
+  }
+
+  function renderTableRows(div, rows) {
+    var table = el('table', 'bk-tbl');
+    table.innerHTML = '<thead><tr><th>#</th><th class="l">Team</th><th>P</th><th>W</th><th>L</th><th>+/-</th><th>Pts</th></tr></thead>';
+    var tb = el('tbody');
+    rows.forEach(function (r) {
+      var diff = (r.diff > 0 ? '+' : '') + r.diff;
+      var tr = el('tr');
+      tr.innerHTML = '<td>' + r.rank + '</td><td class="l">' + teamName(div, r.teamId) +
+        '</td><td>' + r.P + '</td><td>' + r.W + '</td><td>' + r.L + '</td><td>' + diff +
+        '</td><td class="pts">' + r.pts + '</td>';
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    return table;
+  }
+
+  function renderSingleStandings(div, standings) {
+    var box = el('div', 'bk-pool pool-a');
+    var complete = groupComplete(div);
+    box.appendChild(el('div', 'bk-pool-h', '<span class="bk-dot"></span> Group Table' +
+      '<span class="bk-prov">' + (complete ? 'Final' : 'Live') + '</span>'));
+    var rows = (standings && standings.all) ? standings.all.slice().sort(function (a, b) { return a.rank - b.rank; }) : [];
+    if (!rows.length) {
+      box.appendChild(el('div', 'bk-scen', 'Standings appear once group games are played.'));
+    } else {
+      box.appendChild(renderTableRows(div, rows));
+    }
+    return box;
+  }
+
+  // Normalise a messy round label ('SF 2', 'QF1', 'Final', null) to a tier+label.
+  function koTier(round) {
+    var s = (round == null ? '' : String(round)).toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (/^QF|QUARTER/.test(s)) return { t: 2, label: 'Quarter-Finals' };
+    if (/^SF|SEMI/.test(s)) return { t: 3, label: 'Semi-Finals' };
+    if (/PRELIM|^PRE/.test(s)) return { t: 1, label: 'Preliminary' };
+    if (/FINAL/.test(s)) return { t: 4, label: 'Final' };
+    return { t: 2, label: 'Knockout' };
+  }
+
+  function renderKoMatchGeneric(div, k, ratings) {
+    var tier = koTier(k.round);
+    var m = el('div', 'bk-match' + (tier.t === 4 ? ' final' : '') + (isRealFinal(k) ? ' locked' : ''));
+    var meta = '<b>' + (k.time || '') + '</b>' + (k.pitch ? ' · ' + k.pitch : '') + (k.date ? ' · ' + dayLabel(k.date) : '');
+    m.appendChild(el('div', 'bk-meta', meta));
+    var win = null;
+    if (isRealFinal(k)) {
+      win = totalOf(k.home) > totalOf(k.away) ? 'home' : (totalOf(k.away) > totalOf(k.home) ? 'away' : null);
+    }
+    [['home', k.homeRef, k.home], ['away', k.awayRef, k.away]].forEach(function (side) {
+      var which = side[0], ref = side[1], sc = side[2];
+      var known = !!(div.teams && div.teams[ref]);
+      var slot = el('div', 'bk-slot');
+      if (!known) slot.classList.add('seed');
+      if (win === which) slot.classList.add('win');
+      var label = known ? teamName(div, ref) : String(ref == null ? 'TBD' : ref);
+      var scoreHtml = isRealFinal(k) ? '<span class="bk-sc">' + WG.data.fmtScore(sc) + '</span>' : '';
+      slot.innerHTML = '<span class="bk-tn">' + label + '</span>' + scoreHtml;
+      m.appendChild(slot);
+      if (which === 'home') m.appendChild(el('div', 'bk-v', 'v'));
+    });
+    if (!isRealFinal(k)) {
+      var h = (div.teams && div.teams[k.homeRef]) ? k.homeRef : null;
+      var a = (div.teams && div.teams[k.awayRef]) ? k.awayRef : null;
+      if (h && a) { var pe = predEl(div, h, a, ratings, false); if (pe) m.appendChild(pe); }
+    }
+    return m;
+  }
+
+  function renderKnockoutGeneric(div, ratings) {
+    var kos = (div.fixtures || []).filter(function (f) { return f.stage === 'knockout'; });
+    if (!kos.length) return null;
+    var byTier = {};
+    kos.forEach(function (k) {
+      var ti = koTier(k.round);
+      if (!byTier[ti.t]) byTier[ti.t] = { t: ti.t, label: ti.label, items: [] };
+      byTier[ti.t].items.push(k);
+    });
+    var cols = Object.keys(byTier).map(function (key) { return byTier[key]; })
+      .sort(function (a, b) { return a.t - b.t; });
+    var card = el('div', 'bk-bracket cup');
+    card.appendChild(el('div', 'bk-bracket-h', '<span class="bk-sq"></span>Knockout'));
+    card.appendChild(el('div', 'bk-scrollhint', 'Swipe sideways to see all rounds →'));
+    var tree = el('div', 'bk-tree'), scroll = el('div', 'bk-tree-scroll'), inner = el('div', 'bk-tree-inner');
+    cols.forEach(function (col) {
+      var c = el('div', 'bk-col');
+      c.appendChild(el('div', 'bk-col-h', col.label));
+      col.items.sort(function (a, b) { return (a.date + a.time || '').localeCompare(b.date + b.time || ''); });
+      col.items.forEach(function (k) { c.appendChild(renderKoMatchGeneric(div, k, ratings)); });
+      inner.appendChild(c);
+    });
+    scroll.appendChild(inner); tree.appendChild(scroll); card.appendChild(tree);
+    return card;
+  }
+
+  function renderGeneric(rootEl, div, state) {
+    injectStyles();
+    rootEl.innerHTML = '';
+    var wrap = el('div', 'bk-wrap');
+    rootEl.appendChild(wrap);
+
+    state._editing = state._editing || {};
+    var actualDiv = applyReal(div, state);
+    var effDiv = effectiveDiv(actualDiv, state);
+    applyAutoCollapse(effDiv, state);
+    var standings = (WG.standings && WG.standings.compute) ? safe(function () { return WG.standings.compute(effDiv); }) : null;
+    var ratings = (WG.predictions && WG.predictions.build) ? safe(function () { return WG.predictions.build(actualDiv); }) : null;
+
+    function rerender() {
+      if (typeof state.onChange === 'function') state.onChange();
+      else renderGeneric(rootEl, div, state);
+    }
+
+    var intro = el('div', 'bk-intro');
+    intro.appendChild(el('p', 'bk-hint', 'Live schedule, standings and knockout. Tap a group winner to play it out — real final scores lock automatically.'));
+    var reset = el('button', 'bk-reset', 'Reset picks');
+    reset.onclick = function () { state.playout = { group: {}, knock: {} }; rerender(); };
+    intro.appendChild(reset);
+    wrap.appendChild(intro);
+    wrap.appendChild(renderJumpNav());
+
+    var hasGroup = (effDiv.fixtures || []).some(function (f) { return f.stage === 'group'; });
+
+    var cols = el('div', 'bk-cols');
+    var left = el('div', 'bk-col-left');
+    var right = el('div', 'bk-col-right');
+
+    if (hasGroup) {
+      var gh = el('div', 'bk-h2row'); gh.id = 'bk-sec-group';
+      gh.appendChild(el('h2', 'bk-h2 flush', 'Group Stage'));
+      var gsCtl = el('div', 'bk-gs-controls');
+      gsCtl.appendChild(renderModeToggle(state, rerender));
+      gsCtl.appendChild(renderCollapseAll(effDiv, state, rerender));
+      gh.appendChild(gsCtl);
+      left.appendChild(gh);
+      left.appendChild(renderGroupDays(div, effDiv, state, rerender, ratings));
+    } else {
+      left.appendChild(el('p', 'bk-hint', 'No group games listed for this division yet.'));
+    }
+
+    right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP_GENERIC));
+    var st = el('div', 'bk-standings');
+    st.appendChild(renderSingleStandings(effDiv, standings));
+    right.appendChild(st);
+
+    var koCard = renderKnockoutGeneric(effDiv, ratings);
+    if (koCard) {
+      right.appendChild(h2WithHelp('bk-sec-knockout', 'Knockout', 'How predictions work', KNOCKOUT_HELP_GENERIC));
+      var brackets = el('div', 'bk-brackets');
+      brackets.appendChild(koCard);
+      right.appendChild(brackets);
+    }
+
+    cols.appendChild(left);
+    cols.appendChild(right);
+    wrap.appendChild(cols);
+  }
+
   // ---- explainer (collapsible) + jump-nav + controls ----
   function renderExplainer(state, rerender) {
     var pk = picks(state);
@@ -272,7 +452,8 @@
     '<b>#</b> current position &nbsp;·&nbsp; <b>P</b> games played &nbsp;·&nbsp; <b>W</b> won &nbsp;·&nbsp; ' +
     '<b>L</b> lost &nbsp;·&nbsp; <b>+/&minus;</b> score difference (total scored minus conceded, where a goal = 3, a point = 1) &nbsp;·&nbsp; ' +
     '<b>Pts</b> league points (2 for a win, 0 for a loss).<br><br>' +
-    '<b>Ties are broken by</b>, in order: league points → head-to-head result → score difference → team name. ' +
+    '<b>Ties are broken by</b>, in order: league points → head-to-head result (only when exactly two teams are level) → ' +
+    'score difference → highest total score for → most goals scored → fewest goals conceded → penalty competition. ' +
     'Each group is a double round-robin (every pair meets twice).';
 
   var KNOCKOUT_HELP =
@@ -669,7 +850,7 @@
     '.bk-sbrow.win{background:#e3f7ee;}',
     '.bk-sbrow.win .bk-sbname{color:#046b63;font-weight:700;}',
     '.bk-sbrow.win .bk-sbname::after{content:" \\2713";color:var(--teal);}',
-    ".bk-sbname{flex:1;min-width:0;font:600 13px/1.2 'Inter',sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+    ".bk-sbname{flex:1;min-width:0;font:600 13px/1.2 'Inter',sans-serif;overflow-wrap:anywhere;word-break:break-word;}",
     ".bk-num{width:36px;padding:6px 2px;border:1px solid var(--line);border-radius:6px;font:600 13px/1 'Poppins',sans-serif;text-align:center;color:var(--ink);}",
     '.bk-num:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 2px rgba(0,180,168,.15);}',
     '.bk-sbsep{color:var(--mut);font-weight:700;}',
@@ -702,7 +883,7 @@
     '.bk-pair{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;}',
     '.bk-vs-mini{text-align:center;font:600 9px/1 \'Poppins\',sans-serif;color:#b3b3c0;letter-spacing:1px;margin:-1px 0;}',
     ".bk-team{width:100%;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:6px;font:600 13px/1.2 'Inter',sans-serif;text-align:left;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 11px;cursor:pointer;}",
-    '.bk-team .bk-tn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}',
+    '.bk-team .bk-tn{overflow-wrap:anywhere;word-break:break-word;min-width:0;}',
     '.bk-team:hover:not(:disabled){border-color:var(--teal);}',
     '.bk-team.win{background:#e3f7ee;border-color:var(--teal);color:#046b63;}',
     '.bk-team.win .bk-tn::before{content:"\\2713 ";color:var(--teal);font-weight:700;}',
@@ -742,7 +923,7 @@
     '.bk-meta{font-size:10.5px;color:var(--mut);margin-bottom:6px;}',
     '.bk-meta b{color:var(--teal);}.bk-match.final .bk-meta b{color:#a9791a;}',
     ".bk-slot{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 8px;border-radius:6px;font:600 13px/1.2 'Inter',sans-serif;border:1px solid transparent;}",
-    '.bk-slot .bk-tn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}',
+    '.bk-slot .bk-tn{overflow-wrap:anywhere;word-break:break-word;min-width:0;}',
     '.bk-slot.seed{color:#9aa;font-weight:500;font-style:italic;}',
     '.bk-slot.prov .bk-tn{text-decoration:underline dashed var(--gold);text-underline-offset:3px;text-decoration-thickness:1px;}',
     ".bk-provkey{text-decoration:underline dashed var(--gold);text-underline-offset:2px;color:var(--ink);}",

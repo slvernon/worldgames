@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-2",
   "season": "2026",
-  "updatedAt": "2026-07-13T22:02:42Z",
+  "updatedAt": "2026-07-13T22:23:36Z",
   "teams": {
     "aa042f48-9862-4ed8-b366-b79a730b77a8": {
       "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
@@ -138,20 +138,6 @@
       "status": "scheduled"
     },
     {
-      "id": "305a6ee8-e7cf-4ed1-b94d-376be62c50d0",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": "Field 2",
-      "pool": null,
-      "round": "QF2",
-      "homeRef": "5th Pool B",
-      "awayRef": "6th Pool A",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "04a88eb6-7360-480b-ada8-9cf1fa5f0f15",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -161,6 +147,20 @@
       "round": "QF1",
       "homeRef": "5th Pool A",
       "awayRef": "6th Pool B",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "305a6ee8-e7cf-4ed1-b94d-376be62c50d0",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "QF2",
+      "homeRef": "5th Pool B",
+      "awayRef": "6th Pool A",
       "home": null,
       "away": null,
       "status": "scheduled"
