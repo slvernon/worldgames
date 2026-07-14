@@ -773,11 +773,11 @@
         { homeRef: homeId, awayRef: awayId, home: null, away: null, status: 'scheduled' }, ratings, { stakes: !!stakes });
     });
     if (!pred || !pred.favTeamId) return null;
-    var flag = pred.watch === 'must' ? '<span class="bk-fire">🔥 toss-up</span>'
-             : pred.watch === 'close' ? '<span class="bk-close">close</span>' : '';
-    var pct = pred.winProb != null ? ' <span class="bk-pred-pct">(' + Math.round(pred.winProb * 100) + '%)</span>' : '';
-    return el('div', 'bk-pred', '<span class="bk-pred-tag">PREDICTION</span> ' +
-      teamName(div, pred.favTeamId) + ' by ~' + pred.margin + pct + ' ' + flag);
+    var S = (WG.predictions.STRENGTH || {})[pred.strength] || { text: '', emoji: '' };
+    var body = (pred.strength === 'tossup')
+      ? S.emoji + ' ' + S.text
+      : S.emoji + ' ' + S.text + ' — <b>' + teamName(div, pred.favTeamId) + '</b>';
+    return el('div', 'bk-pred', '<span class="bk-pred-tag">Prediction</span> <span class="bk-pred-body">' + body + '</span>');
   }
 
   function renderMatch(div, standings, resolved, ratings, state, k) {

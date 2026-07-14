@@ -120,12 +120,6 @@
 
   /* ---- prediction chip (full tier only) ---- */
 
-  var WATCH_META = {
-    close: { icon: '', text: 'Close' },
-    stakes: { icon: '🔥', text: 'Big stakes' },
-    must: { icon: '🔥', text: 'Toss-up' }
-  };
-
   function predictionChip(div, fx, ratings, stakes) {
     if (!(WG.predictions && typeof WG.predictions.forFixture === 'function')) return null;
     var pred;
@@ -134,25 +128,17 @@
     } catch (e) {
       return null;
     }
-    if (!pred) return null;
+    if (!pred || !pred.favTeamId) return null;
 
     var wrap = el('div', 'wg-pred');
-    var tag = el('span', 'wg-pred-tag', pred.label || 'PREDICTION');
-    wrap.appendChild(tag);
+    wrap.appendChild(el('span', 'wg-pred-tag', 'Prediction'));
 
-    if (pred.favTeamId) {
-      var pct = pred.winProb != null ? Math.round(pred.winProb * 100) + '%' : '';
-      var favTxt = refName(div, pred.favTeamId);
-      if (pred.margin != null) favTxt += ' by ~' + Math.abs(Math.round(pred.margin));
-      if (pct) favTxt += ' (' + pct + ')';
-      wrap.appendChild(el('span', 'wg-pred-fav', favTxt));
-    }
-
-    var w = WATCH_META[pred.watch];
-    if (w) {
-      var fire = el('span', 'wg-pred-watch', w.icon + ' ' + w.text);
-      wrap.appendChild(fire);
-    }
+    var S = (WG.predictions.STRENGTH || {})[pred.strength] || { text: '', emoji: '' };
+    var body = el('span', 'wg-pred-fav');
+    body.innerHTML = (pred.strength === 'tossup')
+      ? S.emoji + ' ' + S.text
+      : S.emoji + ' ' + S.text + ' — <b>' + refName(div, pred.favTeamId) + '</b>';
+    wrap.appendChild(body);
     return wrap;
   }
 

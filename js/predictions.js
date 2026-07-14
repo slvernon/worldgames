@@ -157,14 +157,28 @@
     // A genuine qualification decider nudges a clear-ish game up to 'close'.
     if (watch === 'none' && (opts && opts.stakes) && margin <= 7) watch = 'close';
 
+    // Confidence tier on a symmetric 5-point scale (strong/likely/toss-up/likely/
+    // strong) collapsed to three labels — the favourite is whichever side leads.
+    var strength = 'strong';
+    if (winProb < 0.60) strength = 'tossup';      // ~coin flip
+    else if (winProb < 0.73) strength = 'likely'; // clear but beatable
+
     return {
       favTeamId: favTeamId,
       margin: Math.round(margin * 10) / 10,
       winProb: Math.round(winProb * 100) / 100,
       watch: watch,
+      strength: strength,
       label: 'PREDICTION'
     };
   }
 
-  WG.predictions = { build: build, forFixture: forFixture };
+  // Display metadata for each confidence tier (label + emoji), shared by views.
+  var STRENGTH = {
+    tossup: { text: 'Toss-up', emoji: '🔥' },
+    likely: { text: 'Likely winner', emoji: '👍' },
+    strong: { text: 'Strong winner', emoji: '💪' }
+  };
+
+  WG.predictions = { build: build, forFixture: forFixture, STRENGTH: STRENGTH };
 })();
