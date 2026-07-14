@@ -159,9 +159,11 @@
 
     // Confidence tier on a symmetric 5-point scale (strong/likely/toss-up/likely/
     // strong) collapsed to three labels — the favourite is whichever side leads.
+    // Margin-based (in total points) so it's sensitive with sparse early data:
+    // only a genuinely lopsided projection reads as "Strong".
     var strength = 'strong';
-    if (winProb < 0.60) strength = 'tossup';      // ~coin flip
-    else if (winProb < 0.73) strength = 'likely'; // clear but beatable
+    if (margin <= 4) strength = 'tossup';          // within ~a goal — coin flip
+    else if (margin <= 14) strength = 'likely';    // clear edge but catchable
 
     return {
       favTeamId: favTeamId,
