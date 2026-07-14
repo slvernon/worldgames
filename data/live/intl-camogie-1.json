@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-13T23:01:57Z",
+  "updatedAt": "2026-07-14T09:17:59Z",
   "teams": {
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
@@ -429,9 +429,17 @@
       "round": "Round 4",
       "homeRef": "f78e92aa-8502-484f-b144-58687b5d06b1",
       "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "away": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "a3480d89-d957-406d-be3f-cf9ea9f6e331",
@@ -443,23 +451,17 @@
       "round": "Round 4",
       "homeRef": "d6d25d54-71ba-47ad-afee-41d162123910",
       "awayRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "a1f90b78-5c92-4c5b-a2ed-f1cfe83c5377",
-      "stage": "group",
-      "date": "2026-07-13",
-      "time": "13:30",
-      "pitch": "Field 8",
-      "pool": null,
-      "round": "Round 1",
-      "homeRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
-      "awayRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 2,
+        "total": 11
+      },
+      "away": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
+      },
+      "status": "final"
     },
     {
       "id": "c355b83c-2a5d-4284-8925-5889cfa56277",
@@ -546,6 +548,28 @@
         "goals": 9,
         "points": 7,
         "total": 34
+      },
+      "status": "final"
+    },
+    {
+      "id": "a1f90b78-5c92-4c5b-a2ed-f1cfe83c5377",
+      "stage": "group",
+      "date": "2026-07-13",
+      "time": "13:30",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
+      "awayRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
+      "home": {
+        "goals": 4,
+        "points": 6,
+        "total": 18
+      },
+      "away": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
       },
       "status": "final"
     },

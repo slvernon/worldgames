@@ -217,9 +217,12 @@
     }
     left.appendChild(renderGroupDays(div, effDiv, state, rerender, ratings));
 
+    // Championship odds (from REAL results only, cached until scores change).
+    var forecast = (WG.forecast && ratings) ? safe(function () { return WG.forecast.titleChances(actualDiv, ratings); }) : null;
+
     right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP));
     var st = el('div', 'bk-standings');
-    ['A', 'B'].forEach(function (p) { st.appendChild(renderPool(div, effDiv, standings, p, rerender)); });
+    ['A', 'B'].forEach(function (p) { st.appendChild(renderPool(div, effDiv, standings, p, rerender, forecast)); });
     right.appendChild(st);
 
     cols.appendChild(left);
@@ -248,7 +251,8 @@
     '<b>L</b> lost &nbsp;·&nbsp; <b>+/&minus;</b> score difference (total scored minus conceded, where a goal = 3, a point = 1) &nbsp;·&nbsp; ' +
     '<b>Pts</b> league points (2 for a win).<br><br>' +
     '<b>Ties are broken by</b>, in order: league points → head-to-head result (only when exactly two teams are level) → ' +
-    'score difference → highest total score for → most goals scored → fewest goals conceded → penalty competition.';
+    'score difference → highest total score for → most goals scored → fewest goals conceded → penalty competition.<br><br>' +
+    '<b>Win%</b> is each team’s chance of winning the title, from simulating the rest of the tournament 4,000 times using the prediction win-odds.';
 
   var KNOCKOUT_HELP_GENERIC =
     '<b>How predictions work.</b> Each team gets a strength rating from its scoring margins, adjusted for how strong its ' +
@@ -260,7 +264,7 @@
     return gs.length > 0 && gs.every(function (f) { return f.status === 'final'; });
   }
 
-  function renderSingleStandings(div, standings, rerender) {
+  function renderSingleStandings(div, standings, rerender, forecast) {
     var box = el('div', 'bk-pool pool-a');
     var complete = groupComplete(div);
     box.appendChild(el('div', 'bk-pool-h', '<span class="bk-dot"></span> Group Table' +
@@ -269,7 +273,7 @@
     if (!rows.length) {
       box.appendChild(el('div', 'bk-scen', 'Standings appear once group games are played.'));
     } else {
-      box.appendChild(buildStandingsTable(div, rows, rerender, null));
+      box.appendChild(buildStandingsTable(div, rows, rerender, null, forecast));
     }
     return box;
   }
@@ -389,9 +393,11 @@
       left.appendChild(el('p', 'bk-hint', 'No group games listed for this division yet.'));
     }
 
+    var forecast = (WG.forecast && ratings) ? safe(function () { return WG.forecast.titleChances(actualDiv, ratings); }) : null;
+
     right.appendChild(h2WithHelp('bk-sec-standings', 'Standings', 'What the columns mean', STANDINGS_HELP_GENERIC));
     var st = el('div', 'bk-standings');
-    st.appendChild(renderSingleStandings(effDiv, standings, rerender));
+    st.appendChild(renderSingleStandings(effDiv, standings, rerender, forecast));
     right.appendChild(st);
 
     cols.appendChild(left);
@@ -460,7 +466,9 @@
     '<b>Pts</b> league points (2 for a win, 0 for a loss).<br><br>' +
     '<b>Ties are broken by</b>, in order: league points → head-to-head result (only when exactly two teams are level) → ' +
     'score difference → highest total score for → most goals scored → fewest goals conceded → penalty competition. ' +
-    'Each group is a double round-robin (every pair meets twice).';
+    'Each group is a double round-robin (every pair meets twice).<br><br>' +
+    '<b>Cup%</b> is each team’s chance of winning the Cup, from simulating the rest of the tournament 4,000 times ' +
+    '(remaining group games decide seeds, then the knockout plays out using the prediction win-odds). It updates as real results come in.';
 
   var KNOCKOUT_HELP =
     '<b>Cup</b> = Group A top 3 + Group B top 2. <b>Shield</b> = the other four. ' +
@@ -650,13 +658,25 @@
     return wrap;
   }
 
+  // Format a championship probability (0..100) for the standings cell.
+  function fmtPct(p) {
+    if (p == null || isNaN(p)) return '<span class="bk-pct0">—</span>';
+    if (p <= 0) return '<span class="bk-pct0">—</span>';
+    if (p < 1) return '<span class="bk-pct">&lt;1%</span>';
+    return '<span class="bk-pct">' + Math.round(p) + '%</span>';
+  }
+
   // Shared standings <table> builder with a "follow" star column + fav highlight.
   // extraCell(r) -> trailing-cell HTML (e.g. Cup/Shield badge) or '' for none.
-  function buildStandingsTable(div, rows, rerender, extraCell) {
+  // forecast -> { byTeam:{id:pct}, label } adds a title-chance column (or null).
+  function buildStandingsTable(div, rows, rerender, extraCell, forecast) {
     var fav = favId(div);
+    var hasPct = !!(forecast && forecast.ok);
+    var pctHead = hasPct ? '<th class="pcth" title="Simulated chance of winning the ' +
+      (forecast.label === 'Cup' ? 'Cup' : 'title') + '">' + (forecast.label === 'Cup' ? 'Cup%' : 'Win%') + '</th>' : '';
     var table = el('table', 'bk-tbl');
     table.innerHTML = '<thead><tr><th></th><th>#</th><th class="l">Team</th><th>P</th><th>W</th><th>L</th><th>+/-</th><th>Pts</th>' +
-      (extraCell ? '<th></th>' : '') + '</tr></thead>';
+      pctHead + (extraCell ? '<th></th>' : '') + '</tr></thead>';
     var tb = el('tbody');
     rows.forEach(function (r) {
       var isFav = r.teamId === fav;
@@ -664,9 +684,10 @@
       var tr = el('tr', isFav ? 'fav' : null);
       var star = '<button class="bk-star' + (isFav ? ' on' : '') + '" data-team="' + r.teamId +
         '" aria-label="Follow ' + teamName(div, r.teamId) + '">' + (isFav ? '★' : '☆') + '</button>';
+      var pctCell = hasPct ? '<td class="chance">' + fmtPct(forecast.byTeam[r.teamId]) + '</td>' : '';
       tr.innerHTML = '<td class="star">' + star + '</td><td>' + r.rank + '</td><td class="l">' + teamName(div, r.teamId) +
         '</td><td>' + r.P + '</td><td>' + r.W + '</td><td>' + r.L + '</td><td>' + diff +
-        '</td><td class="pts">' + r.pts + '</td>' + (extraCell ? '<td>' + (extraCell(r) || '') + '</td>' : '');
+        '</td><td class="pts">' + r.pts + '</td>' + pctCell + (extraCell ? '<td>' + (extraCell(r) || '') + '</td>' : '');
       tb.appendChild(tr);
     });
     table.appendChild(tb);
@@ -683,7 +704,7 @@
   }
 
   // ---- standings pool table + Cup/Shield tags + scenario line ----
-  function renderPool(div, effDiv, standings, pool, rerender) {
+  function renderPool(div, effDiv, standings, pool, rerender, forecast) {
     var box = el('div', 'bk-pool pool-' + pool.toLowerCase());
     var complete = poolComplete(effDiv, pool);
     box.appendChild(el('div', 'bk-pool-h', '<span class="bk-dot"></span> ' + POOL_LABEL[pool] +
@@ -693,7 +714,7 @@
     box.appendChild(buildStandingsTable(div, rows, rerender, function (r) {
       if (!complete) return '';
       return r.rank <= cutoff ? '<span class="bk-badge cup">Cup</span>' : '<span class="bk-badge shield">Shield</span>';
-    }));
+    }, forecast));
 
     var scen = (WG.scenarios && WG.scenarios.forPool) ? safe(function () { return WG.scenarios.forPool(div, pool, standings); }) : null;
     if (scen && !complete) {
@@ -958,6 +979,10 @@
     '.bk-tbl td{padding:8px 6px;text-align:center;border-bottom:1px solid #f2f2f6;}',
     '.bk-tbl tbody tr:last-child td{border-bottom:0;}',
     '.bk-tbl td.l{font-weight:600;}.bk-tbl td.pts{font-weight:700;}',
+    '.bk-tbl th.pcth{color:var(--teal);}',
+    '.bk-tbl td.chance{font-weight:700;}',
+    '.bk-pct{color:#0a7d74;}',
+    '.bk-pct0{color:#c2c2cc;font-weight:500;}',
     ".bk-badge{font:600 10px/1 'Poppins',sans-serif;text-transform:uppercase;letter-spacing:.4px;padding:3px 8px;border-radius:6px;}",
     '.bk-badge.cup{background:#e6f7f5;color:#046b63;}.bk-badge.shield{background:#f5e9fb;color:#8a3fb0;}',
     '.bk-scen{font-size:12px;color:var(--ink);padding:10px 14px;border-top:1px solid var(--line);background:#fbfbfd;line-height:1.7;}',
