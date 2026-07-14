@@ -55,6 +55,30 @@
     return out;
   }
 
+  // Connected components of the "who has played whom" graph (final results only,
+  // group + knockout). Two teams in DIFFERENT components have never been linked by
+  // any chain of common opponents, so their ratings live on uncalibrated scales
+  // (e.g. Group A vs Group B before any cross-pool game) and must not be trusted
+  // to call a "strong" favourite. Returns { teamId: componentRootId }.
+  function buildComponents(div) {
+    var parent = {};
+    function find(x) {
+      if (parent[x] == null) parent[x] = x;
+      return parent[x] === x ? x : (parent[x] = find(parent[x]));
+    }
+    function union(a, b) { parent[find(a)] = find(b); }
+    var games = ((div && div.fixtures) || []).concat((div && div.knockout) || []);
+    games.forEach(function (f) {
+      if (!isFinal(f)) return;
+      var h = resolveTeamId(div, f.homeRef), a = resolveTeamId(div, f.awayRef);
+      if (!h || !a) return;
+      union(h, a);
+    });
+    var comp = {};
+    Object.keys(parent).forEach(function (t) { comp[t] = find(t); });
+    return comp;
+  }
+
   // ---- WG.predictions.build ------------------------------------------------
 
   // Returns a ratings object:
@@ -113,7 +137,7 @@
       });
     }
 
-    return { ratings: ratings, games: games, played: anyPlayed };
+    return { ratings: ratings, games: games, played: anyPlayed, component: buildComponents(div) };
   }
 
   // ---- WG.predictions.forFixture ------------------------------------------
@@ -164,6 +188,13 @@
     var strength = 'strong';
     if (margin <= 4) strength = 'tossup';          // within ~a goal — coin flip
     else if (margin <= 14) strength = 'likely';    // clear edge but catchable
+
+    // Cross-scale guard: if the two teams have never been connected by any chain
+    // of common opponents (e.g. Group A vs Group B before a cross-pool game), the
+    // rating gap isn't trustworthy — never claim a "strong" winner, cap at "likely".
+    var comp = ratings.component;
+    var unlinked = comp && comp[h] != null && comp[a] != null && comp[h] !== comp[a];
+    if (unlinked && strength === 'strong') strength = 'likely';
 
     return {
       favTeamId: favTeamId,
