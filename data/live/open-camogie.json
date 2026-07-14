@@ -1,7 +1,7 @@
 {
   "slug": "open-camogie",
   "season": "2026",
-  "updatedAt": "2026-07-14T14:07:40Z",
+  "updatedAt": "2026-07-14T15:40:35Z",
   "teams": {
     "1c82221b-4db3-44c9-8497-37e1a752db68": {
       "id": "1c82221b-4db3-44c9-8497-37e1a752db68",
@@ -138,20 +138,6 @@
       "status": "scheduled"
     },
     {
-      "id": "20404f4a-3301-4679-a05a-f67c0664710f",
-      "stage": "knockout",
-      "date": "2026-07-15",
-      "time": "16:30",
-      "pitch": "Field 2",
-      "pool": null,
-      "round": null,
-      "homeRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
-      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "666c47e6-d96d-4505-b915-40a15d77dc4b",
       "stage": "group",
       "date": "2026-07-15",
@@ -161,6 +147,20 @@
       "round": "Round 1",
       "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "awayRef": "91b178fb-ee0f-4805-b45b-c18ae8364daa",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "20404f4a-3301-4679-a05a-f67c0664710f",
+      "stage": "knockout",
+      "date": "2026-07-15",
+      "time": "16:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": null,
+      "homeRef": "169831f8-762b-40d7-9c05-2024d7635e8d",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
       "home": null,
       "away": null,
       "status": "scheduled"

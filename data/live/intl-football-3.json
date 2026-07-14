@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-3",
   "season": "2026",
-  "updatedAt": "2026-07-14T14:07:21Z",
+  "updatedAt": "2026-07-14T15:40:21Z",
   "teams": {
     "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
       "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
@@ -421,9 +421,13 @@
       "round": "Round 1",
       "homeRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
       "awayRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "home": null,
+      "home": {
+        "goals": 6,
+        "points": 6,
+        "total": 24
+      },
       "away": null,
-      "status": "scheduled"
+      "status": "final"
     },
     {
       "id": "69577339-6830-41d1-ad50-64c39425081c",
@@ -435,9 +439,17 @@
       "round": "Round 5",
       "homeRef": "29986fbc-9e1e-4a7d-ba09-cb3d114cdb3c",
       "awayRef": "667045c5-3824-4bc8-ab94-52af4dc6014a",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 2,
+        "total": 5
+      },
+      "away": {
+        "goals": 0,
+        "points": 7,
+        "total": 7
+      },
+      "status": "final"
     },
     {
       "id": "771e1b4f-4cb1-4649-9a0a-7b8215051f1c",
@@ -449,29 +461,15 @@
       "round": "Round 2",
       "homeRef": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
       "awayRef": "530b45ce-efe8-4593-a2a7-500a763a1551",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "5bcfcf4e-1d4c-42fc-81ba-c02133c5b450",
-      "stage": "group",
-      "date": "2026-07-14",
-      "time": "13:30",
-      "pitch": "Field 4",
-      "pool": null,
-      "round": "Round 2",
-      "homeRef": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
-      "awayRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
       "home": {
-        "goals": 1,
-        "points": 2,
-        "total": 5
+        "goals": 4,
+        "points": 5,
+        "total": 17
       },
       "away": {
-        "goals": 5,
-        "points": 8,
-        "total": 23
+        "goals": 2,
+        "points": 3,
+        "total": 9
       },
       "status": "final"
     },
@@ -494,6 +492,28 @@
         "goals": 0,
         "points": 8,
         "total": 8
+      },
+      "status": "final"
+    },
+    {
+      "id": "5bcfcf4e-1d4c-42fc-81ba-c02133c5b450",
+      "stage": "group",
+      "date": "2026-07-14",
+      "time": "13:30",
+      "pitch": "Field 4",
+      "pool": null,
+      "round": "Round 2",
+      "homeRef": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
+      "awayRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
+      "home": {
+        "goals": 1,
+        "points": 2,
+        "total": 5
+      },
+      "away": {
+        "goals": 5,
+        "points": 8,
+        "total": 23
       },
       "status": "final"
     },
