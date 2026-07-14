@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-14T15:40:24Z",
+  "updatedAt": "2026-07-14T16:52:31Z",
   "teams": {
     "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
       "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
@@ -308,34 +308,6 @@
       "status": "scheduled"
     },
     {
-      "id": "0cc83ab4-d0d7-4db4-8200-052bae9ad8b1",
-      "stage": "group",
-      "date": "2026-07-14",
-      "time": "16:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "Round 6",
-      "homeRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "awayRef": "34285736-228f-41ad-a4db-047d671526a8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "da9174af-99ad-49ac-8615-0199112ce57a",
-      "stage": "group",
-      "date": "2026-07-14",
-      "time": "15:30",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "Round 6",
-      "homeRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
-      "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "51c94805-aab0-466a-bc01-28679a1a42eb",
       "stage": "group",
       "date": "2026-07-14",
@@ -348,6 +320,50 @@
       "home": null,
       "away": null,
       "status": "scheduled"
+    },
+    {
+      "id": "0cc83ab4-d0d7-4db4-8200-052bae9ad8b1",
+      "stage": "group",
+      "date": "2026-07-14",
+      "time": "16:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 6",
+      "homeRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
+      "awayRef": "34285736-228f-41ad-a4db-047d671526a8",
+      "home": {
+        "goals": 1,
+        "points": 2,
+        "total": 5
+      },
+      "away": {
+        "goals": 2,
+        "points": 8,
+        "total": 14
+      },
+      "status": "final"
+    },
+    {
+      "id": "da9174af-99ad-49ac-8615-0199112ce57a",
+      "stage": "group",
+      "date": "2026-07-14",
+      "time": "15:30",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 6",
+      "homeRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
+      "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
+      "home": {
+        "goals": 4,
+        "points": 5,
+        "total": 17
+      },
+      "away": {
+        "goals": 1,
+        "points": 0,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "1872703e-c327-48ef-a358-d571391cd89c",
