@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-2",
   "season": "2026",
-  "updatedAt": "2026-07-14T16:52:36Z",
+  "updatedAt": "2026-07-14T17:56:05Z",
   "teams": {
     "061c49ed-1e36-47f2-8132-ea857b2dcd27": {
       "id": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
@@ -180,8 +180,8 @@
       },
       "away": {
         "goals": 0,
-        "points": 0,
-        "total": 0
+        "points": 1,
+        "total": 1
       },
       "status": "final"
     },
