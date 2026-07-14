@@ -52,7 +52,10 @@ SEASON = "2026"
 # Foireann's public web bundle to every anonymous visitor — not a login token.
 # Overridable via env in case Foireann rotates it (set WG_API_KEY as a GH secret).
 API_BASE = "https://open-data-prod.gaaservers.net/v1"
-API_KEY = os.environ.get("WG_API_KEY", "foir_prod_xYMlGrUPfwVUnxHCIcoRZWmuKMQNfPuQbAxphJIJBcPgS")
+# Use the env override ONLY if it's non-empty. GitHub Actions injects an EMPTY
+# string for an unset secret, and os.environ.get would return that "" (the key
+# exists, just blank) instead of the default -> empty bearer token -> HTTP 401.
+API_KEY = os.environ.get("WG_API_KEY") or "foir_prod_xYMlGrUPfwVUnxHCIcoRZWmuKMQNfPuQbAxphJIJBcPgS"
 API_REFERER = "https://www.foireann.ie/"
 
 # Division registry: slug -> {id, name}. Order matches the app's division list.

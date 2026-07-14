@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-1",
   "season": "2026",
-  "updatedAt": "2026-07-14T09:17:56Z",
+  "updatedAt": "2026-07-14T12:53:35Z",
   "teams": {
     "34eb8e02-de50-4efb-b428-a4e7f1d75de7": {
       "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
@@ -373,9 +373,17 @@
       "round": "Round 4",
       "homeRef": "8e341294-c364-44c1-a558-522c0dc201e5",
       "awayRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 3,
+        "total": 12
+      },
+      "away": {
+        "goals": 4,
+        "points": 7,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "972668ce-ac00-4df9-905c-6eabc5fb6ac5",
@@ -387,9 +395,17 @@
       "round": "Round 4",
       "homeRef": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
       "awayRef": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 2,
+        "total": 5
+      },
+      "away": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "status": "final"
     },
     {
       "id": "a6b8c72b-f789-4a27-aa6d-ca46d2812e27",
@@ -401,9 +417,17 @@
       "round": "Round 4",
       "homeRef": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
       "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "4c9b02ae-3fe9-4fdc-a70e-5f38aeb9156c",
@@ -415,9 +439,17 @@
       "round": "Round 3",
       "homeRef": "8e341294-c364-44c1-a558-522c0dc201e5",
       "awayRef": "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 9,
+        "total": 18
+      },
+      "away": {
+        "goals": 1,
+        "points": 6,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "b7a01790-43e1-438b-98cf-1db123122f8b",
@@ -429,9 +461,17 @@
       "round": "Round 3",
       "homeRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "awayRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 1,
+        "total": 13
+      },
+      "away": {
+        "goals": 3,
+        "points": 6,
+        "total": 15
+      },
+      "status": "final"
     },
     {
       "id": "36cb7a21-e27b-4801-9e2a-4cb4170c3255",
