@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T14:13:42Z",
+  "updatedAt": "2026-07-15T15:51:31Z",
   "teams": {
     "34eb8e02-de50-4efb-b428-a4e7f1d75de7": {
       "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
@@ -177,9 +177,17 @@
       "round": "Round 6",
       "homeRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
       "awayRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "a31ea55a-64ca-454e-bf7e-78ad62141c81",
@@ -191,9 +199,17 @@
       "round": "Round 6",
       "homeRef": "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0",
       "awayRef": "8e341294-c364-44c1-a558-522c0dc201e5",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "status": "final"
     },
     {
       "id": "66147dca-708d-4729-8ff4-70c4432b24f4",
@@ -205,9 +221,13 @@
       "round": "Round 9",
       "homeRef": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
       "awayRef": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
-      "home": null,
+      "home": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
       "away": null,
-      "status": "scheduled"
+      "status": "final"
     },
     {
       "id": "97f2c3c8-62ad-43b6-8906-3f55ace0b76d",

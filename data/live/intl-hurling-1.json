@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T14:13:46Z",
+  "updatedAt": "2026-07-15T15:51:36Z",
   "teams": {
     "2d96597a-29a4-4d43-95d7-3bad6752d875": {
       "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
@@ -204,6 +204,20 @@
       "status": "scheduled"
     },
     {
+      "id": "bf1a6deb-f354-4b13-b686-2efaccba2c7e",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "14:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Round 10",
+      "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
+      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
       "id": "cf12cece-51aa-49b2-a61c-e29067269b3e",
       "stage": "group",
       "date": "2026-07-15",
@@ -213,9 +227,17 @@
       "round": "Round 10",
       "homeRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
       "awayRef": "389b191b-5481-4737-ac23-7207daa3bea8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "away": {
+        "goals": 4,
+        "points": 13,
+        "total": 25
+      },
+      "status": "final"
     },
     {
       "id": "b5b1215f-e45c-4d1c-8581-651b22c61d41",
@@ -227,9 +249,17 @@
       "round": "Round 10",
       "homeRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
       "awayRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "away": {
+        "goals": 4,
+        "points": 7,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "5fc7662e-e2b7-41b3-a50f-f9f584cdccf5",
@@ -243,21 +273,7 @@
       "awayRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
       "home": null,
       "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "bf1a6deb-f354-4b13-b686-2efaccba2c7e",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "14:00",
-      "pitch": "Field 6",
-      "pool": null,
-      "round": "Round 10",
-      "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
-      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "status": "final"
     },
     {
       "id": "79580ed6-82ab-45ae-b721-7c0e815dfb2e",

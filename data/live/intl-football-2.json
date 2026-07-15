@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T14:13:40Z",
+  "updatedAt": "2026-07-15T15:51:28Z",
   "teams": {
     "aa042f48-9862-4ed8-b366-b79a730b77a8": {
       "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
@@ -203,9 +203,17 @@
       "round": "Round 1",
       "homeRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
       "awayRef": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 8,
+        "total": 8
+      },
+      "away": {
+        "goals": 0,
+        "points": 8,
+        "total": 8
+      },
+      "status": "final"
     },
     {
       "id": "ac616ea3-3371-463b-881e-21e937f36978",
@@ -217,9 +225,17 @@
       "round": "Round 1",
       "homeRef": "f50ea8b4-e348-4fa0-a23a-443ee929e046",
       "awayRef": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 1,
+        "total": 7
+      },
+      "away": {
+        "goals": 1,
+        "points": 11,
+        "total": 14
+      },
+      "status": "final"
     },
     {
       "id": "568063d5-1aea-4654-8c70-69eb5ed48457",
@@ -231,9 +247,17 @@
       "round": "Round 1",
       "homeRef": "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5",
       "awayRef": "4565a776-abd0-419a-97c9-9c5e0116b835",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 2,
+        "total": 5
+      },
+      "away": {
+        "goals": 3,
+        "points": 3,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "3c6cc6dc-e812-4466-bbff-88849cd9a75d",

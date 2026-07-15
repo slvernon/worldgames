@@ -1,16 +1,8 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T14:13:43Z",
+  "updatedAt": "2026-07-15T15:51:33Z",
   "teams": {
-    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
-      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "name": "Galicia 2"
-    },
-    "386339f7-9d58-49b0-a9b5-75540cf45414": {
-      "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "name": "Québec LGFA"
-    },
     "fd082792-db67-4b77-9bb5-aff462427ba4": {
       "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
       "name": "Trinity Milton Ladies"
@@ -26,6 +18,14 @@
     "df894de5-82fa-489b-87f1-c0e6a6efff97": {
       "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "name": "Brittany Black"
+    },
+    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
+      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "name": "Galicia 2"
+    },
+    "386339f7-9d58-49b0-a9b5-75540cf45414": {
+      "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
+      "name": "Québec LGFA"
     },
     "34285736-228f-41ad-a4db-047d671526a8": {
       "id": "34285736-228f-41ad-a4db-047d671526a8",
@@ -70,20 +70,6 @@
       "status": "scheduled"
     },
     {
-      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": null,
-      "pool": null,
-      "round": "SF2",
-      "homeRef": "1st Pool A",
-      "awayRef": "2nd Pool B",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -93,6 +79,20 @@
       "round": "SF1",
       "homeRef": "1st Pool B",
       "awayRef": "Winner QF",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": null,
+      "pool": null,
+      "round": "SF2",
+      "homeRef": "1st Pool A",
+      "awayRef": "2nd Pool B",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -140,20 +140,6 @@
       "status": "scheduled"
     },
     {
-      "id": "f5be6bc8-4baf-49d1-9b5e-70ef1ab7fcc1",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "16:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "Round 10",
-      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "df54eef8-570a-4967-a1c0-5a09598bd981",
       "stage": "group",
       "date": "2026-07-15",
@@ -182,6 +168,28 @@
       "status": "scheduled"
     },
     {
+      "id": "f5be6bc8-4baf-49d1-9b5e-70ef1ab7fcc1",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "16:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 10",
+      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
+      "home": {
+        "goals": 4,
+        "points": 4,
+        "total": 16
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
+    },
+    {
       "id": "2930fff2-4aed-4e60-9e81-7b0eaf80fba4",
       "stage": "group",
       "date": "2026-07-15",
@@ -191,9 +199,17 @@
       "round": "Round 10",
       "homeRef": "34285736-228f-41ad-a4db-047d671526a8",
       "awayRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "8795278f-bdc2-4e2f-8b9f-53fdf18e9121",
@@ -289,11 +305,7 @@
       "round": "Round 5",
       "homeRef": "fd082792-db67-4b77-9bb5-aff462427ba4",
       "awayRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
-      "home": {
-        "goals": 0,
-        "points": 2,
-        "total": 2
-      },
+      "home": null,
       "away": {
         "goals": 4,
         "points": 6,
