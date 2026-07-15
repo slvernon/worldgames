@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T12:17:04Z",
+  "updatedAt": "2026-07-15T14:01:58Z",
   "teams": {
     "504c296f-8eb5-fd52-1e74-4da4e8373251": {
       "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
@@ -237,9 +237,17 @@
       "round": "Round 10",
       "homeRef": "69282e0b-1c7b-4007-abd6-3180cb539c27",
       "awayRef": "a05b8392-9986-46cc-965f-82f8a1784505",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 8,
+        "total": 11
+      },
+      "away": {
+        "goals": 1,
+        "points": 4,
+        "total": 7
+      },
+      "status": "final"
     },
     {
       "id": "9d25529a-91d5-4d98-9fa6-08a687141193",
@@ -251,9 +259,17 @@
       "round": "Round 9",
       "homeRef": "e662b245-ffba-420c-a842-4478fdea26d0",
       "awayRef": "c11f7e34-2a86-4da1-998e-70666c783ffe",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 1,
+        "total": 4
+      },
+      "away": {
+        "goals": 3,
+        "points": 10,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "e8e93607-67c2-4a32-8f59-bb6e132c3677",
@@ -265,9 +281,17 @@
       "round": "Round 9",
       "homeRef": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
       "awayRef": "8e341294-c364-44c1-a558-522c0dc201e5",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 9,
+        "total": 12
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "2777c0f0-d903-4e9f-9356-1b76cd1419ea",
@@ -308,8 +332,8 @@
       },
       "away": {
         "goals": 0,
-        "points": 8,
-        "total": 8
+        "points": 2,
+        "total": 2
       },
       "status": "final"
     },
@@ -495,8 +519,16 @@
       "round": "Round 6",
       "homeRef": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
       "awayRef": "e662b245-ffba-420c-a842-4478fdea26d0",
-      "home": null,
-      "away": null,
+      "home": {
+        "goals": 0,
+        "points": 8,
+        "total": 8
+      },
+      "away": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
       "status": "final"
     },
     {
@@ -660,7 +692,11 @@
         "points": 3,
         "total": 6
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 11,
+        "total": 11
+      },
       "status": "final"
     },
     {

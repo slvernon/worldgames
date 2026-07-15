@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T12:17:05Z",
+  "updatedAt": "2026-07-15T14:01:59Z",
   "teams": {
     "aa042f48-9862-4ed8-b366-b79a730b77a8": {
       "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
@@ -138,20 +138,6 @@
       "status": "scheduled"
     },
     {
-      "id": "04a88eb6-7360-480b-ada8-9cf1fa5f0f15",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": "Field 1",
-      "pool": null,
-      "round": "QF1",
-      "homeRef": "5th Pool A",
-      "awayRef": "6th Pool B",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "305a6ee8-e7cf-4ed1-b94d-376be62c50d0",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -161,6 +147,20 @@
       "round": "QF2",
       "homeRef": "5th Pool B",
       "awayRef": "6th Pool A",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "04a88eb6-7360-480b-ada8-9cf1fa5f0f15",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "QF1",
+      "homeRef": "5th Pool A",
+      "awayRef": "6th Pool B",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -245,9 +245,17 @@
       "round": "Round 1",
       "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "awayRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 4,
+        "total": 4
+      },
+      "away": {
+        "goals": 3,
+        "points": 8,
+        "total": 17
+      },
+      "status": "final"
     },
     {
       "id": "641ea735-d153-4775-acf7-f76a94d03299",
@@ -259,9 +267,17 @@
       "round": "Round 1",
       "homeRef": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
       "awayRef": "8d127b3b-1b37-4be1-93de-8cd5f6ded86c",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "a005253d-2ce0-45e4-9ad6-eb5be146ffc6",
