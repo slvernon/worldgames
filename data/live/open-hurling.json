@@ -1,7 +1,7 @@
 {
   "slug": "open-hurling",
   "season": "2026",
-  "updatedAt": "2026-07-15T10:19:37Z",
+  "updatedAt": "2026-07-15T11:00:34Z",
   "teams": {
     "4050c474-3c6c-487f-b235-772b85097be7": {
       "id": "4050c474-3c6c-487f-b235-772b85097be7",
@@ -110,7 +110,7 @@
       "stage": "group",
       "date": "2026-07-15",
       "time": "15:30",
-      "pitch": "Field 1",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Round 3",
       "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",

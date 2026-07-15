@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T10:19:28Z",
+  "updatedAt": "2026-07-15T11:00:22Z",
   "teams": {
     "2d96597a-29a4-4d43-95d7-3bad6752d875": {
       "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
@@ -339,9 +339,17 @@
       "round": "Round 9",
       "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
       "awayRef": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 4,
+        "total": 13
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "f8789cda-7d53-400b-a875-7d80a98781d1",

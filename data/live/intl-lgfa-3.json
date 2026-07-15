@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-3",
   "season": "2026",
-  "updatedAt": "2026-07-15T10:19:26Z",
+  "updatedAt": "2026-07-15T11:00:19Z",
   "teams": {
     "c721050d-4ba6-4af9-80cf-d86c51ceb88f": {
       "id": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
@@ -204,7 +204,7 @@
       "stage": "group",
       "date": "2026-07-15",
       "time": "15:30",
-      "pitch": "Field 4",
+      "pitch": "Field 1",
       "pool": null,
       "round": "Round 10",
       "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
