@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T11:00:25Z",
+  "updatedAt": "2026-07-15T12:17:12Z",
   "teams": {
     "c962c966-363e-4b30-a013-f7553e67cd87": {
       "id": "c962c966-363e-4b30-a013-f7553e67cd87",
@@ -191,9 +191,17 @@
       "round": "Round 9",
       "homeRef": "acbd36bd-12a9-46d0-b463-fdbe420d6725",
       "awayRef": "c962c966-363e-4b30-a013-f7553e67cd87",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 14,
+        "total": 20
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "0cf1c68f-7297-414c-a533-ce7249ec4268",
@@ -205,9 +213,17 @@
       "round": "Round 9",
       "homeRef": "330059b3-05fe-496f-b409-79459886f3f4",
       "awayRef": "921c244c-e082-41b2-a139-ae2bab78c44d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 5,
+        "points": 4,
+        "total": 19
+      },
+      "away": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "fc970697-3ff8-48fe-b6fa-9544777d2309",
@@ -219,9 +235,17 @@
       "round": "Round 6",
       "homeRef": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
       "awayRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 7,
+        "total": 19
+      },
+      "away": {
+        "goals": 1,
+        "points": 6,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "dc5ad6b1-d6b3-4d32-9585-965e219fa0c0",

@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T11:00:29Z",
+  "updatedAt": "2026-07-15T12:17:14Z",
   "teams": {
     "061c49ed-1e36-47f2-8132-ea857b2dcd27": {
       "id": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
@@ -36,20 +36,6 @@
       "status": "scheduled"
     },
     {
-      "id": "e308da48-ffd7-48fb-a3eb-287ba09631f7",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": null,
-      "pool": null,
-      "round": "SF2",
-      "homeRef": "2nd",
-      "awayRef": "3rd",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "586bcfc4-6cde-444e-a532-576b0acf20ca",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -64,6 +50,20 @@
       "status": "scheduled"
     },
     {
+      "id": "e308da48-ffd7-48fb-a3eb-287ba09631f7",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": null,
+      "pool": null,
+      "round": "SF2",
+      "homeRef": "2nd",
+      "awayRef": "3rd",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
       "id": "20421355-76e1-4b90-af6c-8d928cc6e341",
       "stage": "group",
       "date": "2026-07-15",
@@ -73,9 +73,17 @@
       "round": "Round 5",
       "homeRef": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
       "awayRef": "01209e2b-1d47-4150-9d82-1534ab3cf62b",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "12507c52-be35-4924-afd2-9c2e41d8b5cb",

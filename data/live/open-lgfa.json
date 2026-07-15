@@ -1,7 +1,7 @@
 {
   "slug": "open-lgfa",
   "season": "2026",
-  "updatedAt": "2026-07-15T11:00:33Z",
+  "updatedAt": "2026-07-15T12:17:16Z",
   "teams": {
     "21024302-8ab0-4e3a-b901-368cb007b853": {
       "id": "21024302-8ab0-4e3a-b901-368cb007b853",
@@ -86,7 +86,7 @@
       "stage": "group",
       "date": "2026-07-16",
       "time": "15:00",
-      "pitch": "Field 5",
+      "pitch": "Field 1",
       "pool": null,
       "round": "Round 2",
       "homeRef": "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c",
