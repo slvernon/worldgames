@@ -1,16 +1,8 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T18:16:41Z",
+  "updatedAt": "2026-07-15T19:11:11Z",
   "teams": {
-    "8dfb940c-8f50-40a7-9132-030c9d464467": {
-      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
-      "name": "USGAA Southeast"
-    },
-    "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
-      "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
-      "name": "An Triúr Deirfiúr"
-    },
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "name": "New York Camogie"
@@ -26,6 +18,14 @@
     "9c714107-c89e-42a6-8325-666b999f4470": {
       "id": "9c714107-c89e-42a6-8325-666b999f4470",
       "name": "Rust Belt Banshees"
+    },
+    "8dfb940c-8f50-40a7-9132-030c9d464467": {
+      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
+      "name": "USGAA Southeast"
+    },
+    "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
+      "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
+      "name": "An Triúr Deirfiúr"
     },
     "b844e7a3-e662-4bc9-974e-154a71f58fc2": {
       "id": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
@@ -140,20 +140,6 @@
       "status": "scheduled"
     },
     {
-      "id": "5a87ca0c-20a0-4ade-be1a-f11b547c21dd",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "15:00",
-      "pitch": "Field 8",
-      "pool": null,
-      "round": "Round 6",
-      "homeRef": "8dfb940c-8f50-40a7-9132-030c9d464467",
-      "awayRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "4524ea3e-019e-47ca-a63a-cfdcaafc8465",
       "stage": "group",
       "date": "2026-07-15",
@@ -194,6 +180,28 @@
         "goals": 0,
         "points": 1,
         "total": 1
+      },
+      "status": "final"
+    },
+    {
+      "id": "5a87ca0c-20a0-4ade-be1a-f11b547c21dd",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "15:00",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "Round 6",
+      "homeRef": "8dfb940c-8f50-40a7-9132-030c9d464467",
+      "awayRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
+      "home": {
+        "goals": 4,
+        "points": 6,
+        "total": 18
+      },
+      "away": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
       },
       "status": "final"
     },
