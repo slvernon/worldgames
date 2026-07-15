@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T09:04:36Z",
+  "updatedAt": "2026-07-15T10:19:32Z",
   "teams": {
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
@@ -275,9 +275,17 @@
       "round": "Round 8",
       "homeRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "awayRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 9,
+        "total": 18
+      },
+      "away": {
+        "goals": 2,
+        "points": 0,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "443a1c61-491d-450a-a204-8edb65531e06",
@@ -289,9 +297,17 @@
       "round": "Round 8",
       "homeRef": "d6d25d54-71ba-47ad-afee-41d162123910",
       "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 1,
+        "total": 7
+      },
+      "away": {
+        "goals": 2,
+        "points": 4,
+        "total": 10
+      },
+      "status": "final"
     },
     {
       "id": "8110b8dd-09cb-420f-a473-88c1c9998c35",

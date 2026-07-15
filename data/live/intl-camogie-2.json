@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T09:04:37Z",
+  "updatedAt": "2026-07-15T10:19:33Z",
   "teams": {
     "061c49ed-1e36-47f2-8132-ea857b2dcd27": {
       "id": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
@@ -36,20 +36,6 @@
       "status": "scheduled"
     },
     {
-      "id": "586bcfc4-6cde-444e-a532-576b0acf20ca",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": null,
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "1st",
-      "awayRef": "4th",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "e308da48-ffd7-48fb-a3eb-287ba09631f7",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -59,6 +45,20 @@
       "round": "SF2",
       "homeRef": "2nd",
       "awayRef": "3rd",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "586bcfc4-6cde-444e-a532-576b0acf20ca",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": null,
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "1st",
+      "awayRef": "4th",
       "home": null,
       "away": null,
       "status": "scheduled"
