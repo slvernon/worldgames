@@ -3,6 +3,15 @@ name: Poll live scores
 # Fetches live scores during the tournament window and commits any changed
 # data/*.json back to the repo so GitHub Pages serves fresh scores.
 #
+# Triggers (three ways this runs):
+#   1. schedule            GitHub's built-in cron. Best-effort — often delayed
+#                          15-30 min or dropped under load. Kept as a FALLBACK.
+#   2. repository_dispatch fired by an external always-on scheduler (cron-job.org)
+#                          POSTing {"event_type":"poll-scores"} to the repo's
+#                          /dispatches API. Reliable path — dispatched runs queue,
+#                          they are not dropped.
+#   3. workflow_dispatch   the manual "Run workflow" button in the Actions tab.
+#
 # Cron is in UTC. Irish time is UTC+1 in July.
 #   '*/10 7-17 13-17 7 *'  every 10 min, ~08:00-18:00 Irish, 13-17 July 2026
 #   '0 18 13-17 7 *'       final sweep ~19:00 Irish (a couple hours after last games)
@@ -10,7 +19,9 @@ on:
   schedule:
     - cron: '*/10 7-17 13-17 7 *'
     - cron: '0 18 13-17 7 *'
-  workflow_dispatch: {}   # manual "Run workflow" button
+  repository_dispatch:
+    types: [poll-scores]   # external pinger POSTs {"event_type":"poll-scores"}
+  workflow_dispatch: {}    # manual "Run workflow" button
 
 # Allow the job to push commits back to the repo.
 permissions:
