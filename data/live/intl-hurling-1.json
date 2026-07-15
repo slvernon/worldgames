@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-14T19:20:14Z",
+  "updatedAt": "2026-07-15T09:04:33Z",
   "teams": {
     "2d96597a-29a4-4d43-95d7-3bad6752d875": {
       "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
@@ -96,7 +96,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": "Field 7",
+      "pitch": null,
       "pool": null,
       "round": "SF 2",
       "homeRef": "1st Pool B",
@@ -110,7 +110,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": "Field 7",
+      "pitch": null,
       "pool": null,
       "round": "SF1",
       "homeRef": "1st Pool A",
@@ -124,7 +124,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": "Field 7",
+      "pitch": null,
       "pool": null,
       "round": "SF2",
       "homeRef": "3rd Pool B",
@@ -134,29 +134,29 @@
       "status": "scheduled"
     },
     {
-      "id": "b879243a-d87d-40db-9bde-2f5a7a656f3c",
+      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": "Field 5",
+      "pitch": null,
       "pool": null,
-      "round": "SF",
-      "homeRef": "5th Pool A",
-      "awayRef": "6th Pool B",
+      "round": "SF1",
+      "homeRef": "3rd Pool A",
+      "awayRef": "4th Pool B",
       "home": null,
       "away": null,
       "status": "scheduled"
     },
     {
-      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
+      "id": "b879243a-d87d-40db-9bde-2f5a7a656f3c",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": "Field 6",
+      "pitch": null,
       "pool": null,
-      "round": "SF1",
-      "homeRef": "3rd Pool A",
-      "awayRef": "4th Pool B",
+      "round": "SF",
+      "homeRef": "5th Pool A",
+      "awayRef": "6th Pool B",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -409,9 +409,17 @@
       "round": "Round 8",
       "homeRef": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
       "awayRef": "647d1a71-1d0c-4898-af20-af812469942d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 3,
+        "total": 15
+      },
+      "away": {
+        "goals": 4,
+        "points": 7,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "77a880c9-cf51-47a2-b722-e4dde40d4844",
