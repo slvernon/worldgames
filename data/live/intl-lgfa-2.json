@@ -1,16 +1,8 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T17:03:54Z",
+  "updatedAt": "2026-07-15T18:16:35Z",
   "teams": {
-    "fd082792-db67-4b77-9bb5-aff462427ba4": {
-      "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
-      "name": "Trinity Milton Ladies"
-    },
-    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
-      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
-      "name": "Gasconha"
-    },
     "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
       "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
       "name": "Galicia 2"
@@ -18,6 +10,14 @@
     "386339f7-9d58-49b0-a9b5-75540cf45414": {
       "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
       "name": "Québec LGFA"
+    },
+    "fd082792-db67-4b77-9bb5-aff462427ba4": {
+      "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
+      "name": "Trinity Milton Ladies"
+    },
+    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
+      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
+      "name": "Gasconha"
     },
     "34285736-228f-41ad-a4db-047d671526a8": {
       "id": "34285736-228f-41ad-a4db-047d671526a8",
@@ -140,20 +140,6 @@
       "status": "scheduled"
     },
     {
-      "id": "df54eef8-570a-4967-a1c0-5a09598bd981",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "16:00",
-      "pitch": "Field 3",
-      "pool": null,
-      "round": "Round 6",
-      "homeRef": "fd082792-db67-4b77-9bb5-aff462427ba4",
-      "awayRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "f5be6bc8-4baf-49d1-9b5e-70ef1ab7fcc1",
       "stage": "group",
       "date": "2026-07-15",
@@ -172,6 +158,28 @@
         "goals": 0,
         "points": 2,
         "total": 2
+      },
+      "status": "final"
+    },
+    {
+      "id": "df54eef8-570a-4967-a1c0-5a09598bd981",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "16:00",
+      "pitch": "Field 3",
+      "pool": null,
+      "round": "Round 6",
+      "homeRef": "fd082792-db67-4b77-9bb5-aff462427ba4",
+      "awayRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
+      "home": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "away": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
       },
       "status": "final"
     },
