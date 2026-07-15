@@ -176,12 +176,17 @@ def fetch_division_raw(division_id):
 
 
 def parse_gp(goals, points):
-    """Return {goals,points,total} or None if either side is missing."""
-    if goals is None or points is None:
+    """Return {goals,points,total}, or None only if BOTH components are missing.
+
+    A half-entered upstream score (one of goals/points is null while the other
+    is present) is treated as a real score with the missing side filled as 0, so
+    the game still renders instead of vanishing. If an official later completes
+    the entry, a subsequent poll overwrites it with the full score."""
+    if goals is None and points is None:
         return None
     try:
-        g = int(goals)
-        p = int(points)
+        g = int(goals if goals is not None else 0)
+        p = int(points if points is not None else 0)
     except (TypeError, ValueError):
         return None
     return {"goals": g, "points": p, "total": g * 3 + p}

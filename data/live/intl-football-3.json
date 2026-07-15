@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-3",
   "season": "2026",
-  "updatedAt": "2026-07-15T15:51:29Z",
+  "updatedAt": "2026-07-15T16:32:50Z",
   "teams": {
     "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
       "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
@@ -104,20 +104,6 @@
       "status": "scheduled"
     },
     {
-      "id": "036c06ac-1a24-4e0b-b0cc-3a7a8513ef78",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": null,
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "1st Pool A",
-      "awayRef": "Winner QF2",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "bf3d0f29-3cd9-4a33-a7b2-0bfd631489d4",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -127,6 +113,20 @@
       "round": "SF2",
       "homeRef": "1st Pool B",
       "awayRef": "Winner QF1",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "036c06ac-1a24-4e0b-b0cc-3a7a8513ef78",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": null,
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "1st Pool A",
+      "awayRef": "Winner QF2",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -335,7 +335,11 @@
       "round": "Round 4",
       "homeRef": "667045c5-3824-4bc8-ab94-52af4dc6014a",
       "awayRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
       "away": {
         "goals": 2,
         "points": 10,
@@ -552,7 +556,11 @@
         "points": 2,
         "total": 5
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 7,
+        "total": 7
+      },
       "status": "final"
     },
     {
@@ -592,7 +600,11 @@
         "points": 3,
         "total": 9
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 8,
+        "total": 8
+      },
       "status": "final"
     },
     {
@@ -632,7 +644,11 @@
         "points": 5,
         "total": 11
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 7,
+        "total": 7
+      },
       "status": "final"
     },
     {
@@ -645,7 +661,11 @@
       "round": "Round 1",
       "homeRef": "7d7e102d-4864-41f4-9449-42706a8eff29",
       "awayRef": "c20c0110-1057-4559-961e-8bc41209e059",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
       "away": {
         "goals": 2,
         "points": 4,
@@ -729,7 +749,11 @@
       "round": "Round 7",
       "homeRef": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
       "awayRef": "667045c5-3824-4bc8-ab94-52af4dc6014a",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
       "away": {
         "goals": 1,
         "points": 7,
@@ -796,7 +820,11 @@
         "points": 1,
         "total": 4
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
       "status": "final"
     },
     {
@@ -831,7 +859,11 @@
       "round": "Round 2",
       "homeRef": "c20c0110-1057-4559-961e-8bc41209e059",
       "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
       "away": {
         "goals": 1,
         "points": 4,
@@ -894,7 +926,11 @@
         "points": 7,
         "total": 16
       },
-      "away": null,
+      "away": {
+        "goals": 2,
+        "points": 0,
+        "total": 6
+      },
       "status": "final"
     },
     {
@@ -974,7 +1010,11 @@
         "points": 5,
         "total": 20
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 4,
+        "total": 4
+      },
       "status": "final"
     },
     {
@@ -1014,7 +1054,11 @@
         "points": 4,
         "total": 7
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
       "status": "final"
     },
     {

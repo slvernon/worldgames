@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T15:51:26Z",
+  "updatedAt": "2026-07-15T16:32:49Z",
   "teams": {
     "504c296f-8eb5-fd52-1e74-4da4e8373251": {
       "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
@@ -486,7 +486,11 @@
         "points": 12,
         "total": 21
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
       "status": "final"
     },
     {
@@ -609,7 +613,11 @@
       "round": "Round 5",
       "homeRef": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
       "awayRef": "c11f7e34-2a86-4da1-998e-70666c783ffe",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 11,
+        "total": 11
+      },
       "away": {
         "goals": 1,
         "points": 7,
@@ -760,7 +768,11 @@
         "points": 6,
         "total": 12
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 6,
+        "total": 6
+      },
       "status": "final"
     },
     {
@@ -778,7 +790,11 @@
         "points": 5,
         "total": 11
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 10,
+        "total": 10
+      },
       "status": "final"
     },
     {
@@ -862,7 +878,11 @@
         "points": 16,
         "total": 19
       },
-      "away": null,
+      "away": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
       "status": "final"
     },
     {
@@ -963,8 +983,16 @@
       "round": "Round 1",
       "homeRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "awayRef": "7a41c5e1-d325-4fe9-9550-c344164e38ad",
-      "home": null,
-      "away": null,
+      "home": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
+      "away": {
+        "goals": 0,
+        "points": 6,
+        "total": 6
+      },
       "status": "final"
     },
     {
@@ -977,7 +1005,11 @@
       "round": "Round 1",
       "homeRef": "a7d67e17-7f89-474d-a00c-5b3e53486fe9",
       "awayRef": "a05b8392-9986-46cc-965f-82f8a1784505",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
       "away": {
         "goals": 2,
         "points": 5,

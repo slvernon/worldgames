@@ -1,7 +1,7 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T15:51:38Z",
+  "updatedAt": "2026-07-15T16:32:52Z",
   "teams": {
     "8dfb940c-8f50-40a7-9132-030c9d464467": {
       "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
@@ -10,10 +10,6 @@
     "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
       "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
       "name": "An Triúr Deirfiúr"
-    },
-    "d6d25d54-71ba-47ad-afee-41d162123910": {
-      "id": "d6d25d54-71ba-47ad-afee-41d162123910",
-      "name": "Appalachian Alliance"
     },
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
@@ -34,6 +30,10 @@
     "b844e7a3-e662-4bc9-974e-154a71f58fc2": {
       "id": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
       "name": "Europe Camogie International (GGE)"
+    },
+    "d6d25d54-71ba-47ad-afee-41d162123910": {
+      "id": "d6d25d54-71ba-47ad-afee-41d162123910",
+      "name": "Appalachian Alliance"
     },
     "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
       "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
@@ -154,20 +154,6 @@
       "status": "scheduled"
     },
     {
-      "id": "18577d9c-eb6b-4184-9b3e-6973164e4ac5",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "14:00",
-      "pitch": "Field 8",
-      "pool": null,
-      "round": "Round 10",
-      "homeRef": "d6d25d54-71ba-47ad-afee-41d162123910",
-      "awayRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "4524ea3e-019e-47ca-a63a-cfdcaafc8465",
       "stage": "group",
       "date": "2026-07-15",
@@ -234,6 +220,28 @@
       "status": "final"
     },
     {
+      "id": "18577d9c-eb6b-4184-9b3e-6973164e4ac5",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "14:00",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "Round 10",
+      "homeRef": "d6d25d54-71ba-47ad-afee-41d162123910",
+      "awayRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
+      "home": {
+        "goals": 0,
+        "points": 0,
+        "total": 0
+      },
+      "away": {
+        "goals": 6,
+        "points": 9,
+        "total": 27
+      },
+      "status": "final"
+    },
+    {
       "id": "d9d2d5b6-f7cf-4247-a4cb-6d2771aab7ee",
       "stage": "group",
       "date": "2026-07-15",
@@ -265,7 +273,11 @@
       "round": "Round 5",
       "homeRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
       "awayRef": "8dfb940c-8f50-40a7-9132-030c9d464467",
-      "home": null,
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
       "away": {
         "goals": 1,
         "points": 4,
@@ -283,7 +295,11 @@
       "round": "Round 9",
       "homeRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
       "awayRef": "d6d25d54-71ba-47ad-afee-41d162123910",
-      "home": null,
+      "home": {
+        "goals": 1,
+        "points": 0,
+        "total": 3
+      },
       "away": {
         "goals": 7,
         "points": 2,
