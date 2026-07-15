@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T16:32:51Z",
+  "updatedAt": "2026-07-15T17:03:54Z",
   "teams": {
     "fd082792-db67-4b77-9bb5-aff462427ba4": {
       "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
@@ -70,20 +70,6 @@
       "status": "scheduled"
     },
     {
-      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": null,
-      "pool": null,
-      "round": "SF2",
-      "homeRef": "1st Pool A",
-      "awayRef": "2nd Pool B",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -93,6 +79,20 @@
       "round": "SF1",
       "homeRef": "1st Pool B",
       "awayRef": "Winner QF",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": null,
+      "pool": null,
+      "round": "SF2",
+      "homeRef": "1st Pool A",
+      "awayRef": "2nd Pool B",
       "home": null,
       "away": null,
       "status": "scheduled"
