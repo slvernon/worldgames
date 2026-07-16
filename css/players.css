@@ -1,0 +1,102 @@
+/* Players view — per-player scorer stats table.
+   Uses the shared design tokens from styles.css (:root --wg-*). */
+
+.wg-players {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4px 0 24px;
+}
+
+.wg-players__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.wg-players__select {
+  font: 600 15px/1.2 var(--wg-font-head, 'Poppins', sans-serif);
+  color: var(--wg-text);
+  background: var(--wg-surface);
+  border: 1px solid var(--wg-line-2);
+  border-radius: var(--wg-radius-sm);
+  padding: 9px 34px 9px 12px;
+  box-shadow: var(--wg-shadow);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c5c70' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.wg-players__note {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--wg-text-dim);
+  background: var(--wg-surface-2);
+  border: 1px solid var(--wg-line);
+  border-radius: var(--wg-radius-sm);
+  padding: 8px 11px;
+  flex: 1 1 260px;
+}
+.wg-players__note b { color: var(--wg-text); font-weight: 600; }
+
+.wg-players__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.wg-players__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wg-surface);
+  border-radius: var(--wg-radius);
+  overflow: hidden;
+  box-shadow: var(--wg-shadow);
+  font-size: 14px;
+}
+
+.wg-players__table th,
+.wg-players__table td {
+  padding: 10px 12px;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--wg-line);
+}
+.wg-players__table th:first-child,
+.wg-players__table td:first-child { text-align: left; width: 100%; }
+.wg-players__table th:nth-child(2),
+.wg-players__table td:nth-child(2) { text-align: center; color: var(--wg-text-dim); }
+
+.wg-players__table thead th {
+  font: 600 11px/1 var(--wg-font-head, 'Poppins', sans-serif);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--wg-text-dim);
+  background: var(--wg-surface-2);
+  cursor: pointer;
+  user-select: none;
+  position: sticky;
+  top: 0;
+}
+.wg-players__table thead th:hover { color: var(--wg-text); }
+.wg-players__table thead th.is-sorted { color: var(--wg-text); }
+.wg-players__table thead th.is-sorted::after { content: " \25BC"; font-size: 9px; }
+.wg-players__table thead th.is-sorted.is-asc::after { content: " \25B2"; }
+
+.wg-players__table tbody tr:last-child td { border-bottom: 0; }
+.wg-players__table tbody tr:hover { background: var(--wg-surface-2); }
+
+.wg-players__name { font-weight: 600; color: var(--wg-text); }
+.wg-players__total { font-weight: 700; color: var(--wg-text); }
+
+/* Gold accent for the top scorer row. */
+.wg-players__table tbody tr.is-top td { background: var(--wg-win-bg); }
+.wg-players__table tbody tr.is-top .wg-players__total { color: #9a7400; }
+
+.wg-players__empty {
+  text-align: center;
+  color: var(--wg-text-dim);
+  padding: 28px 16px;
+  background: var(--wg-surface);
+  border-radius: var(--wg-radius);
+  box-shadow: var(--wg-shadow);
+}

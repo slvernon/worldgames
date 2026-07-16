@@ -25,7 +25,7 @@
   var DEFAULT_VIEW = 'bracket';
 
   // ---- DOM refs (resolved on init) -----------------------------------------
-  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elTabs, elFooter;
+  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elViewPlayers, elTabs, elFooter;
 
   // ---- runtime state -------------------------------------------------------
   var current = {
@@ -87,6 +87,18 @@
 
   // Render whichever view is active for the current division.
   function renderActiveView() {
+    // Players is team-based and independent of the selected division, so it
+    // renders even before/without a loaded division.
+    if (current.view === 'players') {
+      if (WG.players && typeof WG.players.render === 'function') {
+        try { WG.players.render(elViewPlayers); }
+        catch (e) { console.error('players render failed', e); showEmpty(elViewPlayers, 'Players unavailable.'); }
+      } else {
+        showEmpty(elViewPlayers, 'Players not available.');
+      }
+      return;
+    }
+
     var div = current.div;
     if (!div) return;
     updateFooter();
@@ -120,6 +132,7 @@
   function applyViewToggle() {
     elViewBracket.classList.toggle('is-active', current.view === 'bracket');
     elViewCalendar.classList.toggle('is-active', current.view === 'calendar');
+    if (elViewPlayers) elViewPlayers.classList.toggle('is-active', current.view === 'players');
     for (var i = 0; i < elTabs.length; i++) {
       var t = elTabs[i];
       t.classList.toggle('is-active', t.getAttribute('data-view') === current.view);
@@ -134,7 +147,7 @@
   }
 
   function setView(view) {
-    if (view !== 'bracket' && view !== 'calendar') return;
+    if (view !== 'bracket' && view !== 'calendar' && view !== 'players') return;
     current.view = view;
     lsSet(LS.view, view);
     applyViewToggle();
@@ -250,6 +263,7 @@
     elTabbar = document.getElementById('wg-tabbar');
     elViewBracket = document.getElementById('wg-view-bracket');
     elViewCalendar = document.getElementById('wg-view-calendar');
+    elViewPlayers = document.getElementById('wg-view-players');
     elFooter = document.getElementById('wg-footer');
     elTabs = elTabbar ? elTabbar.querySelectorAll('.wg-tab') : [];
 
@@ -264,7 +278,7 @@
     var savedDiv = lsGet(LS.div);
     var savedView = lsGet(LS.view);
     var startSlug = metaFor(savedDiv) ? savedDiv : DEFAULT_DIV;
-    current.view = (savedView === 'calendar' || savedView === 'bracket') ? savedView : DEFAULT_VIEW;
+    current.view = (savedView === 'calendar' || savedView === 'bracket' || savedView === 'players') ? savedView : DEFAULT_VIEW;
 
     // Wire events.
     elSelect.addEventListener('change', function () {

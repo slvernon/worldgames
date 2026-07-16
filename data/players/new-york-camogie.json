@@ -1,0 +1,20 @@
+{
+  "slug": "new-york-camogie",
+  "teamId": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
+  "teamName": "New York Camogie",
+  "updatedAt": "2026-07-16T11:31:25Z",
+  "gamesTotal": 9,
+  "gamesWithScorers": 1,
+  "unattributedScores": 5,
+  "players": [
+    {
+      "personId": "6254d172-fb40-12e6-53a3-63b418f74645",
+      "name": "Grainne Lavery",
+      "jersey": 2,
+      "goals": 0,
+      "points": 2,
+      "total": 2,
+      "games": 1
+    }
+  ]
+}

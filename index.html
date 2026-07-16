@@ -12,8 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css?v=16" />
-  <link rel="stylesheet" href="css/calendar.css?v=16" />
+  <link rel="stylesheet" href="css/styles.css?v=17" />
+  <link rel="stylesheet" href="css/calendar.css?v=17" />
+  <link rel="stylesheet" href="css/players.css?v=17" />
   <style>
     /* accessible-hidden helper for form labels */
     .wg-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
@@ -57,24 +58,32 @@
       </svg>
       Calendar
     </button>
+    <button class="wg-tab" data-view="players" type="button">
+      <svg class="wg-tab__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>
+      </svg>
+      Players
+    </button>
   </nav>
 
   <main class="wg-main">
     <section class="wg-view" id="wg-view-bracket" role="tabpanel" aria-label="Bracket"></section>
     <section class="wg-view" id="wg-view-calendar" role="tabpanel" aria-label="Calendar"></section>
+    <section class="wg-view" id="wg-view-players" role="tabpanel" aria-label="Players"></section>
     <div id="wg-root" hidden></div>
   </main>
 
   <footer class="wg-footer" id="wg-footer" aria-live="polite"></footer>
 
   <!-- Modules IN DEPENDENCY ORDER -->
-  <script src="js/data.js?v=16"></script>
-  <script src="js/standings.js?v=16"></script>
-  <script src="js/scenarios.js?v=16"></script>
-  <script src="js/predictions.js?v=16"></script>
-  <script src="js/forecast.js?v=16"></script>
-  <script src="js/bracket.js?v=16"></script>
-  <script src="js/calendar.js?v=16"></script>
-  <script src="js/app.js?v=16"></script>
+  <script src="js/data.js?v=17"></script>
+  <script src="js/standings.js?v=17"></script>
+  <script src="js/scenarios.js?v=17"></script>
+  <script src="js/predictions.js?v=17"></script>
+  <script src="js/forecast.js?v=17"></script>
+  <script src="js/bracket.js?v=17"></script>
+  <script src="js/calendar.js?v=17"></script>
+  <script src="js/players.js?v=17"></script>
+  <script src="js/app.js?v=17"></script>
 </body>
 </html>

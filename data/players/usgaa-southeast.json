@@ -1,0 +1,65 @@
+{
+  "slug": "usgaa-southeast",
+  "teamId": "8dfb940c-8f50-40a7-9132-030c9d464467",
+  "teamName": "USGAA Southeast",
+  "updatedAt": "2026-07-16T11:31:24Z",
+  "gamesTotal": 7,
+  "gamesWithScorers": 1,
+  "unattributedScores": 0,
+  "players": [
+    {
+      "personId": "a0b2feae-5ed0-4581-ae11-de1eb7d1b308",
+      "name": "Valerie Munoz",
+      "jersey": 14,
+      "goals": 2,
+      "points": 0,
+      "total": 6,
+      "games": 1
+    },
+    {
+      "personId": "89a85550-0c58-4bc6-9bb6-bd0bbdd5e251",
+      "name": "Amanda DuShane",
+      "jersey": 5,
+      "goals": 1,
+      "points": 2,
+      "total": 5,
+      "games": 1
+    },
+    {
+      "personId": "11387f4b-3832-40ca-bf02-81e46dfe0f0b",
+      "name": "Colleen Kerger",
+      "jersey": 6,
+      "goals": 1,
+      "points": 0,
+      "total": 3,
+      "games": 1
+    },
+    {
+      "personId": "4c5d4d36-0a0d-4ab0-9ce8-3990ea2fdb92",
+      "name": "Kristen Bolt",
+      "jersey": 10,
+      "goals": 1,
+      "points": 0,
+      "total": 3,
+      "games": 1
+    },
+    {
+      "personId": "23182380-e5ce-455d-834d-f988b9c18f36",
+      "name": "Nicole Gordon",
+      "jersey": 11,
+      "goals": 1,
+      "points": 0,
+      "total": 3,
+      "games": 1
+    },
+    {
+      "personId": "adf28223-6339-488b-9660-a318b12b4421",
+      "name": "Sarah Spiller",
+      "jersey": 3,
+      "goals": 0,
+      "points": 1,
+      "total": 1,
+      "games": 1
+    }
+  ]
+}

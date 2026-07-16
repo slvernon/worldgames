@@ -51,6 +51,11 @@ jobs:
           WG_API_KEY: ${{ secrets.WG_API_KEY }}
         run: python3 fetch_results.py --verbose
 
+      - name: Fetch per-player scorer stats (stdlib only, always exits 0)
+        env:
+          WG_API_KEY: ${{ secrets.WG_API_KEY }}
+        run: python3 fetch_players.py --verbose
+
       - name: Commit changed scores
         run: |
           git config user.name  "wg-score-bot"
