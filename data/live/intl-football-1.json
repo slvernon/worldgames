@@ -1,8 +1,16 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:13Z",
+  "updatedAt": "2026-07-16T14:47:12Z",
   "teams": {
+    "c11f7e34-2a86-4da1-998e-70666c783ffe": {
+      "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
+      "name": "Éire Óg GAC - San Francisco"
+    },
+    "504c296f-8eb5-fd52-1e74-4da4e8373251": {
+      "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
+      "name": "Sean McDermott's"
+    },
     "df894de5-82fa-489b-87f1-c0e6a6efff97": {
       "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "name": "Brittany Black"
@@ -11,10 +19,6 @@
       "id": "8e341294-c364-44c1-a558-522c0dc201e5",
       "name": "Galicia 1"
     },
-    "504c296f-8eb5-fd52-1e74-4da4e8373251": {
-      "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
-      "name": "Sean McDermott's"
-    },
     "bf667990-75a3-48de-b0cc-9193bc6f5d79": {
       "id": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
       "name": "France Championship"
@@ -22,10 +26,6 @@
     "69282e0b-1c7b-4007-abd6-3180cb539c27": {
       "id": "69282e0b-1c7b-4007-abd6-3180cb539c27",
       "name": "Delco Gaels Philadelphia"
-    },
-    "c11f7e34-2a86-4da1-998e-70666c783ffe": {
-      "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
-      "name": "Éire Óg GAC - San Francisco"
     },
     "a7d67e17-7f89-474d-a00c-5b3e53486fe9": {
       "id": "a7d67e17-7f89-474d-a00c-5b3e53486fe9",
@@ -53,8 +53,8 @@
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "c11f7e34-2a86-4da1-998e-70666c783ffe",
+      "awayRef": "504c296f-8eb5-fd52-1e74-4da4e8373251",
       "home": null,
       "away": null,
       "status": "scheduled"

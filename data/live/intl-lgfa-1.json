@@ -1,8 +1,16 @@
 {
   "slug": "intl-lgfa-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:18Z",
+  "updatedAt": "2026-07-16T14:47:16Z",
   "teams": {
+    "d67202c3-f1d8-48d6-8ba1-6d733774cbde": {
+      "id": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
+      "name": "San Francisco Fog City Harps White"
+    },
+    "6a1af94f-5134-4dee-8af9-d23098d6fc19": {
+      "id": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
+      "name": "France A"
+    },
     "6401e429-b4e6-44e8-a92a-3934d50aa7f6": {
       "id": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "name": "Canada LGFA 1"
@@ -11,17 +19,9 @@
       "id": "8e341294-c364-44c1-a558-522c0dc201e5",
       "name": "Galicia 1"
     },
-    "6a1af94f-5134-4dee-8af9-d23098d6fc19": {
-      "id": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
-      "name": "France A"
-    },
     "a05b8392-9986-46cc-965f-82f8a1784505": {
       "id": "a05b8392-9986-46cc-965f-82f8a1784505",
       "name": "Australasia"
-    },
-    "d67202c3-f1d8-48d6-8ba1-6d733774cbde": {
-      "id": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
-      "name": "San Francisco Fog City Harps White"
     },
     "3e56809d-1746-4cfd-9fa8-63215231bd3a": {
       "id": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
@@ -49,8 +49,8 @@
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
+      "awayRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -65,9 +65,17 @@
       "round": "Final",
       "homeRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "awayRef": "8e341294-c364-44c1-a558-522c0dc201e5",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
+      "away": {
+        "goals": 1,
+        "points": 6,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "e9ae4f53-4cbd-4d92-9f89-34a498ddca79",

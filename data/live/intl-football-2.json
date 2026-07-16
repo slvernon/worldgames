@@ -1,8 +1,16 @@
 {
   "slug": "intl-football-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:15Z",
+  "updatedAt": "2026-07-16T14:47:13Z",
   "teams": {
+    "032dd17b-77fa-b7d5-1a47-6c5ff2b53242": {
+      "id": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
+      "name": "Leicester Naomh Padraig"
+    },
+    "4565a776-abd0-419a-97c9-9c5e0116b835": {
+      "id": "4565a776-abd0-419a-97c9-9c5e0116b835",
+      "name": "GAA Canada Men's Football"
+    },
     "8d127b3b-1b37-4be1-93de-8cd5f6ded86c": {
       "id": "8d127b3b-1b37-4be1-93de-8cd5f6ded86c",
       "name": "GAA Canada - Ottawa Gaels"
@@ -11,17 +19,9 @@
       "id": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
       "name": "Siroc"
     },
-    "4565a776-abd0-419a-97c9-9c5e0116b835": {
-      "id": "4565a776-abd0-419a-97c9-9c5e0116b835",
-      "name": "GAA Canada Men's Football"
-    },
     "07d42cfb-f444-4040-b5a5-82e0854e77f0": {
       "id": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "name": "Asia"
-    },
-    "032dd17b-77fa-b7d5-1a47-6c5ff2b53242": {
-      "id": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
-      "name": "Leicester Naomh Padraig"
     },
     "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5": {
       "id": "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5",
@@ -61,8 +61,8 @@
       "pitch": "Field 5",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
+      "awayRef": "4565a776-abd0-419a-97c9-9c5e0116b835",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -91,9 +91,17 @@
       "round": "SF2",
       "homeRef": "4565a776-abd0-419a-97c9-9c5e0116b835",
       "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 5,
+        "points": 4,
+        "total": 19
+      },
+      "away": {
+        "goals": 1,
+        "points": 4,
+        "total": 7
+      },
+      "status": "final"
     },
     {
       "id": "ec095092-9432-46c5-ac93-4ff63d62af8c",
@@ -105,9 +113,17 @@
       "round": "SF1",
       "homeRef": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
       "awayRef": "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 6,
+        "points": 9,
+        "total": 27
+      },
+      "away": {
+        "goals": 2,
+        "points": 2,
+        "total": 8
+      },
+      "status": "final"
     },
     {
       "id": "0479c975-d43c-48a7-a5dd-187b6a67a940",

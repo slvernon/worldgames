@@ -1,8 +1,16 @@
 {
   "slug": "intl-football-3",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:17Z",
+  "updatedAt": "2026-07-16T14:47:14Z",
   "teams": {
+    "5d39471a-4564-4eee-8ce4-fa86c6f62dce": {
+      "id": "5d39471a-4564-4eee-8ce4-fa86c6f62dce",
+      "name": "Benelux"
+    },
+    "a91e239b-1e8a-4ec6-83aa-cc7ed7052634": {
+      "id": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
+      "name": "Alsace"
+    },
     "c0f9304d-e9b0-473e-9761-555afe8496b1": {
       "id": "c0f9304d-e9b0-473e-9761-555afe8496b1",
       "name": "Sables Shamrocks, Kabwe, Zambia"
@@ -18,14 +26,6 @@
     "c20c0110-1057-4559-961e-8bc41209e059": {
       "id": "c20c0110-1057-4559-961e-8bc41209e059",
       "name": "Michael Collins"
-    },
-    "5d39471a-4564-4eee-8ce4-fa86c6f62dce": {
-      "id": "5d39471a-4564-4eee-8ce4-fa86c6f62dce",
-      "name": "Benelux"
-    },
-    "a91e239b-1e8a-4ec6-83aa-cc7ed7052634": {
-      "id": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
-      "name": "Alsace"
     },
     "9bb55f69-5dd6-45a9-83a5-1ef433bcc83e": {
       "id": "9bb55f69-5dd6-45a9-83a5-1ef433bcc83e",
@@ -62,34 +62,6 @@
   },
   "fixtures": [
     {
-      "id": "caefa561-d963-467b-b5e7-2e0f8534d142",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "15:00",
-      "pitch": "Field 4",
-      "pool": null,
-      "round": "Final",
-      "homeRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
-      "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "a7e550fc-51ea-4f72-9f68-9bd377ff4fc7",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "14:15",
-      "pitch": "Field 6",
-      "pool": null,
-      "round": "Final",
-      "homeRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "awayRef": "c20c0110-1057-4559-961e-8bc41209e059",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
       "id": "b0f4ac37-575e-446b-9ac0-9b369373c477",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -102,6 +74,50 @@
       "home": null,
       "away": null,
       "status": "scheduled"
+    },
+    {
+      "id": "caefa561-d963-467b-b5e7-2e0f8534d142",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 4",
+      "pool": null,
+      "round": "Final",
+      "homeRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
+      "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
+      "home": {
+        "goals": 7,
+        "points": 8,
+        "total": 29
+      },
+      "away": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
+      },
+      "status": "final"
+    },
+    {
+      "id": "a7e550fc-51ea-4f72-9f68-9bd377ff4fc7",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "14:15",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Final",
+      "homeRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
+      "awayRef": "c20c0110-1057-4559-961e-8bc41209e059",
+      "home": {
+        "goals": 1,
+        "points": 5,
+        "total": 8
+      },
+      "away": {
+        "goals": 1,
+        "points": 9,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "bf3d0f29-3cd9-4a33-a7b2-0bfd631489d4",

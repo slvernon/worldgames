@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:20Z",
+  "updatedAt": "2026-07-16T14:47:17Z",
   "teams": {
     "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
       "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
@@ -51,9 +51,17 @@
       "round": "Final",
       "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
       "awayRef": "34285736-228f-41ad-a4db-047d671526a8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "away": {
+        "goals": 0,
+        "points": 4,
+        "total": 4
+      },
+      "status": "final"
     },
     {
       "id": "3d3cc603-5348-42fa-becb-b3125b86762f",
@@ -65,9 +73,17 @@
       "round": "Final",
       "homeRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
       "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 3,
+        "total": 15
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",

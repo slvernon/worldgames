@@ -1,7 +1,7 @@
 {
   "slug": "open-hurling",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:32Z",
+  "updatedAt": "2026-07-16T14:47:25Z",
   "teams": {
     "4050c474-3c6c-487f-b235-772b85097be7": {
       "id": "4050c474-3c6c-487f-b235-772b85097be7",
@@ -87,9 +87,17 @@
       "round": "Round 1",
       "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
       "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "away": {
+        "goals": 17,
+        "points": 15,
+        "total": 66
+      },
+      "status": "final"
     },
     {
       "id": "c46a5ccc-a116-4b3b-87c7-2f691b8e0547",

@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-3",
   "season": "2026",
-  "updatedAt": "2026-07-16T12:46:22Z",
+  "updatedAt": "2026-07-16T14:47:18Z",
   "teams": {
     "4830995d-47e0-4246-a562-9d069171a1a5": {
       "id": "4830995d-47e0-4246-a562-9d069171a1a5",
@@ -11,6 +11,10 @@
       "id": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
       "name": "Dairy Girls LGFA"
     },
+    "7b547ce7-9d81-4026-9f21-f9150bd51ec7": {
+      "id": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
+      "name": "Argentina"
+    },
     "3205d5cc-5f8e-47c5-a241-d5b73d20c329": {
       "id": "3205d5cc-5f8e-47c5-a241-d5b73d20c329",
       "name": "Canada LGFA - Ottawa"
@@ -18,10 +22,6 @@
     "37e0fc3a-5158-4d81-b594-3fcc1203fc61": {
       "id": "37e0fc3a-5158-4d81-b594-3fcc1203fc61",
       "name": "Central/Eastern Europe LGFA"
-    },
-    "7b547ce7-9d81-4026-9f21-f9150bd51ec7": {
-      "id": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
-      "name": "Argentina"
     },
     "c721050d-4ba6-4af9-80cf-d86c51ceb88f": {
       "id": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
@@ -49,12 +49,26 @@
       "id": "0091d6d2-0d86-4748-8f3c-79272c4ee32b",
       "stage": "knockout",
       "date": "2026-07-16",
-      "time": "13:30",
-      "pitch": "Field 5",
+      "time": "17:00",
+      "pitch": "Field 6",
       "pool": null,
       "round": "Final",
       "homeRef": "4830995d-47e0-4246-a562-9d069171a1a5",
       "awayRef": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "3b2a1c19-6126-4308-917b-45e8ed7175aa",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "15:30",
+      "pitch": "Field 1",
+      "pool": null,
+      "round": "SF",
+      "homeRef": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
+      "awayRef": "4830995d-47e0-4246-a562-9d069171a1a5",
       "home": null,
       "away": null,
       "status": "scheduled"
