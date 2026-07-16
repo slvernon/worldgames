@@ -8,11 +8,12 @@
   var WG = window.WG = window.WG || {};
 
   // Simulation parameters — Poisson means for goals / points, per side.
-  //  Southeast: goal-oriented, faces NY's largely untested goal defence -> more goals.
-  //  New York: points team from range (scouting), gambles on goals rarely & less accurately
-  //  under pressure -> few goals, many points. Tuned so the spread matches the schedule-
-  //  adjusted ratings (NY a marginal favourite).
-  var SIM = { seG: 2.4, seP: 5.6, nyG: 1.3, nyP: 9.2 };
+  // Derived from an opponent-adjusted attack/defence model fit to all 36 Division 1
+  // games (each side's real scoring run through the other's real defence), with
+  // small-sample shrinkage. Both defences are elite so scoring is low; New York's
+  // league-best defence throttles Southeast's goal-based attack more than Southeast's
+  // defence contains New York's points -> New York a modest favourite (~58%).
+  var SIM = { seG: 1.87, seP: 1.82, nyG: 1.67, nyP: 3.62 };
   var N = 10000;
 
   function poisson(lambda) {            // Knuth
@@ -96,7 +97,7 @@
       '<p class="thesis"><span class="lead">It’s ours to take</span>' +
         'A coin flip between the two best teams in the division. It won’t be won by one magic bullet — it’ll be won by <b>contesting every ball, taking the chances we get, and never giving their shooters time</b>.</p>' +
       '<div class="verdict">' +
-        '<div class="vtile"><div class="k">Matchup</div><div class="big">50/50</div><div class="foot">two best teams</div></div>' +
+        '<div class="vtile"><div class="k">Matchup</div><div class="big">One score</div><div class="foot">in it to the end</div></div>' +
         '<div class="vtile"><div class="k">Adj. rating</div><div class="big ny">#1 / #2</div><div class="foot">NY +11 · us +10</div></div>' +
         '<div class="vtile"><div class="k">Their game</div><div class="big ny">POINTS</div><div class="foot">not goals — from range</div></div>' +
       '</div>' +
@@ -104,11 +105,11 @@
       // PROJECTION + SIM
       '<section><h2 class="fmsec">Projected result — 10,000 simulations</h2><div class="fmcard proj">' +
         '<div class="projline">' +
-          '<div class="projteam se"><div class="nm">Southeast</div><div class="sc">2–6</div><div class="tot">12</div></div>' +
+          '<div class="projteam se"><div class="nm">Southeast</div><div class="sc">1–02</div><div class="tot">5</div></div>' +
           '<div class="projdash">–</div>' +
-          '<div class="projteam ny"><div class="nm">New York</div><div class="sc">1–09</div><div class="tot">12</div></div>' +
+          '<div class="projteam ny"><div class="nm">New York</div><div class="sc">1–04</div><div class="tot">7</div></div>' +
         '</div>' +
-        '<div class="projcap">A typical regulation scoreline — tight, often decided by a score or in extra time. New York edge it more often than not.</div>' +
+        '<div class="projcap">A tight, low-scoring final — both defences are elite. Typically decided by a single score or in extra time, with New York shading it more often than not.</div>' +
         '<div class="wp"><div class="wpbar"></div><div class="wplabels"></div></div>' +
         '<div class="histhead"><span class="histtitle">Winning margin — distribution of outcomes</span>' +
           '<button type="button" class="rerun">↻ Re-run</button></div>' +
