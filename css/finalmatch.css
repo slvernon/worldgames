@@ -16,17 +16,20 @@
 .wg-fm .fmnote b { color:var(--wg-text); }
 
 /* VS scoreboard */
-.wg-fm .vs { display:flex; align-items:stretch; justify-content:center; background:var(--wg-ink);
-  border-radius:var(--wg-radius); padding:18px 12px; box-shadow:var(--wg-shadow); }
-.wg-fm .vs .team { flex:1 1 0; min-width:0; text-align:center; }
-.wg-fm .vs .crest { width:50px; height:50px; border-radius:50%; margin:0 auto 8px; display:flex;
-  align-items:center; justify-content:center; font:900 18px/1 var(--wg-font-head,'Poppins'); color:#fff; }
-.wg-fm .vs .se .crest { background:var(--wg-crimson); } .wg-fm .vs .ny .crest { background:var(--wg-blue); }
-.wg-fm .vs .tname { font:700 15px/1.15 var(--wg-font-head,'Poppins'); color:#fff; }
-.wg-fm .vs .sub { font-size:12px; color:rgba(255,255,255,.6); margin-top:3px; }
-.wg-fm .vs .mid { flex:0 0 60px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
-.wg-fm .vs .mid .v { font:900 14px/1 var(--wg-font-head,'Poppins'); color:rgba(255,255,255,.5); letter-spacing:.06em; }
-.wg-fm .vs .mid .dt { font-size:9.5px; color:rgba(255,255,255,.55); text-align:center; line-height:1.25; }
+.wg-fm .vs { background:var(--wg-ink); border-radius:var(--wg-radius); padding:20px 14px 15px; box-shadow:var(--wg-shadow); }
+.wg-fm .vsrow { display:flex; align-items:flex-start; justify-content:center; gap:8px; }
+.wg-fm .vs .team { flex:1 1 0; min-width:0; text-align:center; display:flex; flex-direction:column; align-items:center; }
+.wg-fm .vs .crest { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font:900 20px/1 var(--wg-font-head,'Poppins'); color:#fff; }
+.wg-fm .vs .se .crest { background:var(--wg-crimson); box-shadow:0 0 0 4px color-mix(in srgb, var(--wg-crimson) 26%, transparent); }
+.wg-fm .vs .ny .crest { background:var(--wg-blue); box-shadow:0 0 0 4px color-mix(in srgb, var(--wg-blue) 26%, transparent); }
+.wg-fm .vs .tname { font:700 14.5px/1.2 var(--wg-font-head,'Poppins'); color:#fff; margin-top:11px;
+  min-height:2.4em; display:flex; align-items:center; justify-content:center; }
+.wg-fm .vs .sub { font-size:12px; color:rgba(255,255,255,.62); margin-top:1px; }
+.wg-fm .vs .mid { flex:0 0 40px; align-self:center; text-align:center; }
+.wg-fm .vs .mid .v { font:900 15px/1 var(--wg-font-head,'Poppins'); color:rgba(255,255,255,.42); letter-spacing:.08em; }
+.wg-fm .vsmeta { text-align:center; margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.1);
+  font-size:12px; font-weight:600; color:rgba(255,255,255,.72); letter-spacing:.01em; }
 
 /* thesis + verdict */
 .wg-fm .thesis { text-align:center; margin:16px auto 0; max-width:47ch; font-size:14.5px; color:var(--wg-text-dim); text-wrap:balance; }
