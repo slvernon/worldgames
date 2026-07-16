@@ -12,23 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css?v=17" />
-  <link rel="stylesheet" href="css/calendar.css?v=17" />
-  <link rel="stylesheet" href="css/players.css?v=17" />
+  <link rel="stylesheet" href="css/styles.css?v=18" />
+  <link rel="stylesheet" href="css/calendar.css?v=18" />
+  <link rel="stylesheet" href="css/finalmatch.css?v=18" />
   <style>
     /* accessible-hidden helper for form labels */
     .wg-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
       overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-    /* Cup Final scouting banner (links to final.html) */
-    .wg-finalbar{display:flex;align-items:center;gap:10px;justify-content:center;
-      max-width:680px;margin:0 auto;padding:10px 16px;text-decoration:none;
-      background:#fff;border:1px solid var(--wg-line,#e2e2ec);border-bottom:none;
-      color:var(--wg-text,#1c1c28);font-weight:600;font-size:13.5px}
-    .wg-finalbar:hover{background:var(--wg-surface-2,#f0f0f5)}
-    .wg-finalbar .tag{font:700 10px/1 'Poppins',sans-serif;letter-spacing:.06em;
-      text-transform:uppercase;color:#fff;background:var(--wg-crimson,#E40048);
-      padding:4px 8px;border-radius:6px}
-    .wg-finalbar .arrow{margin-left:2px;color:var(--wg-text-faint,#9494a6);font-weight:700}
   </style>
 </head>
 <body>
@@ -52,13 +42,6 @@
   <!-- 4-color brand rule, directly under the masthead -->
   <div class="wg-rule"></div>
 
-  <!-- Link to the Cup Final scouting report -->
-  <a class="wg-finalbar" href="final.html">
-    <span class="tag">Cup Final</span>
-    Scouting Report — Southeast vs New York
-    <span class="arrow">→</span>
-  </a>
-
   <!-- View toggle / tab bar (Bracket | Calendar). Fixed bottom on phones. -->
   <nav class="wg-tabbar" id="wg-tabbar" aria-label="Views">
     <button class="wg-tab" data-view="bracket" type="button">
@@ -75,32 +58,33 @@
       </svg>
       Calendar
     </button>
-    <button class="wg-tab" data-view="players" type="button">
+    <button class="wg-tab" data-view="finalmatch" type="button">
       <svg class="wg-tab__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>
+        <path d="M6 4h12v3a6 6 0 0 1-12 0z"/><path d="M6 5H4v1a3 3 0 0 0 3 3"/><path d="M18 5h2v1a3 3 0 0 1-3 3"/>
+        <path d="M9 20h6"/><path d="M12 13v4"/>
       </svg>
-      Players
+      Final
     </button>
   </nav>
 
   <main class="wg-main">
     <section class="wg-view" id="wg-view-bracket" role="tabpanel" aria-label="Bracket"></section>
     <section class="wg-view" id="wg-view-calendar" role="tabpanel" aria-label="Calendar"></section>
-    <section class="wg-view" id="wg-view-players" role="tabpanel" aria-label="Players"></section>
+    <section class="wg-view" id="wg-view-finalmatch" role="tabpanel" aria-label="Final Match"></section>
     <div id="wg-root" hidden></div>
   </main>
 
   <footer class="wg-footer" id="wg-footer" aria-live="polite"></footer>
 
   <!-- Modules IN DEPENDENCY ORDER -->
-  <script src="js/data.js?v=17"></script>
-  <script src="js/standings.js?v=17"></script>
-  <script src="js/scenarios.js?v=17"></script>
-  <script src="js/predictions.js?v=17"></script>
-  <script src="js/forecast.js?v=17"></script>
-  <script src="js/bracket.js?v=17"></script>
-  <script src="js/calendar.js?v=17"></script>
-  <script src="js/players.js?v=17"></script>
-  <script src="js/app.js?v=17"></script>
+  <script src="js/data.js?v=18"></script>
+  <script src="js/standings.js?v=18"></script>
+  <script src="js/scenarios.js?v=18"></script>
+  <script src="js/predictions.js?v=18"></script>
+  <script src="js/forecast.js?v=18"></script>
+  <script src="js/bracket.js?v=18"></script>
+  <script src="js/calendar.js?v=18"></script>
+  <script src="js/finalmatch.js?v=18"></script>
+  <script src="js/app.js?v=18"></script>
 </body>
 </html>

@@ -25,7 +25,7 @@
   var DEFAULT_VIEW = 'bracket';
 
   // ---- DOM refs (resolved on init) -----------------------------------------
-  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elViewPlayers, elTabs, elFooter;
+  var elSelect, elDivName, elTabbar, elViewBracket, elViewCalendar, elViewFinal, elTabs, elFooter;
 
   // ---- runtime state -------------------------------------------------------
   var current = {
@@ -87,14 +87,14 @@
 
   // Render whichever view is active for the current division.
   function renderActiveView() {
-    // Players is team-based and independent of the selected division, so it
-    // renders even before/without a loaded division.
-    if (current.view === 'players') {
-      if (WG.players && typeof WG.players.render === 'function') {
-        try { WG.players.render(elViewPlayers); }
-        catch (e) { console.error('players render failed', e); showEmpty(elViewPlayers, 'Players unavailable.'); }
+    // Final Match is a standalone scouting view, independent of the selected
+    // division, so it renders even before/without a loaded division.
+    if (current.view === 'finalmatch') {
+      if (WG.finalmatch && typeof WG.finalmatch.render === 'function') {
+        try { WG.finalmatch.render(elViewFinal); }
+        catch (e) { console.error('finalmatch render failed', e); showEmpty(elViewFinal, 'Final Match unavailable.'); }
       } else {
-        showEmpty(elViewPlayers, 'Players not available.');
+        showEmpty(elViewFinal, 'Final Match not available.');
       }
       return;
     }
@@ -132,7 +132,7 @@
   function applyViewToggle() {
     elViewBracket.classList.toggle('is-active', current.view === 'bracket');
     elViewCalendar.classList.toggle('is-active', current.view === 'calendar');
-    if (elViewPlayers) elViewPlayers.classList.toggle('is-active', current.view === 'players');
+    if (elViewFinal) elViewFinal.classList.toggle('is-active', current.view === 'finalmatch');
     for (var i = 0; i < elTabs.length; i++) {
       var t = elTabs[i];
       t.classList.toggle('is-active', t.getAttribute('data-view') === current.view);
@@ -147,7 +147,7 @@
   }
 
   function setView(view) {
-    if (view !== 'bracket' && view !== 'calendar' && view !== 'players') return;
+    if (view !== 'bracket' && view !== 'calendar' && view !== 'finalmatch') return;
     current.view = view;
     lsSet(LS.view, view);
     applyViewToggle();
@@ -263,7 +263,7 @@
     elTabbar = document.getElementById('wg-tabbar');
     elViewBracket = document.getElementById('wg-view-bracket');
     elViewCalendar = document.getElementById('wg-view-calendar');
-    elViewPlayers = document.getElementById('wg-view-players');
+    elViewFinal = document.getElementById('wg-view-finalmatch');
     elFooter = document.getElementById('wg-footer');
     elTabs = elTabbar ? elTabbar.querySelectorAll('.wg-tab') : [];
 
@@ -278,7 +278,7 @@
     var savedDiv = lsGet(LS.div);
     var savedView = lsGet(LS.view);
     var startSlug = metaFor(savedDiv) ? savedDiv : DEFAULT_DIV;
-    current.view = (savedView === 'calendar' || savedView === 'bracket' || savedView === 'players') ? savedView : DEFAULT_VIEW;
+    current.view = (savedView === 'calendar' || savedView === 'bracket' || savedView === 'finalmatch') ? savedView : DEFAULT_VIEW;
 
     // Wire events.
     elSelect.addEventListener('change', function () {

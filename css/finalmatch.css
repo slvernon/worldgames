@@ -1,0 +1,168 @@
+/* Final Match view — Cup Final scouting + Monte Carlo simulation.
+   Lives inside the SPA and reuses the site tokens from styles.css (--wg-*).
+   Southeast = --wg-crimson (red), New York = --wg-blue. */
+
+.wg-fm { max-width:680px; margin:0 auto; padding:2px 0 8px; }
+.wg-fm * { box-sizing:border-box; }
+.wg-fm .num { font-variant-numeric:tabular-nums; }
+
+.wg-fm section { margin-top:22px; }
+.wg-fm h2.fmsec { font:800 13px/1.2 var(--wg-font-head,'Poppins',sans-serif); letter-spacing:.12em;
+  text-transform:uppercase; color:var(--wg-text-dim); margin:0 0 12px; display:flex; align-items:center; gap:9px; }
+.wg-fm h2.fmsec::before { content:""; width:16px; height:3px; border-radius:2px; background:var(--wg-crimson); }
+.wg-fm .fmcard { background:var(--wg-surface); border:1px solid var(--wg-line); border-radius:var(--wg-radius);
+  box-shadow:var(--wg-shadow); padding:18px; }
+.wg-fm .fmnote { margin:14px 0 0; font-size:12.5px; color:var(--wg-text-dim); }
+.wg-fm .fmnote b { color:var(--wg-text); }
+
+/* VS scoreboard */
+.wg-fm .vs { display:flex; align-items:stretch; justify-content:center; background:var(--wg-ink);
+  border-radius:var(--wg-radius); padding:18px 12px; box-shadow:var(--wg-shadow); }
+.wg-fm .vs .team { flex:1 1 0; min-width:0; text-align:center; }
+.wg-fm .vs .crest { width:50px; height:50px; border-radius:50%; margin:0 auto 8px; display:flex;
+  align-items:center; justify-content:center; font:900 18px/1 var(--wg-font-head,'Poppins'); color:#fff; }
+.wg-fm .vs .se .crest { background:var(--wg-crimson); } .wg-fm .vs .ny .crest { background:var(--wg-blue); }
+.wg-fm .vs .tname { font:700 15px/1.15 var(--wg-font-head,'Poppins'); color:#fff; }
+.wg-fm .vs .sub { font-size:12px; color:rgba(255,255,255,.6); margin-top:3px; }
+.wg-fm .vs .mid { flex:0 0 60px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
+.wg-fm .vs .mid .v { font:900 14px/1 var(--wg-font-head,'Poppins'); color:rgba(255,255,255,.5); letter-spacing:.06em; }
+.wg-fm .vs .mid .dt { font-size:9.5px; color:rgba(255,255,255,.55); text-align:center; line-height:1.25; }
+
+/* thesis + verdict */
+.wg-fm .thesis { text-align:center; margin:16px auto 0; max-width:47ch; font-size:14.5px; color:var(--wg-text-dim); text-wrap:balance; }
+.wg-fm .thesis .lead { display:block; font:800 clamp(21px,5.6vw,28px)/1.06 var(--wg-font-head,'Poppins');
+  color:var(--wg-text); text-transform:uppercase; letter-spacing:-0.01em; margin-bottom:8px; }
+.wg-fm .thesis b { color:var(--wg-text); }
+.wg-fm .verdict { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+.wg-fm .vtile { background:var(--wg-surface); border:1px solid var(--wg-line); border-radius:var(--wg-radius-sm);
+  padding:12px 10px; text-align:center; box-shadow:var(--wg-shadow); }
+.wg-fm .vtile .k { font:800 10.5px/1.1 var(--wg-font-head,'Poppins'); letter-spacing:.07em; text-transform:uppercase; color:var(--wg-text-faint); }
+.wg-fm .vtile .big { font:800 19px/1.05 var(--wg-font-head,'Poppins'); margin-top:5px; letter-spacing:-0.01em; }
+.wg-fm .vtile .big.se { color:var(--wg-crimson); } .wg-fm .vtile .big.ny { color:var(--wg-blue); }
+.wg-fm .vtile .foot { font-size:11px; color:var(--wg-text-faint); margin-top:3px; }
+
+/* ---- projection + simulation ---- */
+.wg-fm .proj { text-align:center; }
+.wg-fm .projline { display:flex; align-items:center; justify-content:center; gap:14px; margin:2px 0 4px; flex-wrap:wrap; }
+.wg-fm .projteam { text-align:center; }
+.wg-fm .projteam .nm { font:800 11px/1 var(--wg-font-head,'Poppins'); letter-spacing:.06em; text-transform:uppercase; }
+.wg-fm .projteam.se .nm { color:var(--wg-crimson); } .wg-fm .projteam.ny .nm { color:var(--wg-blue); }
+.wg-fm .projteam .sc { font:800 30px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); margin-top:4px; letter-spacing:-0.01em; }
+.wg-fm .projteam .tot { font-size:11px; color:var(--wg-text-faint); }
+.wg-fm .projdash { font:800 20px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text-faint); }
+.wg-fm .projcap { font-size:12px; color:var(--wg-text-dim); margin-top:2px; }
+
+/* win-probability split bar */
+.wg-fm .wp { margin-top:16px; }
+.wg-fm .wpbar { display:flex; height:26px; border-radius:8px; overflow:hidden; border:1px solid var(--wg-line); }
+.wg-fm .wpseg { display:flex; align-items:center; justify-content:center; font:800 12px/1 var(--wg-font-head,'Poppins');
+  color:#fff; min-width:0; white-space:nowrap; }
+.wg-fm .wpseg.se { background:var(--wg-crimson); } .wg-fm .wpseg.draw { background:var(--wg-text-faint); }
+.wg-fm .wpseg.ny { background:var(--wg-blue); }
+.wg-fm .wplabels { display:flex; justify-content:space-between; margin-top:7px; font-size:11.5px; font-weight:700; }
+.wg-fm .wplabels .se { color:var(--wg-crimson); } .wg-fm .wplabels .ny { color:var(--wg-blue); } .wg-fm .wplabels .dr { color:var(--wg-text-faint); }
+
+/* histogram */
+.wg-fm .histhead { display:flex; align-items:baseline; justify-content:space-between; margin:18px 0 8px; }
+.wg-fm .histtitle { font:700 12.5px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); }
+.wg-fm .rerun { font:700 12px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); background:var(--wg-surface-2);
+  border:1px solid var(--wg-line-2); border-radius:8px; padding:7px 12px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+.wg-fm .rerun:hover { background:var(--wg-surface); border-color:var(--wg-text-faint); }
+.wg-fm .rerun:active { transform:translateY(1px); }
+.wg-fm .rerun:focus-visible { outline:2px solid var(--wg-blue); outline-offset:2px; }
+.wg-fm .hist { display:flex; align-items:flex-end; gap:2px; height:120px; padding-top:4px; }
+.wg-fm .hbar { flex:1 1 0; min-width:0; border-radius:3px 3px 1px 1px; background:var(--wg-text-faint); position:relative; transition:height .35s cubic-bezier(.2,.7,.2,1); }
+.wg-fm .hbar.se { background:var(--wg-crimson); } .wg-fm .hbar.ny { background:var(--wg-blue); } .wg-fm .hbar.dr { background:var(--wg-gold); }
+.wg-fm .histx { display:flex; justify-content:space-between; margin-top:7px; font-size:10px; color:var(--wg-text-faint); }
+.wg-fm .histx .mid { color:var(--wg-text-dim); font-weight:700; }
+.wg-fm .histcap { font-size:11.5px; color:var(--wg-text-faint); margin-top:10px; text-align:center; }
+
+/* legend */
+.wg-fm .legend { display:flex; gap:15px; margin:0 0 14px; font-size:12.5px; font-weight:700; flex-wrap:wrap; }
+.wg-fm .legend span { display:inline-flex; align-items:center; gap:7px; color:var(--wg-text-dim); }
+.wg-fm .swatch { width:12px; height:12px; border-radius:3px; }
+.wg-fm .swatch.se { background:var(--wg-crimson); } .wg-fm .swatch.ny { background:var(--wg-blue); } .wg-fm .swatch.dr { background:var(--wg-gold); }
+
+/* head-to-head bars */
+.wg-fm .metric { margin:0 0 15px; } .wg-fm .metric:last-of-type { margin-bottom:0; }
+.wg-fm .mlabel { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+.wg-fm .mname { font-weight:700; font-size:13.5px; color:var(--wg-text); }
+.wg-fm .mhint { font-size:11px; color:var(--wg-text-faint); font-weight:600; }
+.wg-fm .barrow { display:flex; align-items:center; gap:9px; }
+.wg-fm .barrow .who { flex:0 0 20px; font:800 10.5px/1 var(--wg-font-head,'Poppins'); }
+.wg-fm .barrow .who.se { color:var(--wg-crimson); } .wg-fm .barrow .who.ny { color:var(--wg-blue); }
+.wg-fm .track { position:relative; flex:1; height:15px; background:var(--wg-surface-2); border-radius:8px; overflow:hidden; }
+.wg-fm .fill { position:absolute; left:0; top:0; height:100%; border-radius:8px; min-width:3px; }
+.wg-fm .fill.se { background:var(--wg-crimson); } .wg-fm .fill.ny { background:var(--wg-blue); }
+.wg-fm .barrow .val { flex:0 0 46px; text-align:right; font-weight:800; font-size:13px; color:var(--wg-text); }
+.wg-fm .val.better::after { content:" \25C0"; color:#0a7d3f; font-size:9px; }
+
+/* play-style + keys lists */
+.wg-fm .plist { display:flex; flex-direction:column; gap:12px; }
+.wg-fm .prow { display:flex; gap:12px; align-items:flex-start; }
+.wg-fm .prow .ic { flex:0 0 30px; height:30px; border-radius:9px; background:var(--wg-blue);
+  display:flex; align-items:center; justify-content:center; font-size:15px; }
+.wg-fm .prow.counter .ic { background:var(--wg-crimson); }
+.wg-fm .prow .pt { font-size:13.5px; color:var(--wg-text-dim); } .wg-fm .prow .pt b { color:var(--wg-text); font-weight:700; }
+
+.wg-fm .keys { display:flex; flex-direction:column; gap:11px; }
+.wg-fm .key { display:flex; gap:13px; align-items:flex-start; }
+.wg-fm .key .n { flex:0 0 26px; height:26px; border-radius:8px; background:var(--wg-crimson); color:#fff;
+  font:800 13px/1 var(--wg-font-head,'Poppins'); display:flex; align-items:center; justify-content:center; }
+.wg-fm .key .kt { font-size:14px; color:var(--wg-text); } .wg-fm .key .kt b { font-weight:800; } .wg-fm .key .kt .s { color:var(--wg-text-dim); }
+
+/* goals context mini */
+.wg-fm .gcgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:520px){ .wg-fm .gcgrid { grid-template-columns:1fr; } }
+.wg-fm .statbox { background:var(--wg-surface-2); border:1px solid var(--wg-line); border-radius:var(--wg-radius-sm); padding:14px; }
+.wg-fm .statbox .k { font:800 11px/1.1 var(--wg-font-head,'Poppins'); letter-spacing:.06em; text-transform:uppercase; color:var(--wg-text-faint); }
+.wg-fm .statbox .hn { font:800 30px/1 var(--wg-font-head,'Poppins'); color:var(--wg-crimson); margin:8px 0 5px; letter-spacing:-0.02em; }
+.wg-fm .statbox .hn .u { font-size:14px; font-weight:700; color:var(--wg-text-faint); }
+.wg-fm .statbox .cap { font-size:12px; color:var(--wg-text-dim); } .wg-fm .statbox .cap b { color:var(--wg-text); }
+
+/* goal timing */
+.wg-fm .tl .row { margin:0 0 18px; } .wg-fm .tl .row:last-child { margin-bottom:2px; }
+.wg-fm .tl .rowhead { display:flex; align-items:baseline; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.wg-fm .tl .rowhead .nm { font:800 13px/1 var(--wg-font-head,'Poppins'); }
+.wg-fm .tl .rowhead .nm.se { color:var(--wg-crimson); } .wg-fm .tl .rowhead .nm.ny { color:var(--wg-blue); }
+.wg-fm .tl .rowhead .desc { font-size:11.5px; color:var(--wg-text-faint); }
+.wg-fm .axis { position:relative; height:36px; }
+.wg-fm .axis .base { position:absolute; left:0; right:0; top:15px; height:2px; background:var(--wg-line-2); border-radius:2px; }
+.wg-fm .axis .htline { position:absolute; top:9px; left:50%; width:1px; height:14px; background:var(--wg-line-2); }
+.wg-fm .goaldot { position:absolute; top:6px; transform:translateX(-50%); width:19px; height:19px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font:800 9px/1 var(--wg-font-head,'Poppins'); color:#fff;
+  border:2px solid var(--wg-surface); box-shadow:var(--wg-shadow); }
+.wg-fm .goaldot.se { background:var(--wg-crimson); } .wg-fm .goaldot.ny { background:var(--wg-blue); }
+.wg-fm .axis .tick { position:absolute; top:25px; font-size:9.5px; color:var(--wg-text-faint); transform:translateX(-50%); white-space:nowrap; }
+.wg-fm .tl .foot { font-size:11.5px; color:var(--wg-text-dim); margin-top:2px; } .wg-fm .tl .foot b { color:var(--wg-crimson); }
+
+/* circle */
+.wg-fm .loop { display:flex; flex-direction:column; }
+.wg-fm .loopstep { display:flex; align-items:center; gap:11px; padding:11px 13px; background:var(--wg-surface-2);
+  border:1px solid var(--wg-line); border-radius:var(--wg-radius-sm); position:relative; }
+.wg-fm .loopstep + .loopstep { margin-top:22px; }
+.wg-fm .loopstep + .loopstep::before { content:"\2193"; position:absolute; top:-19px; left:22px; color:var(--wg-text-faint); font:900 15px/1 var(--wg-font-head,'Poppins'); }
+.wg-fm .chip { flex:0 0 auto; font:800 12px/1 var(--wg-font-head,'Poppins'); padding:5px 9px; border-radius:7px; white-space:nowrap; }
+.wg-fm .chip.se { background:color-mix(in srgb, var(--wg-crimson) 15%, var(--wg-surface)); color:var(--wg-crimson); }
+.wg-fm .chip.ny { background:color-mix(in srgb, var(--wg-blue) 15%, var(--wg-surface)); color:var(--wg-blue); }
+.wg-fm .chip.neu { background:var(--wg-surface-3,#e7e7f0); color:var(--wg-text-dim); border:1px solid var(--wg-line); }
+.wg-fm .loopstep .beat { font-size:13px; color:var(--wg-text-dim); } .wg-fm .loopstep .beat b { color:var(--wg-text); }
+.wg-fm .loopstep .sc { color:var(--wg-text-faint); font-weight:700; font-size:12px; }
+
+/* watch list */
+.wg-fm .watchhead { font-size:12.5px; color:var(--wg-text-dim); margin:0 0 12px; }
+.wg-fm .watch { display:flex; flex-direction:column; gap:9px; }
+.wg-fm .wrow { display:flex; gap:12px; align-items:flex-start; padding:12px 13px; border-radius:var(--wg-radius-sm);
+  background:var(--wg-surface-2); border:1px solid var(--wg-line); }
+.wg-fm .jersey { flex:0 0 auto; width:34px; height:34px; border-radius:9px; background:var(--wg-blue); color:#fff;
+  font:800 15px/1 var(--wg-font-head,'Poppins'); display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.wg-fm .wrow.key .jersey { background:var(--wg-crimson); }
+.wg-fm .wt { font-size:13px; color:var(--wg-text-dim); min-width:0; }
+.wg-fm .wt .wn { font-weight:800; color:var(--wg-text); }
+.wg-fm .tagf { display:inline-block; margin-left:2px; font:700 9.5px/1 var(--wg-font-head,'Poppins'); letter-spacing:.04em;
+  text-transform:uppercase; padding:3px 6px; border-radius:5px; vertical-align:middle; }
+.wg-fm .tagf.threat { background:color-mix(in srgb, var(--wg-crimson) 15%, var(--wg-surface)); color:var(--wg-crimson); }
+.wg-fm .tagf.danger { background:color-mix(in srgb, var(--wg-blue) 15%, var(--wg-surface)); color:var(--wg-blue); }
+.wg-fm .tagf.info { background:var(--wg-surface-3,#e7e7f0); color:var(--wg-text-dim); }
+
+.wg-fm .fmfoot { margin-top:22px; text-align:center; font-size:11px; color:var(--wg-text-faint); line-height:1.6; }
