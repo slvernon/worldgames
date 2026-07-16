@@ -1,15 +1,19 @@
 {
   "slug": "intl-lgfa-3",
   "season": "2026",
-  "updatedAt": "2026-07-16T17:35:37Z",
+  "updatedAt": "2026-07-16T18:43:30Z",
   "teams": {
-    "4830995d-47e0-4246-a562-9d069171a1a5": {
-      "id": "4830995d-47e0-4246-a562-9d069171a1a5",
-      "name": "Co Europe LGFA (GGE)"
+    "9868ac26-a6b5-40d8-a3e7-203cac1dc16b": {
+      "id": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
+      "name": "Dairy Girls LGFA"
     },
     "7b547ce7-9d81-4026-9f21-f9150bd51ec7": {
       "id": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
       "name": "Argentina"
+    },
+    "4830995d-47e0-4246-a562-9d069171a1a5": {
+      "id": "4830995d-47e0-4246-a562-9d069171a1a5",
+      "name": "Co Europe LGFA (GGE)"
     },
     "3205d5cc-5f8e-47c5-a241-d5b73d20c329": {
       "id": "3205d5cc-5f8e-47c5-a241-d5b73d20c329",
@@ -18,10 +22,6 @@
     "37e0fc3a-5158-4d81-b594-3fcc1203fc61": {
       "id": "37e0fc3a-5158-4d81-b594-3fcc1203fc61",
       "name": "Central/Eastern Europe LGFA"
-    },
-    "9868ac26-a6b5-40d8-a3e7-203cac1dc16b": {
-      "id": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
-      "name": "Dairy Girls LGFA"
     },
     "c721050d-4ba6-4af9-80cf-d86c51ceb88f": {
       "id": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
@@ -53,11 +53,19 @@
       "pitch": "Field 6",
       "pool": null,
       "round": "Final",
-      "homeRef": "4830995d-47e0-4246-a562-9d069171a1a5",
+      "homeRef": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
       "awayRef": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 2,
+        "points": 0,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "3b2a1c19-6126-4308-917b-45e8ed7175aa",
