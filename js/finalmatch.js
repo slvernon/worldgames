@@ -90,7 +90,7 @@
           '<div class="mid"><div class="v">VS</div></div>' +
           '<div class="team ny"><div class="crest">NY</div><div class="tname">New York<br>Camogie</div><div class="sub">8–1 · top seed</div></div>' +
         '</div>' +
-        '<div class="vsmeta">Cup Final · Fri 17 Jul, 12:20 · Waterford</div>' +
+        '<div class="vsmeta">Cup Final · Fri 17 Jul, 13:20 · Waterford</div>' +
       '</div>' +
 
       '<p class="thesis"><span class="lead">It’s ours to take</span>' +
