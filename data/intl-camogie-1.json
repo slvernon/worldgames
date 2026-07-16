@@ -57,11 +57,11 @@
   ],
   "knockout": [
     { "id": "cup_qf",    "bracket": "cup",    "roundLabel": "Preliminary", "date": "2026-07-16", "time": "08:30", "pitch": "Field 8",           "homeRef": "B2",         "awayRef": "A3",         "feedsTo": { "matchId": "cup_sf2",   "slot": "away" } },
-    { "id": "cup_sf1",   "bracket": "cup",    "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "10:30", "pitch": "Field 8",           "homeRef": "B1",         "awayRef": "A2",         "feedsTo": { "matchId": "cup_final", "slot": "home" } },
-    { "id": "cup_sf2",   "bracket": "cup",    "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "10:30", "pitch": "Field 7",           "homeRef": "A1",         "awayRef": "W:cup_qf",   "feedsTo": { "matchId": "cup_final", "slot": "away" } },
+    { "id": "cup_sf1",   "bracket": "cup",    "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "10:30", "pitch": "Field 4",           "homeRef": "B1",         "awayRef": "A2",         "feedsTo": { "matchId": "cup_final", "slot": "home" } },
+    { "id": "cup_sf2",   "bracket": "cup",    "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "10:30", "pitch": "Field 3",           "homeRef": "A1",         "awayRef": "W:cup_qf",   "feedsTo": { "matchId": "cup_final", "slot": "away" } },
     { "id": "cup_final", "bracket": "cup",    "roundLabel": "Final",       "date": "2026-07-17", "time": "13:20", "pitch": "Azzurri Walsh Park", "homeRef": "W:cup_sf1",  "awayRef": "W:cup_sf2",  "feedsTo": null },
     { "id": "sh_sf1",    "bracket": "shield", "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "09:30", "pitch": "Field 7",           "homeRef": "B3",         "awayRef": "A4",         "feedsTo": { "matchId": "sh_final",  "slot": "home" } },
     { "id": "sh_sf2",    "bracket": "shield", "roundLabel": "Semi-Final",  "date": "2026-07-16", "time": "09:30", "pitch": "Field 8",           "homeRef": "A5",         "awayRef": "B4",         "feedsTo": { "matchId": "sh_final",  "slot": "away" } },
-    { "id": "sh_final",  "bracket": "shield", "roundLabel": "Final",       "date": "2026-07-16", "time": "12:45", "pitch": "Field 5",           "homeRef": "W:sh_sf1",   "awayRef": "W:sh_sf2",   "feedsTo": null }
+    { "id": "sh_final",  "bracket": "shield", "roundLabel": "Final",       "date": "2026-07-16", "time": "12:45", "pitch": "Field 4",           "homeRef": "W:sh_sf1",   "awayRef": "W:sh_sf2",   "feedsTo": null }
   ]
 }
