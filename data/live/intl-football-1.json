@@ -1,27 +1,15 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:02Z",
+  "updatedAt": "2026-07-16T09:07:35Z",
   "teams": {
     "504c296f-8eb5-fd52-1e74-4da4e8373251": {
       "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
       "name": "Sean McDermott's"
     },
-    "c11f7e34-2a86-4da1-998e-70666c783ffe": {
-      "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
-      "name": "Éire Óg GAC - San Francisco"
-    },
-    "a05b8392-9986-46cc-965f-82f8a1784505": {
-      "id": "a05b8392-9986-46cc-965f-82f8a1784505",
-      "name": "Australasia"
-    },
-    "df894de5-82fa-489b-87f1-c0e6a6efff97": {
-      "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
-      "name": "Brittany Black"
-    },
-    "bf667990-75a3-48de-b0cc-9193bc6f5d79": {
-      "id": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
-      "name": "France Championship"
+    "69282e0b-1c7b-4007-abd6-3180cb539c27": {
+      "id": "69282e0b-1c7b-4007-abd6-3180cb539c27",
+      "name": "Delco Gaels Philadelphia"
     },
     "8e341294-c364-44c1-a558-522c0dc201e5": {
       "id": "8e341294-c364-44c1-a558-522c0dc201e5",
@@ -31,17 +19,29 @@
       "id": "a7d67e17-7f89-474d-a00c-5b3e53486fe9",
       "name": "GAA Canada - Montreal/Quebec"
     },
-    "7a41c5e1-d325-4fe9-9550-c344164e38ad": {
-      "id": "7a41c5e1-d325-4fe9-9550-c344164e38ad",
-      "name": "France Challenger"
-    },
-    "69282e0b-1c7b-4007-abd6-3180cb539c27": {
-      "id": "69282e0b-1c7b-4007-abd6-3180cb539c27",
-      "name": "Delco Gaels Philadelphia"
+    "df894de5-82fa-489b-87f1-c0e6a6efff97": {
+      "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
+      "name": "Brittany Black"
     },
     "e662b245-ffba-420c-a842-4478fdea26d0": {
       "id": "e662b245-ffba-420c-a842-4478fdea26d0",
       "name": "Argentina White"
+    },
+    "a05b8392-9986-46cc-965f-82f8a1784505": {
+      "id": "a05b8392-9986-46cc-965f-82f8a1784505",
+      "name": "Australasia"
+    },
+    "bf667990-75a3-48de-b0cc-9193bc6f5d79": {
+      "id": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
+      "name": "France Championship"
+    },
+    "c11f7e34-2a86-4da1-998e-70666c783ffe": {
+      "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
+      "name": "Éire Óg GAC - San Francisco"
+    },
+    "7a41c5e1-d325-4fe9-9550-c344164e38ad": {
+      "id": "7a41c5e1-d325-4fe9-9550-c344164e38ad",
+      "name": "France Challenger"
     }
   },
   "fixtures": [
@@ -64,7 +64,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "15:00",
-      "pitch": "Field 4",
+      "pitch": "Field 3",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -78,10 +78,10 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 6",
       "pool": null,
       "round": "SF2",
-      "homeRef": "1st Pool B",
+      "homeRef": "504c296f-8eb5-fd52-1e74-4da4e8373251",
       "awayRef": "Winner QF1",
       "home": null,
       "away": null,
@@ -92,10 +92,10 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF1",
-      "homeRef": "1st Pool A",
+      "homeRef": "69282e0b-1c7b-4007-abd6-3180cb539c27",
       "awayRef": "Winner QF2",
       "home": null,
       "away": null,
@@ -106,11 +106,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF2",
-      "homeRef": "4th Pool B",
-      "awayRef": "5th Pool A",
+      "homeRef": "8e341294-c364-44c1-a558-522c0dc201e5",
+      "awayRef": "a7d67e17-7f89-474d-a00c-5b3e53486fe9",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -120,11 +120,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 6",
       "pool": null,
       "round": "SF1",
-      "homeRef": "4th Pool A",
-      "awayRef": "5th Pool B",
+      "homeRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
+      "awayRef": "e662b245-ffba-420c-a842-4478fdea26d0",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -134,11 +134,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": "Field 1",
+      "pitch": "Field 4",
       "pool": null,
       "round": "QF1",
-      "homeRef": "2nd Pool A",
-      "awayRef": "3rd Pool B",
+      "homeRef": "a05b8392-9986-46cc-965f-82f8a1784505",
+      "awayRef": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -148,11 +148,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": "Field 2",
+      "pitch": "Field 3",
       "pool": null,
-      "round": "QF1",
-      "homeRef": "2nd Pool B",
-      "awayRef": "3rd Pool A",
+      "round": "QF2",
+      "homeRef": "c11f7e34-2a86-4da1-998e-70666c783ffe",
+      "awayRef": "7a41c5e1-d325-4fe9-9550-c344164e38ad",
       "home": null,
       "away": null,
       "status": "scheduled"

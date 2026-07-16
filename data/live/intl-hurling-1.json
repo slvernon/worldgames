@@ -1,51 +1,51 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:09Z",
+  "updatedAt": "2026-07-16T09:07:47Z",
   "teams": {
-    "2d96597a-29a4-4d43-95d7-3bad6752d875": {
-      "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
-      "name": "Pearse Óg San Francisco"
-    },
-    "cea875fc-9112-4a95-afc2-45ad8db3278b": {
-      "id": "cea875fc-9112-4a95-afc2-45ad8db3278b",
-      "name": "Legen-Dairy Daddies"
-    },
-    "8ac1b329-b13d-4651-9cbd-ef60d96e367f": {
-      "id": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
-      "name": "France Hurling"
-    },
-    "05990fb1-d313-43db-9c95-04adca442784": {
-      "id": "05990fb1-d313-43db-9c95-04adca442784",
-      "name": "Southeast Stripes"
-    },
     "389b191b-5481-4737-ac23-7207daa3bea8": {
       "id": "389b191b-5481-4737-ac23-7207daa3bea8",
       "name": "Philadelphia Red"
     },
-    "7efcdefa-38da-4d69-9498-a1651ca190d9": {
-      "id": "7efcdefa-38da-4d69-9498-a1651ca190d9",
-      "name": "Joseph Mary Plunketts"
+    "2d96597a-29a4-4d43-95d7-3bad6752d875": {
+      "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
+      "name": "Pearse Óg San Francisco"
     },
-    "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e": {
-      "id": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
-      "name": "Philadelphia Blue"
-    },
-    "c36af5df-6571-47c1-8305-0b72bbd37c0a": {
-      "id": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "name": "Southeast Stars"
-    },
-    "c0a505d0-2c4d-4661-a782-5fbd79e94fea": {
-      "id": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
-      "name": "Canada Hurling 1"
+    "647d1a71-1d0c-4898-af20-af812469942d": {
+      "id": "647d1a71-1d0c-4898-af20-af812469942d",
+      "name": "Pittsburgh Pucas"
     },
     "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc": {
       "id": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
       "name": "New York GAA"
     },
-    "647d1a71-1d0c-4898-af20-af812469942d": {
-      "id": "647d1a71-1d0c-4898-af20-af812469942d",
-      "name": "Pittsburgh Pucas"
+    "7efcdefa-38da-4d69-9498-a1651ca190d9": {
+      "id": "7efcdefa-38da-4d69-9498-a1651ca190d9",
+      "name": "Joseph Mary Plunketts"
+    },
+    "cea875fc-9112-4a95-afc2-45ad8db3278b": {
+      "id": "cea875fc-9112-4a95-afc2-45ad8db3278b",
+      "name": "Legen-Dairy Daddies"
+    },
+    "c0a505d0-2c4d-4661-a782-5fbd79e94fea": {
+      "id": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
+      "name": "Canada Hurling 1"
+    },
+    "c36af5df-6571-47c1-8305-0b72bbd37c0a": {
+      "id": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "name": "Southeast Stars"
+    },
+    "05990fb1-d313-43db-9c95-04adca442784": {
+      "id": "05990fb1-d313-43db-9c95-04adca442784",
+      "name": "Southeast Stripes"
+    },
+    "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e": {
+      "id": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
+      "name": "Philadelphia Blue"
+    },
+    "8ac1b329-b13d-4651-9cbd-ef60d96e367f": {
+      "id": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
+      "name": "France Hurling"
     }
   },
   "fixtures": [
@@ -68,7 +68,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "14:15",
-      "pitch": "Field 7",
+      "pitch": "Field 3",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -82,10 +82,10 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "13:30",
-      "pitch": "Field 6",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Final",
-      "homeRef": "5th Pool B",
+      "homeRef": "389b191b-5481-4737-ac23-7207daa3bea8",
       "awayRef": "Winner SF",
       "home": null,
       "away": null,
@@ -96,11 +96,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 3",
       "pool": null,
       "round": "SF 2",
-      "homeRef": "1st Pool B",
-      "awayRef": "2nd Pool A",
+      "homeRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
+      "awayRef": "647d1a71-1d0c-4898-af20-af812469942d",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -110,11 +110,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": null,
+      "pitch": "Field 3",
       "pool": null,
       "round": "SF1",
-      "homeRef": "1st Pool A",
-      "awayRef": "2nd Pool B",
+      "homeRef": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
+      "awayRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -124,11 +124,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": null,
+      "pitch": "Field 3",
       "pool": null,
       "round": "SF2",
-      "homeRef": "3rd Pool B",
-      "awayRef": "4th Pool A",
+      "homeRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
+      "awayRef": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -138,11 +138,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF1",
-      "homeRef": "3rd Pool A",
-      "awayRef": "4th Pool B",
+      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -152,11 +152,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": null,
+      "pitch": "Field 4",
       "pool": null,
       "round": "SF",
-      "homeRef": "5th Pool A",
-      "awayRef": "6th Pool B",
+      "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
+      "awayRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -166,56 +166,66 @@
       "stage": "group",
       "date": "2026-07-16",
       "time": "08:30",
-      "pitch": "Field 6",
+      "pitch": "Field 7",
       "pool": null,
       "round": "Round 7",
       "homeRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
       "awayRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 7,
+        "total": 7
+      },
+      "away": {
+        "goals": 1,
+        "points": 9,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "4b61ee61-af46-4b0d-ae41-9056e7fe18e0",
       "stage": "group",
       "date": "2026-07-16",
       "time": "08:30",
-      "pitch": "Field 5",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Round 7",
       "homeRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
       "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 3,
+        "total": 3
+      },
+      "away": {
+        "goals": 1,
+        "points": 8,
+        "total": 11
+      },
+      "status": "final"
     },
     {
       "id": "a573c83f-1d95-46df-aef4-766facb3828a",
       "stage": "group",
       "date": "2026-07-16",
       "time": "08:30",
-      "pitch": "Field 7",
+      "pitch": "Field 3",
       "pool": null,
       "round": "Round 7",
       "homeRef": "389b191b-5481-4737-ac23-7207daa3bea8",
       "awayRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "bf1a6deb-f354-4b13-b686-2efaccba2c7e",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "14:00",
-      "pitch": "Field 6",
-      "pool": null,
-      "round": "Round 10",
-      "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
-      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 2,
+        "points": 7,
+        "total": 13
+      },
+      "status": "final"
     },
     {
       "id": "cf12cece-51aa-49b2-a61c-e29067269b3e",
@@ -281,6 +291,20 @@
         "points": 10,
         "total": 10
       },
+      "status": "final"
+    },
+    {
+      "id": "bf1a6deb-f354-4b13-b686-2efaccba2c7e",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "14:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "Round 10",
+      "homeRef": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
+      "awayRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "home": null,
+      "away": null,
       "status": "final"
     },
     {

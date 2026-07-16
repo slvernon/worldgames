@@ -1,43 +1,43 @@
 {
   "slug": "intl-hurling-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:10Z",
+  "updatedAt": "2026-07-16T09:07:48Z",
   "teams": {
     "c962c966-363e-4b30-a013-f7553e67cd87": {
       "id": "c962c966-363e-4b30-a013-f7553e67cd87",
       "name": "Heartland Red"
     },
-    "94199b01-b7d8-4065-93b6-038172906733": {
-      "id": "94199b01-b7d8-4065-93b6-038172906733",
-      "name": "Canada Hurling  2"
+    "1ac44ea5-5508-4b13-92a1-68e39b2c39a3": {
+      "id": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
+      "name": "Heartland Blue"
     },
     "921c244c-e082-41b2-a139-ae2bab78c44d": {
       "id": "921c244c-e082-41b2-a139-ae2bab78c44d",
       "name": "Seattle Gaels"
     },
-    "330059b3-05fe-496f-b409-79459886f3f4": {
-      "id": "330059b3-05fe-496f-b409-79459886f3f4",
-      "name": "German Hawks"
-    },
     "acbd36bd-12a9-46d0-b463-fdbe420d6725": {
       "id": "acbd36bd-12a9-46d0-b463-fdbe420d6725",
       "name": "Mid Atlantic GAA Hurling"
     },
-    "1ac44ea5-5508-4b13-92a1-68e39b2c39a3": {
-      "id": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
-      "name": "Heartland Blue"
+    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
+      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
+      "name": "Heartland St. Louis"
     },
     "7fcb7072-4e07-452e-a962-ce7228cdd5bb": {
       "id": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
       "name": "German Ravens"
     },
+    "94199b01-b7d8-4065-93b6-038172906733": {
+      "id": "94199b01-b7d8-4065-93b6-038172906733",
+      "name": "Canada Hurling  2"
+    },
+    "330059b3-05fe-496f-b409-79459886f3f4": {
+      "id": "330059b3-05fe-496f-b409-79459886f3f4",
+      "name": "German Hawks"
+    },
     "97a024e2-b172-4f7b-a8f4-a0f05fd555d4": {
       "id": "97a024e2-b172-4f7b-a8f4-a0f05fd555d4",
       "name": "GGE Central & East Hurling"
-    },
-    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
-      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "name": "Heartland St. Louis"
     }
   },
   "fixtures": [
@@ -46,7 +46,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "14:15",
-      "pitch": "Field 6",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -60,10 +60,10 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 4",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "c962c966-363e-4b30-a013-f7553e67cd87",
       "awayRef": "Winner SF2",
       "home": null,
       "away": null,
@@ -74,11 +74,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": null,
+      "pitch": "Field 6",
       "pool": null,
       "round": "SF2",
-      "homeRef": "1st Pool B",
-      "awayRef": "2nd Pool A",
+      "homeRef": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
+      "awayRef": "921c244c-e082-41b2-a139-ae2bab78c44d",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -88,39 +88,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": null,
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "1st Pool A",
-      "awayRef": "Winner QF",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "f8268f3f-8f72-4c71-966c-87f361ec2424",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "09:00",
       "pitch": "Field 7",
       "pool": null,
-      "round": "QF",
-      "homeRef": "2nd Pool B",
-      "awayRef": "3rd Pool A",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "f5b451f9-ac1b-473c-9efc-a92fc4a47565",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "09:00",
-      "pitch": null,
-      "pool": null,
       "round": "SF1",
-      "homeRef": "4th Pool A",
-      "awayRef": "4th Pool B",
+      "homeRef": "acbd36bd-12a9-46d0-b463-fdbe420d6725",
+      "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -130,14 +102,58 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:00",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF2",
-      "homeRef": "3rd Pool B",
-      "awayRef": "5th Pool A",
+      "homeRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
+      "awayRef": "94199b01-b7d8-4065-93b6-038172906733",
       "home": null,
       "away": null,
       "status": "scheduled"
+    },
+    {
+      "id": "f8268f3f-8f72-4c71-966c-87f361ec2424",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "09:00",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "QF",
+      "homeRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
+      "awayRef": "330059b3-05fe-496f-b409-79459886f3f4",
+      "home": {
+        "goals": 3,
+        "points": 4,
+        "total": 13
+      },
+      "away": {
+        "goals": 2,
+        "points": 2,
+        "total": 8
+      },
+      "status": "final"
+    },
+    {
+      "id": "f5b451f9-ac1b-473c-9efc-a92fc4a47565",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "09:00",
+      "pitch": "Field 4",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "c962c966-363e-4b30-a013-f7553e67cd87",
+      "awayRef": "97a024e2-b172-4f7b-a8f4-a0f05fd555d4",
+      "home": {
+        "goals": 5,
+        "points": 6,
+        "total": 21
+      },
+      "away": {
+        "goals": 2,
+        "points": 2,
+        "total": 8
+      },
+      "status": "final"
     },
     {
       "id": "187b1349-8cb7-470f-a0dc-5a89fb715394",

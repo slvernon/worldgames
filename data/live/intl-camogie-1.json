@@ -1,43 +1,43 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:11Z",
+  "updatedAt": "2026-07-16T09:07:50Z",
   "teams": {
+    "8dfb940c-8f50-40a7-9132-030c9d464467": {
+      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
+      "name": "USGAA Southeast"
+    },
+    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
+      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
+      "name": "Heartland St. Louis"
+    },
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "name": "New York Camogie"
-    },
-    "f78e92aa-8502-484f-b144-58687b5d06b1": {
-      "id": "f78e92aa-8502-484f-b144-58687b5d06b1",
-      "name": "Camogie Canada"
     },
     "be3ef321-15e4-450d-81da-7d3cb11e53ce": {
       "id": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
       "name": "Twin Cities (TCRE)"
     },
-    "9c714107-c89e-42a6-8325-666b999f4470": {
-      "id": "9c714107-c89e-42a6-8325-666b999f4470",
-      "name": "Rust Belt Banshees"
-    },
-    "8dfb940c-8f50-40a7-9132-030c9d464467": {
-      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
-      "name": "USGAA Southeast"
-    },
     "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
       "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
       "name": "An Triúr Deirfiúr"
-    },
-    "b844e7a3-e662-4bc9-974e-154a71f58fc2": {
-      "id": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
-      "name": "Europe Camogie International (GGE)"
     },
     "d6d25d54-71ba-47ad-afee-41d162123910": {
       "id": "d6d25d54-71ba-47ad-afee-41d162123910",
       "name": "Appalachian Alliance"
     },
-    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
-      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "name": "Heartland St. Louis"
+    "b844e7a3-e662-4bc9-974e-154a71f58fc2": {
+      "id": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
+      "name": "Europe Camogie International (GGE)"
+    },
+    "9c714107-c89e-42a6-8325-666b999f4470": {
+      "id": "9c714107-c89e-42a6-8325-666b999f4470",
+      "name": "Rust Belt Banshees"
+    },
+    "f78e92aa-8502-484f-b144-58687b5d06b1": {
+      "id": "f78e92aa-8502-484f-b144-58687b5d06b1",
+      "name": "Camogie Canada"
     }
   },
   "fixtures": [
@@ -60,7 +60,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:45",
-      "pitch": "Field 5",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -74,11 +74,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 4",
       "pool": null,
       "round": "SF2",
-      "homeRef": "1st Pool B",
-      "awayRef": "2nd Pool A",
+      "homeRef": "8dfb940c-8f50-40a7-9132-030c9d464467",
+      "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -88,11 +88,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 3",
       "pool": null,
       "round": "SF1",
-      "homeRef": "1st Pool A",
-      "awayRef": "Winner QF",
+      "homeRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
+      "awayRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -102,11 +102,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF1",
-      "homeRef": "3rd Pool B",
-      "awayRef": "4th Pool A",
+      "homeRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
+      "awayRef": "d6d25d54-71ba-47ad-afee-41d162123910",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -116,11 +116,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": null,
+      "pitch": "Field 8",
       "pool": null,
       "round": "SF2",
-      "homeRef": "5th Pool A",
-      "awayRef": "4th Pool B",
+      "homeRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
+      "awayRef": "9c714107-c89e-42a6-8325-666b999f4470",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -133,11 +133,19 @@
       "pitch": "Field 8",
       "pool": null,
       "round": "QF",
-      "homeRef": "2nd Pool B",
-      "awayRef": "3rd Pool A",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "homeRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
+      "awayRef": "f78e92aa-8502-484f-b144-58687b5d06b1",
+      "home": {
+        "goals": 2,
+        "points": 7,
+        "total": 13
+      },
+      "away": {
+        "goals": 1,
+        "points": 0,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "4524ea3e-019e-47ca-a63a-cfdcaafc8465",

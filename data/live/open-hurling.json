@@ -1,7 +1,7 @@
 {
   "slug": "open-hurling",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:14Z",
+  "updatedAt": "2026-07-16T09:07:54Z",
   "teams": {
     "4050c474-3c6c-487f-b235-772b85097be7": {
       "id": "4050c474-3c6c-487f-b235-772b85097be7",
@@ -40,7 +40,7 @@
       "stage": "group",
       "date": "2026-07-16",
       "time": "17:00",
-      "pitch": "Field 6",
+      "pitch": "Field 4",
       "pool": null,
       "round": "Round 2",
       "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
@@ -54,25 +54,11 @@
       "stage": "group",
       "date": "2026-07-16",
       "time": "16:00",
-      "pitch": "Field 6",
+      "pitch": "Field 3",
       "pool": null,
       "round": "Round 3",
       "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
       "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "0c6684b5-36e1-481e-84f6-f33ea1e393b6",
-      "stage": "group",
-      "date": "2026-07-16",
-      "time": "15:00",
-      "pitch": "Field 6",
-      "pool": null,
-      "round": "Round 1",
-      "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
-      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -87,6 +73,20 @@
       "round": "Round 1",
       "homeRef": "b9ad32f8-8cd4-4c40-8dad-c959479901b0",
       "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "0c6684b5-36e1-481e-84f6-f33ea1e393b6",
+      "stage": "group",
+      "date": "2026-07-16",
+      "time": "15:00",
+      "pitch": "Field 5",
+      "pool": null,
+      "round": "Round 1",
+      "homeRef": "4050c474-3c6c-487f-b235-772b85097be7",
+      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "home": null,
       "away": null,
       "status": "scheduled"

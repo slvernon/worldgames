@@ -1,43 +1,43 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:07Z",
+  "updatedAt": "2026-07-16T09:07:43Z",
   "teams": {
-    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
-      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "name": "Galicia 2"
-    },
-    "386339f7-9d58-49b0-a9b5-75540cf45414": {
-      "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "name": "Québec LGFA"
-    },
-    "fd082792-db67-4b77-9bb5-aff462427ba4": {
-      "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
-      "name": "Trinity Milton Ladies"
-    },
-    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
-      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
-      "name": "Gasconha"
+    "df894de5-82fa-489b-87f1-c0e6a6efff97": {
+      "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
+      "name": "Brittany Black"
     },
     "34285736-228f-41ad-a4db-047d671526a8": {
       "id": "34285736-228f-41ad-a4db-047d671526a8",
       "name": "San Francisco Fog City Harps Black"
     },
-    "b4a5ff03-290b-4c71-a652-f1dc742410f3": {
-      "id": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
-      "name": "Team South USA - Cailíní Bláthanna"
+    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
+      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "name": "Galicia 2"
+    },
+    "fd082792-db67-4b77-9bb5-aff462427ba4": {
+      "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
+      "name": "Trinity Milton Ladies"
+    },
+    "f199af06-9f45-4a2c-be37-f1ef2748410e": {
+      "id": "f199af06-9f45-4a2c-be37-f1ef2748410e",
+      "name": "Neustrie LGFA"
+    },
+    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
+      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
+      "name": "Gasconha"
+    },
+    "386339f7-9d58-49b0-a9b5-75540cf45414": {
+      "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
+      "name": "Québec LGFA"
     },
     "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6": {
       "id": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
       "name": "Canada LGFA 2"
     },
-    "df894de5-82fa-489b-87f1-c0e6a6efff97": {
-      "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
-      "name": "Brittany Black"
-    },
-    "f199af06-9f45-4a2c-be37-f1ef2748410e": {
-      "id": "f199af06-9f45-4a2c-be37-f1ef2748410e",
-      "name": "Neustrie LGFA"
+    "b4a5ff03-290b-4c71-a652-f1dc742410f3": {
+      "id": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
+      "name": "Team South USA - Cailíní Bláthanna"
     }
   },
   "fixtures": [
@@ -46,7 +46,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "14:15",
-      "pitch": "Field 4",
+      "pitch": "Field 5",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -60,7 +60,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "13:30",
-      "pitch": "Field 3",
+      "pitch": "Field 6",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -70,29 +70,29 @@
       "status": "scheduled"
     },
     {
-      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
+      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": null,
+      "pitch": "Field 5",
       "pool": null,
-      "round": "SF1",
-      "homeRef": "1st Pool B",
-      "awayRef": "Winner QF",
+      "round": "SF2",
+      "homeRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
+      "awayRef": "34285736-228f-41ad-a4db-047d671526a8",
       "home": null,
       "away": null,
       "status": "scheduled"
     },
     {
-      "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
+      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:30",
-      "pitch": null,
+      "pitch": "Field 2",
       "pool": null,
-      "round": "SF2",
-      "homeRef": "1st Pool A",
-      "awayRef": "2nd Pool B",
+      "round": "SF1",
+      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "awayRef": "Winner QF",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -102,11 +102,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 5",
       "pool": null,
       "round": "SF2",
-      "homeRef": "3rd Pool A",
-      "awayRef": "5th Pool B",
+      "homeRef": "fd082792-db67-4b77-9bb5-aff462427ba4",
+      "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -116,11 +116,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:30",
-      "pitch": null,
+      "pitch": "Field 2",
       "pool": null,
       "round": "SF1",
-      "homeRef": "4th Pool A",
-      "awayRef": "4th Pool B",
+      "homeRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
+      "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -130,36 +130,14 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:00",
-      "pitch": "Field 4",
+      "pitch": "Field 5",
       "pool": null,
       "round": "QF",
-      "homeRef": "2nd Pool A",
-      "awayRef": "3rd Pool B",
+      "homeRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
+      "awayRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
       "home": null,
       "away": null,
       "status": "scheduled"
-    },
-    {
-      "id": "f5be6bc8-4baf-49d1-9b5e-70ef1ab7fcc1",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "16:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "Round 10",
-      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "home": {
-        "goals": 4,
-        "points": 4,
-        "total": 16
-      },
-      "away": {
-        "goals": 0,
-        "points": 2,
-        "total": 2
-      },
-      "status": "final"
     },
     {
       "id": "df54eef8-570a-4967-a1c0-5a09598bd981",
@@ -184,24 +162,24 @@
       "status": "final"
     },
     {
-      "id": "2930fff2-4aed-4e60-9e81-7b0eaf80fba4",
+      "id": "f5be6bc8-4baf-49d1-9b5e-70ef1ab7fcc1",
       "stage": "group",
       "date": "2026-07-15",
-      "time": "15:30",
+      "time": "16:00",
       "pitch": "Field 7",
       "pool": null,
       "round": "Round 10",
-      "homeRef": "34285736-228f-41ad-a4db-047d671526a8",
-      "awayRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
+      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
       "home": {
-        "goals": 2,
-        "points": 5,
-        "total": 11
+        "goals": 4,
+        "points": 4,
+        "total": 16
       },
       "away": {
-        "goals": 1,
-        "points": 3,
-        "total": 6
+        "goals": 0,
+        "points": 2,
+        "total": 2
       },
       "status": "final"
     },
@@ -224,6 +202,28 @@
         "goals": 1,
         "points": 6,
         "total": 9
+      },
+      "status": "final"
+    },
+    {
+      "id": "2930fff2-4aed-4e60-9e81-7b0eaf80fba4",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "15:30",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "Round 10",
+      "homeRef": "34285736-228f-41ad-a4db-047d671526a8",
+      "awayRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
       },
       "status": "final"
     },

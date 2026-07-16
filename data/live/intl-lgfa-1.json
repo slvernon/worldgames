@@ -1,43 +1,43 @@
 {
   "slug": "intl-lgfa-1",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:05Z",
+  "updatedAt": "2026-07-16T09:07:42Z",
   "teams": {
-    "34eb8e02-de50-4efb-b428-a4e7f1d75de7": {
-      "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
-      "name": "Brittany White"
+    "6a1af94f-5134-4dee-8af9-d23098d6fc19": {
+      "id": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
+      "name": "France A"
     },
     "a05b8392-9986-46cc-965f-82f8a1784505": {
       "id": "a05b8392-9986-46cc-965f-82f8a1784505",
       "name": "Australasia"
     },
+    "d67202c3-f1d8-48d6-8ba1-6d733774cbde": {
+      "id": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
+      "name": "San Francisco Fog City Harps White"
+    },
     "3e56809d-1746-4cfd-9fa8-63215231bd3a": {
       "id": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
       "name": "France B"
     },
-    "5675951f-53b9-47dc-8cfa-b505724245a6": {
-      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
-      "name": "Middle East"
-    },
-    "6a1af94f-5134-4dee-8af9-d23098d6fc19": {
-      "id": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
-      "name": "France A"
+    "34eb8e02-de50-4efb-b428-a4e7f1d75de7": {
+      "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
+      "name": "Brittany White"
     },
     "6401e429-b4e6-44e8-a92a-3934d50aa7f6": {
       "id": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "name": "Canada LGFA 1"
     },
-    "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0": {
-      "id": "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0",
-      "name": "NY LGFA"
-    },
     "8e341294-c364-44c1-a558-522c0dc201e5": {
       "id": "8e341294-c364-44c1-a558-522c0dc201e5",
       "name": "Galicia 1"
     },
-    "d67202c3-f1d8-48d6-8ba1-6d733774cbde": {
-      "id": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
-      "name": "San Francisco Fog City Harps White"
+    "5675951f-53b9-47dc-8cfa-b505724245a6": {
+      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "name": "Middle East"
+    },
+    "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0": {
+      "id": "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0",
+      "name": "NY LGFA"
     }
   },
   "fixtures": [
@@ -60,7 +60,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:45",
-      "pitch": "Field 4",
+      "pitch": "Field 5",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -74,11 +74,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 2",
       "pool": null,
       "round": "SF2",
-      "homeRef": "1st Pool B",
-      "awayRef": "2nd PoolA",
+      "homeRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
+      "awayRef": "a05b8392-9986-46cc-965f-82f8a1784505",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -88,11 +88,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:00",
-      "pitch": null,
+      "pitch": "Field 5",
       "pool": null,
       "round": "SF1",
-      "homeRef": "1st Pool A",
-      "awayRef": "Winner QF",
+      "homeRef": "d67202c3-f1d8-48d6-8ba1-6d733774cbde",
+      "awayRef": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -102,11 +102,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": null,
+      "pitch": "Field 2",
       "pool": null,
       "round": "SF1",
-      "homeRef": "4th Pool A",
-      "awayRef": "4th Pool B",
+      "homeRef": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
+      "awayRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -116,28 +116,44 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:30",
-      "pitch": null,
+      "pitch": "Field 5",
       "pool": null,
       "round": "SF2",
-      "homeRef": "3rd Pool A",
-      "awayRef": "5th Pool B",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "homeRef": "8e341294-c364-44c1-a558-522c0dc201e5",
+      "awayRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "home": {
+        "goals": 5,
+        "points": 9,
+        "total": 24
+      },
+      "away": {
+        "goals": 1,
+        "points": 1,
+        "total": 4
+      },
+      "status": "final"
     },
     {
       "id": "3bc445f7-1699-4d76-950d-2ddc67820612",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "09:00",
-      "pitch": "Field 3",
+      "pitch": "Field 2",
       "pool": null,
       "round": "QF",
-      "homeRef": "2nd Pool B",
-      "awayRef": "3rd Pool A",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "homeRef": "bead76ce-a6d4-4e9b-9a0d-fe87789a34e0",
+      "awayRef": "3e56809d-1746-4cfd-9fa8-63215231bd3a",
+      "home": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
+      "away": {
+        "goals": 0,
+        "points": 6,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "75175b78-6384-48df-9820-34b0c6cc3aff",
@@ -194,14 +210,14 @@
       "homeRef": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
       "awayRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
       "home": {
-        "goals": 2,
+        "goals": 1,
         "points": 6,
-        "total": 12
+        "total": 9
       },
       "away": {
         "goals": 0,
-        "points": 2,
-        "total": 2
+        "points": 3,
+        "total": 3
       },
       "status": "final"
     },

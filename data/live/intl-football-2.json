@@ -1,23 +1,19 @@
 {
   "slug": "intl-football-2",
   "season": "2026",
-  "updatedAt": "2026-07-15T19:11:03Z",
+  "updatedAt": "2026-07-16T09:07:39Z",
   "teams": {
+    "4565a776-abd0-419a-97c9-9c5e0116b835": {
+      "id": "4565a776-abd0-419a-97c9-9c5e0116b835",
+      "name": "GAA Canada Men's Football"
+    },
+    "032dd17b-77fa-b7d5-1a47-6c5ff2b53242": {
+      "id": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
+      "name": "Leicester Naomh Padraig"
+    },
     "8d127b3b-1b37-4be1-93de-8cd5f6ded86c": {
       "id": "8d127b3b-1b37-4be1-93de-8cd5f6ded86c",
       "name": "GAA Canada - Ottawa Gaels"
-    },
-    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
-      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "name": "Galicia 2"
-    },
-    "8cc60820-b470-4522-91d2-dd1b904c0b1f": {
-      "id": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
-      "name": "Siroc"
-    },
-    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
-      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
-      "name": "Gasconha"
     },
     "0da2ee08-34de-45a4-8a7a-1592b6d4fa4c": {
       "id": "0da2ee08-34de-45a4-8a7a-1592b6d4fa4c",
@@ -27,29 +23,33 @@
       "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
       "name": "Brittany White"
     },
-    "f50ea8b4-e348-4fa0-a23a-443ee929e046": {
-      "id": "f50ea8b4-e348-4fa0-a23a-443ee929e046",
-      "name": "Charlotte James Connolly's"
+    "8cc60820-b470-4522-91d2-dd1b904c0b1f": {
+      "id": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
+      "name": "Siroc"
     },
     "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5": {
       "id": "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5",
       "name": "Cuenca del Plata - Argentina"
     },
-    "4565a776-abd0-419a-97c9-9c5e0116b835": {
-      "id": "4565a776-abd0-419a-97c9-9c5e0116b835",
-      "name": "GAA Canada Men's Football"
+    "c90b240e-74ab-4d6b-82dc-fdfff06e3c05": {
+      "id": "c90b240e-74ab-4d6b-82dc-fdfff06e3c05",
+      "name": "Argentina Blue"
     },
     "07d42cfb-f444-4040-b5a5-82e0854e77f0": {
       "id": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "name": "Asia"
     },
-    "032dd17b-77fa-b7d5-1a47-6c5ff2b53242": {
-      "id": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
-      "name": "Leicester Naomh Padraig"
+    "f50ea8b4-e348-4fa0-a23a-443ee929e046": {
+      "id": "f50ea8b4-e348-4fa0-a23a-443ee929e046",
+      "name": "Charlotte James Connolly's"
     },
-    "c90b240e-74ab-4d6b-82dc-fdfff06e3c05": {
-      "id": "c90b240e-74ab-4d6b-82dc-fdfff06e3c05",
-      "name": "Argentina Blue"
+    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
+      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "name": "Galicia 2"
+    },
+    "aa042f48-9862-4ed8-b366-b79a730b77a8": {
+      "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
+      "name": "Gasconha"
     }
   },
   "fixtures": [
@@ -58,7 +58,7 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "15:45",
-      "pitch": "Field 3",
+      "pitch": "Field 5",
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
@@ -86,10 +86,10 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:30",
-      "pitch": null,
+      "pitch": "Field 3",
       "pool": null,
       "round": "SF2",
-      "homeRef": "4th Pool B",
+      "homeRef": "4565a776-abd0-419a-97c9-9c5e0116b835",
       "awayRef": "Winner QF1",
       "home": null,
       "away": null,
@@ -100,11 +100,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "12:30",
-      "pitch": null,
+      "pitch": "Field 7",
       "pool": null,
       "round": "SF1",
-      "homeRef": "4th Pool A",
-      "awayRef": "Winner QF3",
+      "homeRef": "032dd17b-77fa-b7d5-1a47-6c5ff2b53242",
+      "awayRef": "Winner QF2",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -114,11 +114,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": null,
+      "pitch": "Field 1",
       "pool": null,
       "round": "SF1",
       "homeRef": "8d127b3b-1b37-4be1-93de-8cd5f6ded86c",
-      "awayRef": "Winner QF2",
+      "awayRef": "0da2ee08-34de-45a4-8a7a-1592b6d4fa4c",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -128,25 +128,11 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "11:00",
-      "pitch": null,
+      "pitch": "Field 6",
       "pool": null,
       "round": "SF2",
-      "homeRef": "1st Pool B",
-      "awayRef": "Winner QF1",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "04a88eb6-7360-480b-ada8-9cf1fa5f0f15",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": "Field 1",
-      "pool": null,
-      "round": "QF1",
-      "homeRef": "5th Pool A",
-      "awayRef": "6th Pool B",
+      "homeRef": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
+      "awayRef": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -156,11 +142,25 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "10:00",
-      "pitch": "Field 2",
+      "pitch": "Field 4",
       "pool": null,
       "round": "QF2",
-      "homeRef": "5th Pool B",
-      "awayRef": "6th Pool A",
+      "homeRef": "0a961a00-4f7c-4a5a-b578-1d3e95c2a8e5",
+      "awayRef": "c90b240e-74ab-4d6b-82dc-fdfff06e3c05",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "04a88eb6-7360-480b-ada8-9cf1fa5f0f15",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": "Field 6",
+      "pool": null,
+      "round": "QF1",
+      "homeRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
+      "awayRef": "f50ea8b4-e348-4fa0-a23a-443ee929e046",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -170,28 +170,44 @@
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "08:30",
-      "pitch": null,
+      "pitch": "Field 6",
       "pool": null,
       "round": "QF 1",
       "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
       "awayRef": "8cc60820-b470-4522-91d2-dd1b904c0b1f",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 7,
+        "total": 13
+      },
+      "away": {
+        "goals": 1,
+        "points": 10,
+        "total": 13
+      },
+      "status": "final"
     },
     {
       "id": "853c85e2-9e0b-4788-8464-14b9a4371103",
       "stage": "knockout",
       "date": "2026-07-16",
       "time": "08:30",
-      "pitch": null,
+      "pitch": "Field 1",
       "pool": null,
       "round": "QF2",
       "homeRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
       "awayRef": "0da2ee08-34de-45a4-8a7a-1592b6d4fa4c",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 4,
+        "total": 4
+      },
+      "away": {
+        "goals": 1,
+        "points": 5,
+        "total": 8
+      },
+      "status": "final"
     },
     {
       "id": "a5ad7557-76f5-4c49-9774-6d830a0b53c2",
