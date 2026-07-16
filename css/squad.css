@@ -1,0 +1,71 @@
+/* Squad view — Southeast offensive analytics. Companion to the Final tab.
+   Reuses site tokens (--wg-*). Team accent = --wg-crimson; points = --wg-gold. */
+
+.wg-sq { max-width:680px; margin:0 auto; padding:2px 0 8px; }
+.wg-sq * { box-sizing:border-box; }
+.wg-sq .num { font-variant-numeric:tabular-nums; }
+.wg-sq section { margin-top:22px; }
+.wg-sq h2.sqsec { font:800 13px/1.2 var(--wg-font-head,'Poppins',sans-serif); letter-spacing:.12em;
+  text-transform:uppercase; color:var(--wg-text-dim); margin:0 0 6px; display:flex; align-items:center; gap:9px; }
+.wg-sq h2.sqsec::before { content:""; width:16px; height:3px; border-radius:2px; background:var(--wg-crimson); }
+.wg-sq .sqsub { font-size:12.5px; color:var(--wg-text-dim); margin:0 0 12px; }
+.wg-sq .sqcard { background:var(--wg-surface); border:1px solid var(--wg-line); border-radius:var(--wg-radius);
+  box-shadow:var(--wg-shadow); padding:18px; }
+
+/* hero */
+.wg-sq .sqhero { text-align:center; border-radius:var(--wg-radius); padding:22px 16px 20px; box-shadow:var(--wg-shadow);
+  border:1px solid var(--wg-line);
+  background:radial-gradient(120% 90% at 50% -10%, color-mix(in srgb, var(--wg-crimson) 14%, transparent), transparent 62%), var(--wg-surface); }
+.wg-sq .sqhero .eyebrow { font:800 11px/1 var(--wg-font-head,'Poppins'); letter-spacing:.16em; text-transform:uppercase; color:var(--wg-crimson); }
+.wg-sq .sqhero h1 { font:800 clamp(24px,6.4vw,34px)/1.04 var(--wg-font-head,'Poppins'); text-transform:uppercase;
+  letter-spacing:-0.01em; margin:10px 0 6px; color:var(--wg-text); text-wrap:balance; }
+.wg-sq .sqhero p { margin:0 auto; max-width:42ch; font-size:14px; color:var(--wg-text-dim); text-wrap:balance; }
+.wg-sq .sqstats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+.wg-sq .sqstat { background:var(--wg-surface-2); border:1px solid var(--wg-line); border-radius:var(--wg-radius-sm); padding:12px 8px; }
+.wg-sq .sqstat .v { font:800 26px/1 var(--wg-font-head,'Poppins'); color:var(--wg-crimson); letter-spacing:-0.02em; }
+.wg-sq .sqstat .l { font-size:11px; font-weight:700; color:var(--wg-text-dim); margin-top:4px; letter-spacing:.03em; }
+
+/* legend */
+.wg-sq .legend { display:flex; gap:16px; margin:0 0 14px; font-size:12.5px; font-weight:700; flex-wrap:wrap; }
+.wg-sq .legend span { display:inline-flex; align-items:center; gap:7px; color:var(--wg-text-dim); }
+.wg-sq .swatch { width:12px; height:12px; border-radius:3px; }
+.wg-sq .swatch.g { background:var(--wg-crimson); } .wg-sq .swatch.p { background:var(--wg-gold); }
+
+/* ranked player rows (raw contribution) */
+.wg-sq .prow { display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid var(--wg-line); }
+.wg-sq .prow:first-of-type { border-top:0; }
+.wg-sq .rank { flex:0 0 18px; text-align:center; font:800 13px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text-faint); }
+.wg-sq .jersey { flex:0 0 30px; height:30px; border-radius:8px; background:var(--wg-crimson); color:#fff;
+  font:800 14px/1 var(--wg-font-head,'Poppins'); display:flex; align-items:center; justify-content:center; }
+.wg-sq .pmain { flex:1 1 auto; min-width:0; }
+.wg-sq .pname { font-weight:700; font-size:13.5px; color:var(--wg-text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.wg-sq .pname .first { color:var(--wg-crimson); }
+.wg-sq .ptrack { display:flex; height:12px; margin-top:5px; border-radius:6px; overflow:hidden; background:var(--wg-surface-2); }
+.wg-sq .pfill-g { background:var(--wg-crimson); height:100%; }
+.wg-sq .pfill-p { background:var(--wg-gold); height:100%; box-shadow:inset 2px 0 0 var(--wg-surface); }
+.wg-sq .pend { flex:0 0 auto; text-align:right; }
+.wg-sq .ptot { font:800 16px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); }
+.wg-sq .pbreak { font-size:10.5px; color:var(--wg-text-faint); font-weight:600; margin-top:2px; white-space:nowrap; }
+
+/* weighted rows */
+.wg-sq .wrow { display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid var(--wg-line); }
+.wg-sq .wrow:first-of-type { border-top:0; }
+.wg-sq .wbarwrap { flex:1 1 auto; min-width:0; }
+.wg-sq .wtrack { height:12px; border-radius:6px; background:var(--wg-surface-2); overflow:hidden; }
+.wg-sq .wfill { height:100%; background:var(--wg-crimson); border-radius:6px; }
+.wg-sq .wval { flex:0 0 42px; text-align:right; font:800 15px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); }
+.wg-sq .move { flex:0 0 auto; font:800 10px/1 var(--wg-font-head,'Poppins'); padding:3px 6px; border-radius:5px; }
+.wg-sq .move.up { background:color-mix(in srgb, #0a7d3f 15%, var(--wg-surface)); color:#0a6c37; }
+.wg-sq .move.down { background:var(--wg-surface-2); color:var(--wg-text-faint); }
+.wg-sq .move.same { color:var(--wg-text-faint); background:transparent; }
+
+/* opponent weight key */
+.wg-sq .wkey { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.wg-sq .wchip { font-size:11.5px; font-weight:700; padding:5px 9px; border-radius:7px; border:1px solid var(--wg-line);
+  background:var(--wg-surface-2); color:var(--wg-text-dim); }
+.wg-sq .wchip b { color:var(--wg-text); }
+.wg-sq .wchip.hard { border-color:color-mix(in srgb, var(--wg-crimson) 40%, var(--wg-line)); }
+
+.wg-sq .fmnote { margin:14px 0 0; font-size:12.5px; color:var(--wg-text-dim); }
+.wg-sq .fmnote b { color:var(--wg-text); }
+.wg-sq .sqfoot { margin-top:22px; text-align:center; font-size:11px; color:var(--wg-text-faint); line-height:1.6; }
