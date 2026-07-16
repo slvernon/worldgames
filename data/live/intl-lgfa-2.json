@@ -1,8 +1,20 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T09:07:43Z",
+  "updatedAt": "2026-07-16T11:08:10Z",
   "teams": {
+    "f199af06-9f45-4a2c-be37-f1ef2748410e": {
+      "id": "f199af06-9f45-4a2c-be37-f1ef2748410e",
+      "name": "Neustrie LGFA"
+    },
+    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
+      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "name": "Galicia 2"
+    },
+    "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6": {
+      "id": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
+      "name": "Canada LGFA 2"
+    },
     "df894de5-82fa-489b-87f1-c0e6a6efff97": {
       "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "name": "Brittany Black"
@@ -11,17 +23,9 @@
       "id": "34285736-228f-41ad-a4db-047d671526a8",
       "name": "San Francisco Fog City Harps Black"
     },
-    "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
-      "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "name": "Galicia 2"
-    },
     "fd082792-db67-4b77-9bb5-aff462427ba4": {
       "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
       "name": "Trinity Milton Ladies"
-    },
-    "f199af06-9f45-4a2c-be37-f1ef2748410e": {
-      "id": "f199af06-9f45-4a2c-be37-f1ef2748410e",
-      "name": "Neustrie LGFA"
     },
     "aa042f48-9862-4ed8-b366-b79a730b77a8": {
       "id": "aa042f48-9862-4ed8-b366-b79a730b77a8",
@@ -30,10 +34,6 @@
     "386339f7-9d58-49b0-a9b5-75540cf45414": {
       "id": "386339f7-9d58-49b0-a9b5-75540cf45414",
       "name": "Québec LGFA"
-    },
-    "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6": {
-      "id": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
-      "name": "Canada LGFA 2"
     },
     "b4a5ff03-290b-4c71-a652-f1dc742410f3": {
       "id": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
@@ -64,7 +64,21 @@
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
+      "home": null,
+      "away": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "awayRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -79,23 +93,17 @@
       "round": "SF2",
       "homeRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "awayRef": "34285736-228f-41ad-a4db-047d671526a8",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": "Field 2",
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "awayRef": "Winner QF",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 0,
+        "total": 3
+      },
+      "away": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "a216b42f-ae99-43dd-9550-231572855097",
@@ -107,9 +115,17 @@
       "round": "SF2",
       "homeRef": "fd082792-db67-4b77-9bb5-aff462427ba4",
       "awayRef": "f199af06-9f45-4a2c-be37-f1ef2748410e",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 5,
+        "total": 5
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "95c3a7c6-9ca0-4cdc-b5ea-8aa09cf50e3b",
@@ -121,9 +137,17 @@
       "round": "SF1",
       "homeRef": "aa042f48-9862-4ed8-b366-b79a730b77a8",
       "awayRef": "386339f7-9d58-49b0-a9b5-75540cf45414",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "away": {
+        "goals": 5,
+        "points": 7,
+        "total": 22
+      },
+      "status": "final"
     },
     {
       "id": "551d1259-4913-415b-8097-2c46302e1e95",
@@ -135,9 +159,17 @@
       "round": "QF",
       "homeRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
       "awayRef": "b4a5ff03-290b-4c71-a652-f1dc742410f3",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 5,
+        "points": 0,
+        "total": 15
+      },
+      "away": {
+        "goals": 3,
+        "points": 4,
+        "total": 13
+      },
+      "status": "final"
     },
     {
       "id": "df54eef8-570a-4967-a1c0-5a09598bd981",
@@ -184,28 +216,6 @@
       "status": "final"
     },
     {
-      "id": "b2a8b1cd-1f14-4815-9bb5-aa9da66e9153",
-      "stage": "group",
-      "date": "2026-07-15",
-      "time": "15:30",
-      "pitch": "Field 3",
-      "pool": null,
-      "round": "Round 6",
-      "homeRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
-      "awayRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
-      "home": {
-        "goals": 2,
-        "points": 2,
-        "total": 8
-      },
-      "away": {
-        "goals": 1,
-        "points": 6,
-        "total": 9
-      },
-      "status": "final"
-    },
-    {
       "id": "2930fff2-4aed-4e60-9e81-7b0eaf80fba4",
       "stage": "group",
       "date": "2026-07-15",
@@ -224,6 +234,28 @@
         "goals": 1,
         "points": 3,
         "total": 6
+      },
+      "status": "final"
+    },
+    {
+      "id": "b2a8b1cd-1f14-4815-9bb5-aa9da66e9153",
+      "stage": "group",
+      "date": "2026-07-15",
+      "time": "15:30",
+      "pitch": "Field 3",
+      "pool": null,
+      "round": "Round 6",
+      "homeRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
+      "awayRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
+      "home": {
+        "goals": 2,
+        "points": 2,
+        "total": 8
+      },
+      "away": {
+        "goals": 1,
+        "points": 6,
+        "total": 9
       },
       "status": "final"
     },

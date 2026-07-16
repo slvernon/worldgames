@@ -1,11 +1,15 @@
 {
   "slug": "intl-hurling-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T09:07:48Z",
+  "updatedAt": "2026-07-16T11:08:15Z",
   "teams": {
     "c962c966-363e-4b30-a013-f7553e67cd87": {
       "id": "c962c966-363e-4b30-a013-f7553e67cd87",
       "name": "Heartland Red"
+    },
+    "7fcb7072-4e07-452e-a962-ce7228cdd5bb": {
+      "id": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
+      "name": "German Ravens"
     },
     "1ac44ea5-5508-4b13-92a1-68e39b2c39a3": {
       "id": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
@@ -23,14 +27,6 @@
       "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
       "name": "Heartland St. Louis"
     },
-    "7fcb7072-4e07-452e-a962-ce7228cdd5bb": {
-      "id": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
-      "name": "German Ravens"
-    },
-    "94199b01-b7d8-4065-93b6-038172906733": {
-      "id": "94199b01-b7d8-4065-93b6-038172906733",
-      "name": "Canada Hurling  2"
-    },
     "330059b3-05fe-496f-b409-79459886f3f4": {
       "id": "330059b3-05fe-496f-b409-79459886f3f4",
       "name": "German Hawks"
@@ -38,6 +34,10 @@
     "97a024e2-b172-4f7b-a8f4-a0f05fd555d4": {
       "id": "97a024e2-b172-4f7b-a8f4-a0f05fd555d4",
       "name": "GGE Central & East Hurling"
+    },
+    "94199b01-b7d8-4065-93b6-038172906733": {
+      "id": "94199b01-b7d8-4065-93b6-038172906733",
+      "name": "Canada Hurling  2"
     }
   },
   "fixtures": [
@@ -64,7 +64,7 @@
       "pool": null,
       "round": "Final",
       "homeRef": "c962c966-363e-4b30-a013-f7553e67cd87",
-      "awayRef": "Winner SF2",
+      "awayRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -93,20 +93,6 @@
       "round": "SF1",
       "homeRef": "acbd36bd-12a9-46d0-b463-fdbe420d6725",
       "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "db73d501-6cf1-47f4-9bc4-ea4815ac7943",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "09:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "SF2",
-      "homeRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
-      "awayRef": "94199b01-b7d8-4065-93b6-038172906733",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -152,6 +138,28 @@
         "goals": 2,
         "points": 2,
         "total": 8
+      },
+      "status": "final"
+    },
+    {
+      "id": "db73d501-6cf1-47f4-9bc4-ea4815ac7943",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "09:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "SF2",
+      "homeRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
+      "awayRef": "94199b01-b7d8-4065-93b6-038172906733",
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
       },
       "status": "final"
     },

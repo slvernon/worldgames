@@ -1,8 +1,16 @@
 {
   "slug": "intl-lgfa-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T09:07:42Z",
+  "updatedAt": "2026-07-16T11:08:08Z",
   "teams": {
+    "6401e429-b4e6-44e8-a92a-3934d50aa7f6": {
+      "id": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
+      "name": "Canada LGFA 1"
+    },
+    "8e341294-c364-44c1-a558-522c0dc201e5": {
+      "id": "8e341294-c364-44c1-a558-522c0dc201e5",
+      "name": "Galicia 1"
+    },
     "6a1af94f-5134-4dee-8af9-d23098d6fc19": {
       "id": "6a1af94f-5134-4dee-8af9-d23098d6fc19",
       "name": "France A"
@@ -22,14 +30,6 @@
     "34eb8e02-de50-4efb-b428-a4e7f1d75de7": {
       "id": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
       "name": "Brittany White"
-    },
-    "6401e429-b4e6-44e8-a92a-3934d50aa7f6": {
-      "id": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
-      "name": "Canada LGFA 1"
-    },
-    "8e341294-c364-44c1-a558-522c0dc201e5": {
-      "id": "8e341294-c364-44c1-a558-522c0dc201e5",
-      "name": "Galicia 1"
     },
     "5675951f-53b9-47dc-8cfa-b505724245a6": {
       "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
@@ -63,8 +63,8 @@
       "pitch": "Field 5",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
+      "awayRef": "8e341294-c364-44c1-a558-522c0dc201e5",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -107,9 +107,17 @@
       "round": "SF1",
       "homeRef": "34eb8e02-de50-4efb-b428-a4e7f1d75de7",
       "awayRef": "6401e429-b4e6-44e8-a92a-3934d50aa7f6",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "away": {
+        "goals": 5,
+        "points": 3,
+        "total": 18
+      },
+      "status": "final"
     },
     {
       "id": "ade938f3-c593-47c8-b063-3a918e4926c8",

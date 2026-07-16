@@ -1,27 +1,11 @@
 {
   "slug": "intl-camogie-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T09:07:50Z",
+  "updatedAt": "2026-07-16T11:08:17Z",
   "teams": {
-    "8dfb940c-8f50-40a7-9132-030c9d464467": {
-      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
-      "name": "USGAA Southeast"
-    },
-    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
-      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "name": "Heartland St. Louis"
-    },
     "f08c98b9-878e-4e78-a31e-2770cbb5a485": {
       "id": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "name": "New York Camogie"
-    },
-    "be3ef321-15e4-450d-81da-7d3cb11e53ce": {
-      "id": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
-      "name": "Twin Cities (TCRE)"
-    },
-    "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
-      "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
-      "name": "An Triúr Deirfiúr"
     },
     "d6d25d54-71ba-47ad-afee-41d162123910": {
       "id": "d6d25d54-71ba-47ad-afee-41d162123910",
@@ -30,6 +14,22 @@
     "b844e7a3-e662-4bc9-974e-154a71f58fc2": {
       "id": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
       "name": "Europe Camogie International (GGE)"
+    },
+    "8dfb940c-8f50-40a7-9132-030c9d464467": {
+      "id": "8dfb940c-8f50-40a7-9132-030c9d464467",
+      "name": "USGAA Southeast"
+    },
+    "c69b5cb5-1e63-4206-a4a0-930ec84f0f72": {
+      "id": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
+      "name": "Heartland St. Louis"
+    },
+    "be3ef321-15e4-450d-81da-7d3cb11e53ce": {
+      "id": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
+      "name": "Twin Cities (TCRE)"
+    },
+    "3a75e551-c1ad-4ca4-9d00-c6561d58bd87": {
+      "id": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
+      "name": "An Triúr Deirfiúr"
     },
     "9c714107-c89e-42a6-8325-666b999f4470": {
       "id": "9c714107-c89e-42a6-8325-666b999f4470",
@@ -49,7 +49,7 @@
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "awayRef": "Winner SF2",
       "home": null,
       "away": null,
@@ -63,8 +63,8 @@
       "pitch": "Field 4",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "d6d25d54-71ba-47ad-afee-41d162123910",
+      "awayRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -79,9 +79,17 @@
       "round": "SF2",
       "homeRef": "8dfb940c-8f50-40a7-9132-030c9d464467",
       "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 6,
+        "points": 3,
+        "total": 21
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "cc46895a-6c67-4354-9be8-11b1b61f1aaa",
@@ -93,9 +101,17 @@
       "round": "SF1",
       "homeRef": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
       "awayRef": "be3ef321-15e4-450d-81da-7d3cb11e53ce",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 6,
+        "total": 12
+      },
+      "away": {
+        "goals": 0,
+        "points": 2,
+        "total": 2
+      },
+      "status": "final"
     },
     {
       "id": "7d9e5bef-06a8-4c95-88ca-5e4128aa63a8",
@@ -107,9 +123,17 @@
       "round": "SF1",
       "homeRef": "3a75e551-c1ad-4ca4-9d00-c6561d58bd87",
       "awayRef": "d6d25d54-71ba-47ad-afee-41d162123910",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "aa2e19ce-6d4f-45a4-97ba-af3cac928481",
@@ -121,9 +145,17 @@
       "round": "SF2",
       "homeRef": "b844e7a3-e662-4bc9-974e-154a71f58fc2",
       "awayRef": "9c714107-c89e-42a6-8325-666b999f4470",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 0,
+        "total": 12
+      },
+      "away": {
+        "goals": 1,
+        "points": 0,
+        "total": 3
+      },
+      "status": "final"
     },
     {
       "id": "719df810-0ff3-4d4d-aabb-af00d8862db6",
