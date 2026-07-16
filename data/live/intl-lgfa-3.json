@@ -1,15 +1,11 @@
 {
   "slug": "intl-lgfa-3",
   "season": "2026",
-  "updatedAt": "2026-07-16T14:47:18Z",
+  "updatedAt": "2026-07-16T16:04:23Z",
   "teams": {
     "4830995d-47e0-4246-a562-9d069171a1a5": {
       "id": "4830995d-47e0-4246-a562-9d069171a1a5",
       "name": "Co Europe LGFA (GGE)"
-    },
-    "9868ac26-a6b5-40d8-a3e7-203cac1dc16b": {
-      "id": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
-      "name": "Dairy Girls LGFA"
     },
     "7b547ce7-9d81-4026-9f21-f9150bd51ec7": {
       "id": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
@@ -22,6 +18,10 @@
     "37e0fc3a-5158-4d81-b594-3fcc1203fc61": {
       "id": "37e0fc3a-5158-4d81-b594-3fcc1203fc61",
       "name": "Central/Eastern Europe LGFA"
+    },
+    "9868ac26-a6b5-40d8-a3e7-203cac1dc16b": {
+      "id": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
+      "name": "Dairy Girls LGFA"
     },
     "c721050d-4ba6-4af9-80cf-d86c51ceb88f": {
       "id": "c721050d-4ba6-4af9-80cf-d86c51ceb88f",
@@ -54,7 +54,7 @@
       "pool": null,
       "round": "Final",
       "homeRef": "4830995d-47e0-4246-a562-9d069171a1a5",
-      "awayRef": "9868ac26-a6b5-40d8-a3e7-203cac1dc16b",
+      "awayRef": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -69,9 +69,17 @@
       "round": "SF",
       "homeRef": "7b547ce7-9d81-4026-9f21-f9150bd51ec7",
       "awayRef": "4830995d-47e0-4246-a562-9d069171a1a5",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
+      },
+      "away": {
+        "goals": 2,
+        "points": 2,
+        "total": 8
+      },
+      "status": "final"
     },
     {
       "id": "353e5e48-2034-4689-9ebc-761bb0500f4b",

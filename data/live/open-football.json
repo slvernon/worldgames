@@ -1,7 +1,7 @@
 {
   "slug": "open-football",
   "season": "2026",
-  "updatedAt": "2026-07-16T14:47:23Z",
+  "updatedAt": "2026-07-16T16:04:28Z",
   "teams": {
     "06ca79ca-663b-4656-999c-f069ad93ebae": {
       "id": "06ca79ca-663b-4656-999c-f069ad93ebae",
@@ -59,9 +59,17 @@
       "round": "Round 2",
       "homeRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
       "awayRef": "06ca79ca-663b-4656-999c-f069ad93ebae",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 2,
+        "total": 11
+      },
+      "away": {
+        "goals": 1,
+        "points": 16,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "1baf047a-9735-45b6-aaf3-fbda32c951f5",
