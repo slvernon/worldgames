@@ -8,12 +8,11 @@
   var WG = window.WG = window.WG || {};
 
   // Simulation parameters — Poisson means for goals / points, per side.
-  // Derived from an opponent-adjusted attack/defence model fit to all 36 Division 1
-  // games (each side's real scoring run through the other's real defence), with
-  // small-sample shrinkage. Both defences are elite so scoring is low; New York's
-  // league-best defence throttles Southeast's goal-based attack more than Southeast's
-  // defence contains New York's points -> New York a modest favourite (~58%).
-  var SIM = { seG: 1.87, seP: 1.82, nyG: 1.67, nyP: 3.62 };
+  // Opponent-adjusted attack/defence model fit to all 36 Division 1 games, with
+  // small-sample shrinkage, then calibrated to the scouting read: possession partly
+  // explains New York's low goals-against, but on balance a light lean to New York.
+  // Nets to ~ Southeast 47% / New York 53% — a coin flip that shades New York.
+  var SIM = { seG: 2.10, seP: 1.82, nyG: 1.67, nyP: 3.51 };
   var N = 10000;
 
   function poisson(lambda) {            // Knuth
@@ -37,6 +36,7 @@
 
   function runSim(n) {
     var seWin = 0, nyWin = 0, otCount = 0;
+    var seBig = 0, seClose = 0, nyClose = 0, nyBig = 0, oneScore = 0;
     var LO = -24, HI = 24, W = 3;
     var nb = Math.floor((HI - LO) / W) + 1;
     var hist = []; for (var b = 0; b < nb; b++) hist.push(0);
@@ -46,25 +46,49 @@
       var m = st - nt;
       if (m === 0) { otCount++; m = playOT(st, nt); }   // extra time — no draws
       if (m > 0) seWin++; else nyWin++;
+      if (m >= 6) seBig++; else if (m >= 1) seClose++; else if (m <= -6) nyBig++; else nyClose++;
+      if (m >= -3 && m <= 3) oneScore++;
       var mm = Math.max(LO, Math.min(HI, m));
       hist[Math.floor((mm - LO) / W)]++;
     }
-    return { n: n, se: seWin / n, ny: nyWin / n, ot: otCount / n, hist: hist, LO: LO, W: W };
+    return {
+      n: n, se: seWin / n, ny: nyWin / n, hist: hist, LO: LO, W: W,
+      bands: { seBig: seBig / n, seClose: seClose / n, nyClose: nyClose / n, nyBig: nyBig / n, oneScore: oneScore / n }
+    };
   }
 
   function pct(x) { return Math.round(x * 100); }
 
   function renderSim(root) {
     var r = runSim(N);
+
+    // headline
+    var lead = Math.abs(r.se - r.ny) <= 0.05 ? 'Too close to call'
+             : (r.se > r.ny ? 'Southeast shade it' : 'New York shade it');
+    root.querySelector('.tossup').textContent = lead + ' — a coin flip between two elite defences.';
+
     // win-probability bar
-    var wp = root.querySelector('.wpbar');
-    wp.innerHTML =
+    root.querySelector('.wpbar').innerHTML =
       '<div class="wpseg se" style="width:' + (r.se * 100) + '%">' + pct(r.se) + '%</div>' +
       '<div class="wpseg ny" style="width:' + (r.ny * 100) + '%">' + pct(r.ny) + '%</div>';
     root.querySelector('.wplabels').innerHTML =
       '<span class="se">Southeast ' + pct(r.se) + '% to win</span>' +
       '<span class="ny">New York ' + pct(r.ny) + '% to win</span>';
-    // histogram
+
+    // outcome bands — the likelihood spread
+    var bd = r.bands, maxB = Math.max(bd.seBig, bd.seClose, bd.nyClose, bd.nyBig, 0.01);
+    function band(cls, label, v) {
+      return '<div class="oband"><span class="olabel ' + cls + '">' + label + '</span>' +
+        '<div class="otrack"><div class="ofill ' + cls + '" style="width:' + (v / maxB * 100) + '%"></div></div>' +
+        '<span class="oval">' + pct(v) + '%</span></div>';
+    }
+    root.querySelector('.obands').innerHTML =
+      band('sebig', 'Southeast by 6+', bd.seBig) +
+      band('seclose', 'Southeast by 1–5', bd.seClose) +
+      band('nyclose', 'New York by 1–5', bd.nyClose) +
+      band('nybig', 'New York by 6+', bd.nyBig);
+
+    // histogram (full distribution)
     var max = 1; for (var i = 0; i < r.hist.length; i++) if (r.hist[i] > max) max = r.hist[i];
     var html = '';
     for (var b = 0; b < r.hist.length; b++) {
@@ -76,6 +100,10 @@
       html += '<div class="hbar ' + cls + '" style="height:' + (r.hist[b] / max * 100) + '%" title="' + t + '"></div>';
     }
     root.querySelector('.hist').innerHTML = html;
+
+    root.querySelector('.histcap').innerHTML = 'About <b>' + pct(bd.oneScore) + '%</b> of finals are a one-score game ' +
+      '(within a goal, or level and into extra time). Both defences are elite, so expect a low-scoring, tight final — ' +
+      'level games go to extra time, so every run has a winner.';
   }
 
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
@@ -102,21 +130,18 @@
         '<div class="vtile"><div class="k">Their game</div><div class="big ny">POINTS</div><div class="foot">not goals — from range</div></div>' +
       '</div>' +
 
-      // PROJECTION + SIM
-      '<section><h2 class="fmsec">Projected result — 10,000 simulations</h2><div class="fmcard proj">' +
-        '<div class="projline">' +
-          '<div class="projteam se"><div class="nm">Southeast</div><div class="sc">1–02</div><div class="tot">5</div></div>' +
-          '<div class="projdash">–</div>' +
-          '<div class="projteam ny"><div class="nm">New York</div><div class="sc">1–04</div><div class="tot">7</div></div>' +
-        '</div>' +
-        '<div class="projcap">A tight, low-scoring final — both defences are elite. Typically decided by a single score or in extra time, with New York shading it more often than not.</div>' +
+      // SPREAD / SIM — likelihood of outcomes, not a single predicted score
+      '<section><h2 class="fmsec">How the final could go — 10,000 simulations</h2><div class="fmcard proj">' +
+        '<div class="tossup"></div>' +
         '<div class="wp"><div class="wpbar"></div><div class="wplabels"></div></div>' +
-        '<div class="histhead"><span class="histtitle">Winning margin — distribution of outcomes</span>' +
+        '<div class="obtitle">Most likely outcomes</div>' +
+        '<div class="obands"></div>' +
+        '<div class="histhead"><span class="histtitle">Every outcome — winning margin</span>' +
           '<button type="button" class="rerun">↻ Re-run</button></div>' +
         '<div class="legend"><span><i class="swatch ny"></i>New York win</span><span><i class="swatch se"></i>Southeast win</span></div>' +
         '<div class="hist"></div>' +
         '<div class="histx"><span>← New York by 24</span><span class="mid">level</span><span>Southeast by 24 →</span></div>' +
-        '<div class="histcap">Each run simulates 10,000 finals from a Poisson model of both sides’ goals &amp; points, tuned to the data and the scouting. Level games are played out in extra time, so every game has a winner.</div>' +
+        '<div class="histcap"></div>' +
       '</div></section>' +
 
       // HOW NEW YORK PLAY

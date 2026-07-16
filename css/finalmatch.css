@@ -80,6 +80,24 @@
 .wg-fm .histx .mid { color:var(--wg-text-dim); font-weight:700; }
 .wg-fm .histcap { font-size:11.5px; color:var(--wg-text-faint); margin-top:10px; text-align:center; }
 
+/* toss-up headline + outcome bands (likelihood spread) */
+.wg-fm .tossup { text-align:center; font:700 14.5px/1.35 var(--wg-font-head,'Poppins'); color:var(--wg-text);
+  margin:0 auto 14px; max-width:40ch; }
+.wg-fm .obtitle { font:800 11px/1 var(--wg-font-head,'Poppins'); letter-spacing:.08em; text-transform:uppercase;
+  color:var(--wg-text-faint); margin:18px 0 10px; }
+.wg-fm .obands { display:flex; flex-direction:column; gap:9px; }
+.wg-fm .oband { display:flex; align-items:center; gap:10px; }
+.wg-fm .olabel { flex:0 0 116px; font:700 12.5px/1.15 var(--wg-font-head,'Poppins'); }
+.wg-fm .olabel.sebig, .wg-fm .olabel.seclose { color:var(--wg-crimson); }
+.wg-fm .olabel.nyclose, .wg-fm .olabel.nybig { color:var(--wg-blue); }
+.wg-fm .otrack { flex:1; height:13px; background:var(--wg-surface-2); border-radius:7px; overflow:hidden; }
+.wg-fm .ofill { height:100%; border-radius:7px; min-width:3px; transition:width .4s cubic-bezier(.2,.7,.2,1); }
+.wg-fm .ofill.sebig { background:var(--wg-crimson); }
+.wg-fm .ofill.seclose { background:color-mix(in srgb, var(--wg-crimson) 52%, var(--wg-surface)); }
+.wg-fm .ofill.nyclose { background:color-mix(in srgb, var(--wg-blue) 52%, var(--wg-surface)); }
+.wg-fm .ofill.nybig { background:var(--wg-blue); }
+.wg-fm .oval { flex:0 0 40px; text-align:right; font:800 13.5px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text); }
+
 /* legend */
 .wg-fm .legend { display:flex; gap:15px; margin:0 0 14px; font-size:12.5px; font-weight:700; flex-wrap:wrap; }
 .wg-fm .legend span { display:inline-flex; align-items:center; gap:7px; color:var(--wg-text-dim); }
