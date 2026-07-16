@@ -86,9 +86,9 @@
       // VS scoreboard
       '<div class="vs">' +
         '<div class="vsrow">' +
-          '<div class="team se"><div class="crest">SE</div><div class="tname">USGAA Southeast</div><div class="sub">5–1</div></div>' +
+          '<div class="team se"><div class="crest">SE</div><div class="tname">USGAA<br>Southeast</div><div class="sub">5–1</div></div>' +
           '<div class="mid"><div class="v">VS</div></div>' +
-          '<div class="team ny"><div class="crest">NY</div><div class="tname">New York Camogie</div><div class="sub">8–1 · top seed</div></div>' +
+          '<div class="team ny"><div class="crest">NY</div><div class="tname">New York<br>Camogie</div><div class="sub">8–1 · top seed</div></div>' +
         '</div>' +
         '<div class="vsmeta">Cup Final · Fri 17 Jul, 12:20 · Waterford</div>' +
       '</div>' +

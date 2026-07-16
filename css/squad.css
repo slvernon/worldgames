@@ -35,8 +35,9 @@
 .wg-sq .prow { display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid var(--wg-line); }
 .wg-sq .prow:first-of-type { border-top:0; }
 .wg-sq .rank { flex:0 0 18px; text-align:center; font:800 13px/1 var(--wg-font-head,'Poppins'); color:var(--wg-text-faint); }
-.wg-sq .jersey { flex:0 0 30px; height:30px; border-radius:8px; background:var(--wg-crimson); color:#fff;
-  font:800 14px/1 var(--wg-font-head,'Poppins'); display:flex; align-items:center; justify-content:center; }
+.wg-sq .jersey { flex:0 0 34px; width:34px; height:32px; background:var(--wg-crimson); color:#fff;
+  font:800 12px/1 var(--wg-font-head,'Poppins'); display:flex; align-items:center; justify-content:center; padding-top:3px;
+  clip-path:polygon(33% 0,67% 0,74% 8%,100% 17%,86% 43%,76% 31%,76% 100%,24% 100%,24% 31%,14% 43%,0 17%,26% 8%); }
 .wg-sq .pmain { flex:1 1 auto; min-width:0; }
 .wg-sq .pname { font-weight:700; font-size:13.5px; color:var(--wg-text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .wg-sq .pname .first { color:var(--wg-crimson); }
