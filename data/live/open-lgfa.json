@@ -1,16 +1,8 @@
 {
   "slug": "open-lgfa",
   "season": "2026",
-  "updatedAt": "2026-07-16T16:04:29Z",
+  "updatedAt": "2026-07-16T17:35:46Z",
   "teams": {
-    "21024302-8ab0-4e3a-b901-368cb007b853": {
-      "id": "21024302-8ab0-4e3a-b901-368cb007b853",
-      "name": "France Irish LGFA"
-    },
-    "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c": {
-      "id": "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c",
-      "name": "Waterford LGFA"
-    },
     "5675951f-53b9-47dc-8cfa-b505724245a6": {
       "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
       "name": "Middle East"
@@ -18,6 +10,14 @@
     "07d42cfb-f444-4040-b5a5-82e0854e77f0": {
       "id": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "name": "Asia"
+    },
+    "21024302-8ab0-4e3a-b901-368cb007b853": {
+      "id": "21024302-8ab0-4e3a-b901-368cb007b853",
+      "name": "France Irish LGFA"
+    },
+    "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c": {
+      "id": "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c",
+      "name": "Waterford LGFA"
     },
     "60316f52-8464-4ca4-849c-4835dcd30ec9": {
       "id": "60316f52-8464-4ca4-849c-4835dcd30ec9",
@@ -33,8 +33,8 @@
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
-      "homeRef": "1st",
-      "awayRef": "2nd",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "07d42cfb-f444-4040-b5a5-82e0854e77f0",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -49,9 +49,17 @@
       "round": "Round 4",
       "homeRef": "21024302-8ab0-4e3a-b901-368cb007b853",
       "awayRef": "6cc39ab4-f1a1-4680-b112-df4eb35dcc6c",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 8,
+        "total": 20
+      },
+      "away": {
+        "goals": 8,
+        "points": 10,
+        "total": 34
+      },
+      "status": "final"
     },
     {
       "id": "3dd6207f-f05d-4b2e-a239-f41a0834054a",

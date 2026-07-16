@@ -1,8 +1,12 @@
 {
   "slug": "open-football",
   "season": "2026",
-  "updatedAt": "2026-07-16T16:04:28Z",
+  "updatedAt": "2026-07-16T17:35:45Z",
   "teams": {
+    "5675951f-53b9-47dc-8cfa-b505724245a6": {
+      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "name": "Middle East"
+    },
     "06ca79ca-663b-4656-999c-f069ad93ebae": {
       "id": "06ca79ca-663b-4656-999c-f069ad93ebae",
       "name": "Yorkshire GAA"
@@ -14,10 +18,6 @@
     "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
       "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
       "name": "Italy"
-    },
-    "5675951f-53b9-47dc-8cfa-b505724245a6": {
-      "id": "5675951f-53b9-47dc-8cfa-b505724245a6",
-      "name": "Middle East"
     }
   },
   "fixtures": [
@@ -29,8 +29,8 @@
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
-      "homeRef": "1st",
-      "awayRef": "2nd",
+      "homeRef": "5675951f-53b9-47dc-8cfa-b505724245a6",
+      "awayRef": "06ca79ca-663b-4656-999c-f069ad93ebae",
       "home": null,
       "away": null,
       "status": "scheduled"
