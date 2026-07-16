@@ -21,8 +21,21 @@
     return k - 1;
   }
 
+  // A level game goes to extra time — never a draw. Extra time ≈ a third of
+  // regulation; keep playing periods until someone leads (then a coin, which
+  // effectively never triggers).
+  function playOT(st, nt) {
+    var etf = 1 / 3;
+    for (var t = 0; t < 6; t++) {
+      st += poisson(SIM.seG * etf) * 3 + poisson(SIM.seP * etf);
+      nt += poisson(SIM.nyG * etf) * 3 + poisson(SIM.nyP * etf);
+      if (st !== nt) return st - nt;
+    }
+    return Math.random() < 0.51 ? -1 : 1;   // still level: New York a shade favoured
+  }
+
   function runSim(n) {
-    var seWin = 0, nyWin = 0, draw = 0;
+    var seWin = 0, nyWin = 0, otCount = 0;
     var LO = -24, HI = 24, W = 3;
     var nb = Math.floor((HI - LO) / W) + 1;
     var hist = []; for (var b = 0; b < nb; b++) hist.push(0);
@@ -30,11 +43,12 @@
       var st = poisson(SIM.seG) * 3 + poisson(SIM.seP);
       var nt = poisson(SIM.nyG) * 3 + poisson(SIM.nyP);
       var m = st - nt;
-      if (m > 0) seWin++; else if (m < 0) nyWin++; else draw++;
+      if (m === 0) { otCount++; m = playOT(st, nt); }   // extra time — no draws
+      if (m > 0) seWin++; else nyWin++;
       var mm = Math.max(LO, Math.min(HI, m));
       hist[Math.floor((mm - LO) / W)]++;
     }
-    return { n: n, se: seWin / n, ny: nyWin / n, dr: draw / n, hist: hist, LO: LO, W: W };
+    return { n: n, se: seWin / n, ny: nyWin / n, ot: otCount / n, hist: hist, LO: LO, W: W };
   }
 
   function pct(x) { return Math.round(x * 100); }
@@ -44,13 +58,11 @@
     // win-probability bar
     var wp = root.querySelector('.wpbar');
     wp.innerHTML =
-      '<div class="wpseg se" style="width:' + (r.se * 100) + '%">' + (r.se >= .12 ? pct(r.se) + '%' : '') + '</div>' +
-      '<div class="wpseg draw" style="width:' + (r.dr * 100) + '%"></div>' +
-      '<div class="wpseg ny" style="width:' + (r.ny * 100) + '%">' + (r.ny >= .12 ? pct(r.ny) + '%' : '') + '</div>';
+      '<div class="wpseg se" style="width:' + (r.se * 100) + '%">' + pct(r.se) + '%</div>' +
+      '<div class="wpseg ny" style="width:' + (r.ny * 100) + '%">' + pct(r.ny) + '%</div>';
     root.querySelector('.wplabels').innerHTML =
-      '<span class="se">Southeast ' + pct(r.se) + '%</span>' +
-      '<span class="dr">Draw ' + pct(r.dr) + '%</span>' +
-      '<span class="ny">New York ' + pct(r.ny) + '%</span>';
+      '<span class="se">Southeast ' + pct(r.se) + '% to win</span>' +
+      '<span class="ny">New York ' + pct(r.ny) + '% to win</span>';
     // histogram
     var max = 1; for (var i = 0; i < r.hist.length; i++) if (r.hist[i] > max) max = r.hist[i];
     var html = '';
@@ -93,14 +105,14 @@
           '<div class="projdash">–</div>' +
           '<div class="projteam ny"><div class="nm">New York</div><div class="sc">1–09</div><div class="tot">12</div></div>' +
         '</div>' +
-        '<div class="projcap">Typical scoreline — level, decided by a single score. New York edge it more often than not.</div>' +
+        '<div class="projcap">A typical regulation scoreline — tight, often decided by a score or in extra time. New York edge it more often than not.</div>' +
         '<div class="wp"><div class="wpbar"></div><div class="wplabels"></div></div>' +
         '<div class="histhead"><span class="histtitle">Winning margin — distribution of outcomes</span>' +
           '<button type="button" class="rerun">↻ Re-run</button></div>' +
         '<div class="legend"><span><i class="swatch ny"></i>New York win</span><span><i class="swatch se"></i>Southeast win</span></div>' +
         '<div class="hist"></div>' +
         '<div class="histx"><span>← New York by 24</span><span class="mid">level</span><span>Southeast by 24 →</span></div>' +
-        '<div class="histcap">Each run simulates 10,000 finals from a Poisson model of both sides’ goals &amp; points, tuned to the data and the scouting. ~6% finish level → extra time.</div>' +
+        '<div class="histcap">Each run simulates 10,000 finals from a Poisson model of both sides’ goals &amp; points, tuned to the data and the scouting. Level games are played out in extra time, so every game has a winner.</div>' +
       '</div></section>' +
 
       // HOW NEW YORK PLAY
