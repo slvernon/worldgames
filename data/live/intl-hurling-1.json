@@ -1,8 +1,12 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T11:08:14Z",
+  "updatedAt": "2026-07-16T12:46:24Z",
   "teams": {
+    "c36af5df-6571-47c1-8305-0b72bbd37c0a": {
+      "id": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "name": "Southeast Stars"
+    },
     "cea875fc-9112-4a95-afc2-45ad8db3278b": {
       "id": "cea875fc-9112-4a95-afc2-45ad8db3278b",
       "name": "Legen-Dairy Daddies"
@@ -10,6 +14,10 @@
     "389b191b-5481-4737-ac23-7207daa3bea8": {
       "id": "389b191b-5481-4737-ac23-7207daa3bea8",
       "name": "Philadelphia Red"
+    },
+    "8ac1b329-b13d-4651-9cbd-ef60d96e367f": {
+      "id": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
+      "name": "France Hurling"
     },
     "2d96597a-29a4-4d43-95d7-3bad6752d875": {
       "id": "2d96597a-29a4-4d43-95d7-3bad6752d875",
@@ -27,25 +35,17 @@
       "id": "7efcdefa-38da-4d69-9498-a1651ca190d9",
       "name": "Joseph Mary Plunketts"
     },
-    "c36af5df-6571-47c1-8305-0b72bbd37c0a": {
-      "id": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "name": "Southeast Stars"
+    "c0a505d0-2c4d-4661-a782-5fbd79e94fea": {
+      "id": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
+      "name": "Canada Hurling 1"
     },
     "05990fb1-d313-43db-9c95-04adca442784": {
       "id": "05990fb1-d313-43db-9c95-04adca442784",
       "name": "Southeast Stripes"
     },
-    "c0a505d0-2c4d-4661-a782-5fbd79e94fea": {
-      "id": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
-      "name": "Canada Hurling 1"
-    },
     "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e": {
       "id": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
       "name": "Philadelphia Blue"
-    },
-    "8ac1b329-b13d-4651-9cbd-ef60d96e367f": {
-      "id": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
-      "name": "France Hurling"
     }
   },
   "fixtures": [
@@ -71,7 +71,7 @@
       "pitch": "Field 3",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
       "awayRef": "cea875fc-9112-4a95-afc2-45ad8db3278b",
       "home": null,
       "away": null,
@@ -86,7 +86,7 @@
       "pool": null,
       "round": "Final",
       "homeRef": "389b191b-5481-4737-ac23-7207daa3bea8",
-      "awayRef": "Winner SF",
+      "awayRef": "8ac1b329-b13d-4651-9cbd-ef60d96e367f",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -101,9 +101,17 @@
       "round": "SF 2",
       "homeRef": "2d96597a-29a4-4d43-95d7-3bad6752d875",
       "awayRef": "647d1a71-1d0c-4898-af20-af812469942d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 6,
+        "points": 13,
+        "total": 31
+      },
+      "away": {
+        "goals": 1,
+        "points": 8,
+        "total": 11
+      },
+      "status": "final"
     },
     {
       "id": "0d199257-9360-458d-a2f8-d87c3034f9d5",
@@ -115,23 +123,17 @@
       "round": "SF1",
       "homeRef": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
       "awayRef": "7efcdefa-38da-4d69-9498-a1651ca190d9",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
-    },
-    {
-      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 4,
+        "points": 6,
+        "total": 18
+      },
+      "away": {
+        "goals": 0,
+        "points": 7,
+        "total": 7
+      },
+      "status": "final"
     },
     {
       "id": "f2af5f1e-9dba-4db0-8849-f12aeec98615",
@@ -152,6 +154,28 @@
         "goals": 0,
         "points": 7,
         "total": 7
+      },
+      "status": "final"
+    },
+    {
+      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
+      "home": {
+        "goals": 3,
+        "points": 10,
+        "total": 19
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
       },
       "status": "final"
     },

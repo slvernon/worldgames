@@ -1,23 +1,23 @@
 {
   "slug": "intl-camogie-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T11:08:19Z",
+  "updatedAt": "2026-07-16T12:46:29Z",
   "teams": {
-    "cb8b42f4-adc5-408f-ad8f-94d438c39e63": {
-      "id": "cb8b42f4-adc5-408f-ad8f-94d438c39e63",
-      "name": "Dairy Girls Camogie"
-    },
     "061c49ed-1e36-47f2-8132-ea857b2dcd27": {
       "id": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
       "name": "Northwest Camogie Collective"
     },
-    "4a4dbf6d-f643-4961-9750-4c4b810de954": {
-      "id": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "name": "Germany"
+    "cb8b42f4-adc5-408f-ad8f-94d438c39e63": {
+      "id": "cb8b42f4-adc5-408f-ad8f-94d438c39e63",
+      "name": "Dairy Girls Camogie"
     },
     "01209e2b-1d47-4150-9d82-1534ab3cf62b": {
       "id": "01209e2b-1d47-4150-9d82-1534ab3cf62b",
       "name": "Mid Atlantic Camogie"
+    },
+    "4a4dbf6d-f643-4961-9750-4c4b810de954": {
+      "id": "4a4dbf6d-f643-4961-9750-4c4b810de954",
+      "name": "Germany"
     }
   },
   "fixtures": [
@@ -29,33 +29,11 @@
       "pitch": "Field 3",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
       "awayRef": "cb8b42f4-adc5-408f-ad8f-94d438c39e63",
       "home": null,
       "away": null,
       "status": "scheduled"
-    },
-    {
-      "id": "586bcfc4-6cde-444e-a532-576b0acf20ca",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "10:00",
-      "pitch": "Field 8",
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
-      "awayRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "home": {
-        "goals": 2,
-        "points": 5,
-        "total": 11
-      },
-      "away": {
-        "goals": 3,
-        "points": 0,
-        "total": 9
-      },
-      "status": "final"
     },
     {
       "id": "e308da48-ffd7-48fb-a3eb-287ba09631f7",
@@ -76,6 +54,28 @@
         "goals": 1,
         "points": 1,
         "total": 4
+      },
+      "status": "final"
+    },
+    {
+      "id": "586bcfc4-6cde-444e-a532-576b0acf20ca",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "10:00",
+      "pitch": "Field 8",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "061c49ed-1e36-47f2-8132-ea857b2dcd27",
+      "awayRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
+      "home": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "away": {
+        "goals": 3,
+        "points": 0,
+        "total": 9
       },
       "status": "final"
     },

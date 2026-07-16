@@ -1,11 +1,15 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-16T11:08:03Z",
+  "updatedAt": "2026-07-16T12:46:13Z",
   "teams": {
     "df894de5-82fa-489b-87f1-c0e6a6efff97": {
       "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "name": "Brittany Black"
+    },
+    "8e341294-c364-44c1-a558-522c0dc201e5": {
+      "id": "8e341294-c364-44c1-a558-522c0dc201e5",
+      "name": "Galicia 1"
     },
     "504c296f-8eb5-fd52-1e74-4da4e8373251": {
       "id": "504c296f-8eb5-fd52-1e74-4da4e8373251",
@@ -22,10 +26,6 @@
     "c11f7e34-2a86-4da1-998e-70666c783ffe": {
       "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
       "name": "Éire Óg GAC - San Francisco"
-    },
-    "8e341294-c364-44c1-a558-522c0dc201e5": {
-      "id": "8e341294-c364-44c1-a558-522c0dc201e5",
-      "name": "Galicia 1"
     },
     "a7d67e17-7f89-474d-a00c-5b3e53486fe9": {
       "id": "a7d67e17-7f89-474d-a00c-5b3e53486fe9",
@@ -68,7 +68,7 @@
       "pool": null,
       "round": "Final",
       "homeRef": "df894de5-82fa-489b-87f1-c0e6a6efff97",
-      "awayRef": "Winner SF2",
+      "awayRef": "8e341294-c364-44c1-a558-522c0dc201e5",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -83,9 +83,17 @@
       "round": "SF2",
       "homeRef": "504c296f-8eb5-fd52-1e74-4da4e8373251",
       "awayRef": "bf667990-75a3-48de-b0cc-9193bc6f5d79",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 13,
+        "total": 19
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
+      },
+      "status": "final"
     },
     {
       "id": "ad6a6ba1-e16b-408c-a36a-b6ffb346dc33",
@@ -97,9 +105,17 @@
       "round": "SF1",
       "homeRef": "69282e0b-1c7b-4007-abd6-3180cb539c27",
       "awayRef": "c11f7e34-2a86-4da1-998e-70666c783ffe",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 0,
+        "points": 8,
+        "total": 8
+      },
+      "away": {
+        "goals": 2,
+        "points": 9,
+        "total": 15
+      },
+      "status": "final"
     },
     {
       "id": "d5102a01-7326-4116-8f90-9bf159b9adab",

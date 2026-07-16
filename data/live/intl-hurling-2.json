@@ -1,8 +1,12 @@
 {
   "slug": "intl-hurling-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T11:08:15Z",
+  "updatedAt": "2026-07-16T12:46:25Z",
   "teams": {
+    "1ac44ea5-5508-4b13-92a1-68e39b2c39a3": {
+      "id": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
+      "name": "Heartland Blue"
+    },
     "c962c966-363e-4b30-a013-f7553e67cd87": {
       "id": "c962c966-363e-4b30-a013-f7553e67cd87",
       "name": "Heartland Red"
@@ -10,10 +14,6 @@
     "7fcb7072-4e07-452e-a962-ce7228cdd5bb": {
       "id": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
       "name": "German Ravens"
-    },
-    "1ac44ea5-5508-4b13-92a1-68e39b2c39a3": {
-      "id": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
-      "name": "Heartland Blue"
     },
     "921c244c-e082-41b2-a139-ae2bab78c44d": {
       "id": "921c244c-e082-41b2-a139-ae2bab78c44d",
@@ -50,7 +50,7 @@
       "pool": null,
       "round": "Final",
       "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "awayRef": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -65,9 +65,17 @@
       "round": "Final",
       "homeRef": "c962c966-363e-4b30-a013-f7553e67cd87",
       "awayRef": "7fcb7072-4e07-452e-a962-ce7228cdd5bb",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 3,
+        "points": 7,
+        "total": 16
+      },
+      "away": {
+        "goals": 3,
+        "points": 3,
+        "total": 12
+      },
+      "status": "final"
     },
     {
       "id": "8f026fd5-9566-44df-a34d-f85a05d014b6",
@@ -79,9 +87,17 @@
       "round": "SF2",
       "homeRef": "1ac44ea5-5508-4b13-92a1-68e39b2c39a3",
       "awayRef": "921c244c-e082-41b2-a139-ae2bab78c44d",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 1,
+        "points": 7,
+        "total": 10
+      },
+      "away": {
+        "goals": 2,
+        "points": 3,
+        "total": 9
+      },
+      "status": "final"
     },
     {
       "id": "95995644-9887-4971-8aab-9e69b08391d5",
@@ -93,9 +109,17 @@
       "round": "SF1",
       "homeRef": "acbd36bd-12a9-46d0-b463-fdbe420d6725",
       "awayRef": "c69b5cb5-1e63-4206-a4a0-930ec84f0f72",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 12,
+        "total": 18
+      },
+      "away": {
+        "goals": 3,
+        "points": 10,
+        "total": 19
+      },
+      "status": "final"
     },
     {
       "id": "f8268f3f-8f72-4c71-966c-87f361ec2424",

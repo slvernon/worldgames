@@ -1,27 +1,35 @@
 {
   "slug": "intl-football-3",
   "season": "2026",
-  "updatedAt": "2026-07-16T11:08:07Z",
+  "updatedAt": "2026-07-16T12:46:17Z",
   "teams": {
-    "c20c0110-1057-4559-961e-8bc41209e059": {
-      "id": "c20c0110-1057-4559-961e-8bc41209e059",
-      "name": "Michael Collins"
-    },
-    "a91e239b-1e8a-4ec6-83aa-cc7ed7052634": {
-      "id": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
-      "name": "Alsace"
+    "c0f9304d-e9b0-473e-9761-555afe8496b1": {
+      "id": "c0f9304d-e9b0-473e-9761-555afe8496b1",
+      "name": "Sables Shamrocks, Kabwe, Zambia"
     },
     "2a6a3b12-dc6d-4385-a548-dde03fc06140": {
       "id": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
       "name": "Italy"
     },
+    "4a4dbf6d-f643-4961-9750-4c4b810de954": {
+      "id": "4a4dbf6d-f643-4961-9750-4c4b810de954",
+      "name": "Germany"
+    },
+    "c20c0110-1057-4559-961e-8bc41209e059": {
+      "id": "c20c0110-1057-4559-961e-8bc41209e059",
+      "name": "Michael Collins"
+    },
+    "5d39471a-4564-4eee-8ce4-fa86c6f62dce": {
+      "id": "5d39471a-4564-4eee-8ce4-fa86c6f62dce",
+      "name": "Benelux"
+    },
+    "a91e239b-1e8a-4ec6-83aa-cc7ed7052634": {
+      "id": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
+      "name": "Alsace"
+    },
     "9bb55f69-5dd6-45a9-83a5-1ef433bcc83e": {
       "id": "9bb55f69-5dd6-45a9-83a5-1ef433bcc83e",
       "name": "Europe Wolves (GGE)"
-    },
-    "c0f9304d-e9b0-473e-9761-555afe8496b1": {
-      "id": "c0f9304d-e9b0-473e-9761-555afe8496b1",
-      "name": "Sables Shamrocks, Kabwe, Zambia"
     },
     "df939ed0-db8a-4ce3-b144-77d330728959": {
       "id": "df939ed0-db8a-4ce3-b144-77d330728959",
@@ -35,17 +43,9 @@
       "id": "667045c5-3824-4bc8-ab94-52af4dc6014a",
       "name": "Europe Lions (GGE)"
     },
-    "5d39471a-4564-4eee-8ce4-fa86c6f62dce": {
-      "id": "5d39471a-4564-4eee-8ce4-fa86c6f62dce",
-      "name": "Benelux"
-    },
     "530b45ce-efe8-4593-a2a7-500a763a1551": {
       "id": "530b45ce-efe8-4593-a2a7-500a763a1551",
       "name": "Catalunya Red"
-    },
-    "4a4dbf6d-f643-4961-9750-4c4b810de954": {
-      "id": "4a4dbf6d-f643-4961-9750-4c4b810de954",
-      "name": "Germany"
     },
     "7d7e102d-4864-41f4-9449-42706a8eff29": {
       "id": "7d7e102d-4864-41f4-9449-42706a8eff29",
@@ -69,8 +69,8 @@
       "pitch": "Field 4",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
-      "awayRef": "Winner SF2",
+      "homeRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
+      "awayRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
       "home": null,
       "away": null,
       "status": "scheduled"
@@ -83,7 +83,7 @@
       "pitch": "Field 6",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "4a4dbf6d-f643-4961-9750-4c4b810de954",
       "awayRef": "c20c0110-1057-4559-961e-8bc41209e059",
       "home": null,
       "away": null,
@@ -97,7 +97,7 @@
       "pitch": "Field 7",
       "pool": null,
       "round": "Final",
-      "homeRef": "Winner SF1",
+      "homeRef": "5d39471a-4564-4eee-8ce4-fa86c6f62dce",
       "awayRef": "a91e239b-1e8a-4ec6-83aa-cc7ed7052634",
       "home": null,
       "away": null,
@@ -113,9 +113,17 @@
       "round": "SF2",
       "homeRef": "2a6a3b12-dc6d-4385-a548-dde03fc06140",
       "awayRef": "9bb55f69-5dd6-45a9-83a5-1ef433bcc83e",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 2,
+        "points": 7,
+        "total": 13
+      },
+      "away": {
+        "goals": 2,
+        "points": 5,
+        "total": 11
+      },
+      "status": "final"
     },
     {
       "id": "036c06ac-1a24-4e0b-b0cc-3a7a8513ef78",
@@ -127,9 +135,17 @@
       "round": "SF1",
       "homeRef": "c0f9304d-e9b0-473e-9761-555afe8496b1",
       "awayRef": "df939ed0-db8a-4ce3-b144-77d330728959",
-      "home": null,
-      "away": null,
-      "status": "scheduled"
+      "home": {
+        "goals": 8,
+        "points": 12,
+        "total": 36
+      },
+      "away": {
+        "goals": 2,
+        "points": 1,
+        "total": 7
+      },
+      "status": "final"
     },
     {
       "id": "6c401593-abab-4ab5-b366-71edb4e38ae9",
