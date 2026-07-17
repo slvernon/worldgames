@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-17T12:03:33Z",
+  "updatedAt": "2026-07-17T13:57:59Z",
   "teams": {
     "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc": {
       "id": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
@@ -53,7 +53,7 @@
       "id": "cc0f7d11-104a-4073-bf24-9777f29addfa",
       "stage": "knockout",
       "date": "2026-07-17",
-      "time": "14:25",
+      "time": "14:40",
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",

@@ -2,9 +2,9 @@
   "slug": "usgaa-southeast",
   "teamId": "8dfb940c-8f50-40a7-9132-030c9d464467",
   "teamName": "USGAA Southeast",
-  "updatedAt": "2026-07-17T12:03:40Z",
-  "gamesTotal": 7,
-  "gamesWithScorers": 1,
+  "updatedAt": "2026-07-17T13:58:06Z",
+  "gamesTotal": 8,
+  "gamesWithScorers": 2,
   "unattributedScores": 0,
   "players": [
     {
@@ -30,9 +30,9 @@
       "name": "Colleen Kerger",
       "jersey": 6,
       "goals": 1,
-      "points": 0,
-      "total": 3,
-      "games": 1
+      "points": 1,
+      "total": 4,
+      "games": 2
     },
     {
       "personId": "4c5d4d36-0a0d-4ab0-9ce8-3990ea2fdb92",

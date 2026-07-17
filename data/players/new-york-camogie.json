@@ -2,19 +2,37 @@
   "slug": "new-york-camogie",
   "teamId": "f08c98b9-878e-4e78-a31e-2770cbb5a485",
   "teamName": "New York Camogie",
-  "updatedAt": "2026-07-17T12:03:40Z",
-  "gamesTotal": 9,
-  "gamesWithScorers": 1,
+  "updatedAt": "2026-07-17T13:58:06Z",
+  "gamesTotal": 10,
+  "gamesWithScorers": 2,
   "unattributedScores": 5,
   "players": [
+    {
+      "personId": "d6805b5c-b081-40e4-bcee-431247688778",
+      "name": "Claire Mahoney",
+      "jersey": 8,
+      "goals": 0,
+      "points": 5,
+      "total": 5,
+      "games": 1
+    },
+    {
+      "personId": "e88f0a6e-debe-4525-be91-a5b3deae0a14",
+      "name": "Sinead McGovern",
+      "jersey": 9,
+      "goals": 1,
+      "points": 1,
+      "total": 4,
+      "games": 1
+    },
     {
       "personId": "6254d172-fb40-12e6-53a3-63b418f74645",
       "name": "Grainne Lavery",
       "jersey": 2,
       "goals": 0,
-      "points": 2,
-      "total": 2,
-      "games": 1
+      "points": 3,
+      "total": 3,
+      "games": 2
     }
   ]
 }

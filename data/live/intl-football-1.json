@@ -1,7 +1,7 @@
 {
   "slug": "intl-football-1",
   "season": "2026",
-  "updatedAt": "2026-07-17T12:03:27Z",
+  "updatedAt": "2026-07-17T13:57:53Z",
   "teams": {
     "c11f7e34-2a86-4da1-998e-70666c783ffe": {
       "id": "c11f7e34-2a86-4da1-998e-70666c783ffe",
@@ -49,7 +49,7 @@
       "id": "5465861a-1ed4-4ddd-bae6-76530ec26e17",
       "stage": "knockout",
       "date": "2026-07-17",
-      "time": "16:35",
+      "time": "16:40",
       "pitch": "Azzurri Walsh Park",
       "pool": null,
       "round": "Final",
