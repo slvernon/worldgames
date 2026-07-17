@@ -1,7 +1,7 @@
 {
   "slug": "intl-hurling-1",
   "season": "2026",
-  "updatedAt": "2026-07-17T16:35:28Z",
+  "updatedAt": "2026-07-17T17:42:13Z",
   "teams": {
     "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc": {
       "id": "0da8bb6d-443d-4876-b0db-1eb43ca6d8dc",
@@ -39,13 +39,13 @@
       "id": "c0a505d0-2c4d-4661-a782-5fbd79e94fea",
       "name": "Canada Hurling 1"
     },
-    "05990fb1-d313-43db-9c95-04adca442784": {
-      "id": "05990fb1-d313-43db-9c95-04adca442784",
-      "name": "Southeast Stripes"
-    },
     "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e": {
       "id": "ff68bebb-af25-44bc-a7c1-4ac3ec8ffb0e",
       "name": "Philadelphia Blue"
+    },
+    "05990fb1-d313-43db-9c95-04adca442784": {
+      "id": "05990fb1-d313-43db-9c95-04adca442784",
+      "name": "Southeast Stripes"
     }
   },
   "fixtures": [
@@ -182,28 +182,6 @@
       "status": "final"
     },
     {
-      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:00",
-      "pitch": "Field 7",
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
-      "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
-      "home": {
-        "goals": 3,
-        "points": 10,
-        "total": 19
-      },
-      "away": {
-        "goals": 1,
-        "points": 3,
-        "total": 6
-      },
-      "status": "final"
-    },
-    {
       "id": "b879243a-d87d-40db-9bde-2f5a7a656f3c",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -222,6 +200,28 @@
         "goals": 3,
         "points": 5,
         "total": 14
+      },
+      "status": "final"
+    },
+    {
+      "id": "3bfb3a2e-f338-4de1-9b40-7fed0a6debf3",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:00",
+      "pitch": "Field 7",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "c36af5df-6571-47c1-8305-0b72bbd37c0a",
+      "awayRef": "05990fb1-d313-43db-9c95-04adca442784",
+      "home": {
+        "goals": 3,
+        "points": 10,
+        "total": 19
+      },
+      "away": {
+        "goals": 1,
+        "points": 3,
+        "total": 6
       },
       "status": "final"
     },
