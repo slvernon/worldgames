@@ -1,7 +1,7 @@
 {
   "slug": "intl-lgfa-2",
   "season": "2026",
-  "updatedAt": "2026-07-16T19:10:48Z",
+  "updatedAt": "2026-07-17T09:02:54Z",
   "teams": {
     "6969450c-ee11-4742-9c5d-11e36f2dabbb": {
       "id": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
@@ -19,13 +19,13 @@
       "id": "f199af06-9f45-4a2c-be37-f1ef2748410e",
       "name": "Neustrie LGFA"
     },
-    "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6": {
-      "id": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
-      "name": "Canada LGFA 2"
-    },
     "df894de5-82fa-489b-87f1-c0e6a6efff97": {
       "id": "df894de5-82fa-489b-87f1-c0e6a6efff97",
       "name": "Brittany Black"
+    },
+    "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6": {
+      "id": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
+      "name": "Canada LGFA 2"
     },
     "fd082792-db67-4b77-9bb5-aff462427ba4": {
       "id": "fd082792-db67-4b77-9bb5-aff462427ba4",
@@ -86,28 +86,6 @@
       "status": "final"
     },
     {
-      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
-      "stage": "knockout",
-      "date": "2026-07-16",
-      "time": "11:30",
-      "pitch": "Field 2",
-      "pool": null,
-      "round": "SF1",
-      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
-      "awayRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
-      "home": {
-        "goals": 3,
-        "points": 7,
-        "total": 16
-      },
-      "away": {
-        "goals": 0,
-        "points": 1,
-        "total": 1
-      },
-      "status": "final"
-    },
-    {
       "id": "9c3b27c6-8934-4d9b-8bf1-528196deef12",
       "stage": "knockout",
       "date": "2026-07-16",
@@ -126,6 +104,28 @@
         "goals": 2,
         "points": 3,
         "total": 9
+      },
+      "status": "final"
+    },
+    {
+      "id": "e0f792e3-7ee3-445e-9de0-8ca2dca846e1",
+      "stage": "knockout",
+      "date": "2026-07-16",
+      "time": "11:30",
+      "pitch": "Field 2",
+      "pool": null,
+      "round": "SF1",
+      "homeRef": "6969450c-ee11-4742-9c5d-11e36f2dabbb",
+      "awayRef": "90da6d9c-9332-4a0a-8a9e-9e98fa6593f6",
+      "home": {
+        "goals": 3,
+        "points": 7,
+        "total": 16
+      },
+      "away": {
+        "goals": 0,
+        "points": 1,
+        "total": 1
       },
       "status": "final"
     },
